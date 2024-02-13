@@ -661,24 +661,28 @@ MainMenu_Desc:
 	dw MainMenu_Desc_Network
 
 MainMenu_Desc_Continue:
-	db "つづきからゲームをはじめます。　"
-	;db "CONTINUE GAME。　"
+	;db "つづきからゲームをはじめます。　"
+	db "CONTINUE GAME。　"
 
 MainMenu_Desc_NewGame:
-	db "あたらしくゲームをはじめます。　"
-	;db "START NEW GAME。　"
+	;db "あたらしくゲームをはじめます。　"
+	db "START NEW GAME。　"
 
 MainMenu_Desc_Vs:
-	db "ほかのプレイヤーと[LF]"
-	db "たいせんします。　"
+	;db "ほかのプレイヤーと[LF]"
+	;db "たいせんします。　"
+	db "PLAY AGAINST[LF]"
+	db "OTHER PLAYERS。　"
 
 MainMenu_Desc_Map:
-	db "マップをつくったり[LF]"
-	db "IRつうしんでやりとりできます。　"
+	;db "マップをつくったり[LF]"
+	;db "IRつうしんでやりとりできます。　"
+	db "SHARE MAPS。　"
+	; TODO: Find space and improve this string
 
 MainMenu_Desc_Network:
-	db "ウォーズネットセンターに[LF]"
-	db "アクセスします。　"
+	db "ACCESS THE WARS[LF]"
+	db "NET CENTER。　"
 
 ds $5640 - @  ; end of space
 
