@@ -1,3 +1,4 @@
+include "include/macros.inc"
 include "include/char_main.inc"
 
 section "01:4c1a", romx[$4c1a], bank[$01]
@@ -684,7 +685,7 @@ MainMenu_Desc_Network:
 	db "ACCESS THE WARS[LF]"
 	db "NET CENTER。　"
 
-ds $5640 - @  ; end of space
+	section_end $5640
 
 section "15:5ec1", romx[$5ec1], bank[$15]
 ;db $be, $2d, $ef, $6c, $7f, $6c, $70, $2e
