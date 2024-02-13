@@ -651,9 +651,37 @@ db $73, $00, $4a, $00, $4b, $00, $4a, $00, $4a, $00, $73, $00, $00, $00, $00, $0
 section "15:4a3b", romx[$4a3b], bank[$15]
 ; db $ee, $df, $c5, $2d, $d3, $2d, $ec, $20, $20, $20, $20, $00, $b7, $fc, $dd, $f5, $2d, $dd, $d3, $2d, $ec, $20, $20, $00, $bd, $c0, $dd, $e8, $2d, $ec, $d3, $2d, $ec
 db $42, $45, $47, $49, $4e, $4e, $45, $52, $20, $20, $20, $00, $43, $41, $4d, $50, $41, $49, $47, $4e, $20, $20, $20, $00, $53, $54, $41, $4e, $44, $41, $52, $44, $20
-section "15:55dc", romx[$55dc], bank[$15]
-; db $72, $9a, $67, $66, $87, $e1, $2d, $d1, $60, $7a, $94, $82, $7f, $6d, $2e, $00, $61, $70, $87, $6c, $68, $e1, $2d, $d1, $60, $7a, $94, $82, $7f, $6d
-db $43, $4f, $4e, $54, $49, $4e, $55, $45, $20, $47, $41, $4d, $45, $2e, $20, $00, $53, $54, $41, $52, $54, $20, $4e, $45, $57, $20, $47, $41, $4d, $45
+
+section "MainMenu_Desc", romx[$55d2], bank[$15]
+MainMenu_Desc:
+	dw MainMenu_Desc_Continue
+	dw MainMenu_Desc_NewGame
+	dw MainMenu_Desc_Vs
+	dw MainMenu_Desc_Map
+	dw MainMenu_Desc_Network
+
+MainMenu_Desc_Continue:
+	db "つづきからゲームをはじめます。　"
+	;db "CONTINUE GAME。　"
+
+MainMenu_Desc_NewGame:
+	db "あたらしくゲームをはじめます。　"
+	;db "START NEW GAME。　"
+
+MainMenu_Desc_Vs:
+	db "ほかのプレイヤーと[LF]"
+	db "たいせんします。　"
+
+MainMenu_Desc_Map:
+	db "マップをつくったり[LF]"
+	db "IRつうしんでやりとりできます。　"
+
+MainMenu_Desc_Network:
+	db "ウォーズネットセンターに[LF]"
+	db "アクセスします。　"
+
+ds $5640 - @  ; end of space
+
 section "15:5ec1", romx[$5ec1], bank[$15]
 ; db $be, $2d, $ef, $6c, $7f, $6c, $70, $2e
 db $53, $41, $56, $45, $44, $2e, $20, $20
