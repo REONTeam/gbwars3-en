@@ -1,6 +1,3 @@
-SECTION "00:014e", ROM0[$014e]
-; db $32, $af
-db $0b, $f6
 SECTION "01:4c1a", ROMX[$4c1a], BANK[$01]
 ; db $fe, $01, $02, $fd, $fe, $01, $02, $fd, $04, $fb, $18, $e7, $60, $9f
 db $10, $ef, $10, $ef, $7c, $83, $38, $c7, $38, $c7, $44, $bb, $00, $ff

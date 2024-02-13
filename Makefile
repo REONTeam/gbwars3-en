@@ -15,6 +15,7 @@ clean:
 
 $(name).gbc: $(objects) | baserom.gbc
 	rgblink -O baserom.gbc -o $@ $^
+	rgbfix -O -v $@
 
 %.o: %.asm
 	rgbasm -o $@ $<
