@@ -584,12 +584,12 @@ section "12:5488", romx[$5488], bank[$12]
 db $97, $8b, $9e, $8f, $9c, $93, $8b, $96
 
 section "13:5543", romx[$5543], bank[$13]
-	;db "エディット　" $07, $06
-	db "EDITト　", $07, $06
-	;db "プレイ　", $07, $07
-	db "PLA　", $07, $07
-	;db "コピー　", $07, $08
-	db "COP　", $07, $08
+	;db "エディット", 0 $07, $06
+	db "EDITト", 0, $07, $06
+	;db "プレイ", 0, $07, $07
+	db "PLA", 0, $07, $07
+	;db "コピー", 0, $07, $08
+	db "COP", 0, $07, $08
 	;db "デリー"
 	db "DEL"
 
@@ -598,8 +598,8 @@ section "13:5568", romx[$5568], bank[$13]
 	db "EDIT WHICH DATA"
 
 section "13:5657", romx[$5657], bank[$13]
-	;db "エディット コピー   あげる[LF]"
-	db "EDIT  COPY  END[LF]"
+	;db "エディット コピー   あげる{LF}"
+	db "EDIT  COPY  END{LF}"
 	;db "プレイ   デリート  もらう"
 	db "PLAY  ERASE GET"
 
@@ -608,14 +608,14 @@ section "13:570f", romx[$570f], bank[$13]
 	db "EDIT MAP。 "
 
 section "13:573a", romx[$573a], bank[$13]
-	;db "マップデータをコピーします。　"
+	;db "マップデータをコピーします。", 0
 	;db "マップデータをさくじょします"
-	db "COPY MAP DATA。　"
+	db "COPY MAP DATA。", 0
 	db "ERASE MAP DATA"
 
 section "13:57be", romx[$57be], bank[$13]
 	;db "マップデータがありません。"
-	db "NO MAP DATA。　"
+	db "NO MAP DATA。", 0
 
 section "13:582f", romx[$582f], bank[$13]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
@@ -670,10 +670,10 @@ section "15:4856", romx[$4856], bank[$15]
 db $73, $00, $4a, $00, $4b, $00, $4a, $00, $4a, $00, $73, $00, $00, $00, $00, $00, $b9, $00, $12, $00, $92, $00, $13, $00, $12, $00, $92, $00, $00, $00, $00, $00, $94, $00, $54, $00, $54, $00, $d4, $00, $54, $00, $56, $00, $00, $00, $00, $00, $e0, $00, $80, $00, $e0, $00, $20, $00, $20, $00, $e0, $00, $00
 
 section "15:4a3b", romx[$4a3b], bank[$15]
-	;db "ビギナーモード    　"
-	db "BEGINNER   　"
-	;db "キャンペーンモード  　"
-	db "CAMPAIGN   　"
+	;db "ビギナーモード    ", 0
+	db "BEGINNER   ", 0
+	;db "キャンペーンモード  ", 0
+	db "CAMPAIGN   ", 0
 	;db "スタンダードモード"
 	db "STANDARD "
 
@@ -686,33 +686,33 @@ MainMenu_Desc:
 	dw MainMenu_Desc_Network
 
 MainMenu_Desc_Continue:
-	;db "つづきからゲームをはじめます。　"
-	db "CONTINUE GAME。　"
+	;db "つづきからゲームをはじめます。", 0
+	db "CONTINUE GAME。", 0
 
 MainMenu_Desc_NewGame:
-	;db "あたらしくゲームをはじめます。　"
-	db "START NEW GAME。　"
+	;db "あたらしくゲームをはじめます。", 0
+	db "START NEW GAME。", 0
 
 MainMenu_Desc_Vs:
-	;db "ほかのプレイヤーと[LF]"
-	;db "たいせんします。　"
-	db "PLAY AGAINST[LF]"
-	db "OTHER PLAYERS。　"
+	;db "ほかのプレイヤーと{LF}"
+	;db "たいせんします。", 0
+	db "PLAY AGAINST{LF}"
+	db "OTHER PLAYERS。", 0
 
 MainMenu_Desc_Map:
-	;db "マップをつくったり[LF]"
-	;db "IRつうしんでやりとりできます。　"
-	db "CREATE AND SHARE[LF]"
-	db "MAPS USING IR。　"
+	;db "マップをつくったり{LF}"
+	;db "IRつうしんでやりとりできます。", 0
+	db "CREATE AND SHARE{LF}"
+	db "MAPS USING IR。", 0
 
 	section_end $5640
 
 section fragment "bank15_end", romx[bank15_end_addr], bank[$15]
 MainMenu_Desc_Network:
-	;db "ウォーズネットセンターに[LF]"
-	;db "アクセスします。　"
-	db "ACCESS THE WARS[LF]"
-	db "NET CENTER。　"
+	;db "ウォーズネットセンターに{LF}"
+	;db "アクセスします。", 0
+	db "ACCESS THE WARS{LF}"
+	db "NET CENTER。", 0
 
 section "15:5ec1", romx[$5ec1], bank[$15]
 	;db "セーブしました。"
@@ -731,10 +731,10 @@ section "15:5fbc", romx[$5fbc], bank[$15]
 	db $05
 
 section "15:5fc9", romx[$5fc9], bank[$15]
-	;db "ビギナーモード　"
+	;db "ビギナーモード", 0
 	db "BEGINNER"
-	;db "キャンペーンモード　"
-	db "CAMPAIGN 　"
+	;db "キャンペーンモード", 0
+	db "CAMPAIGN ", 0
 	;db "スタンダードモード"
 	db "STANDARD "
 
@@ -781,10 +781,10 @@ section "18:7e30", romx[$7e30], bank[$18]
 db $24, $db, $24, $db, $27, $d8, $00, $ff, $00, $ff, $e7, $18, $94, $6b, $94, $6b, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $19, $e6, $a5, $5a, $a5, $5a, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $26, $d9, $e9, $16, $29, $d6, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $77, $88, $24, $db, $27, $d8
 
 section "19:55c5", romx[$55c5], bank[$19]
-	;db "メッセージをよむ　", $03, $07
-	db "SEE MAIL　", $03, $07
-	;db "マップデータをダウンロード　", $03, $08
-	db "DOWNLOAD MAPS　", $03, $08
+	;db "メッセージをよむ", 0, $03, $07
+	db "SEE MAIL", 0, $03, $07
+	;db "マップデータをダウンロード", 0, $03, $08
+	db "DOWNLOAD MAPS", 0, $03, $08
 	;db "センターにアクセス"
 	db "WARS NET "
 
@@ -809,20 +809,20 @@ section "25:48a0", romx[$48a0], bank[$25]
 	db "WINS    "
 
 section "25:5e49", romx[$5e49], bank[$25]
-	;db "そうこうユニット 　"
-	db "ARMORED  　"
-	;db "ひそうこうユニット　"
-	db "UNARMORED　"
-	;db "そらユニット   　"
-	db "AIR      　"
-	;db "うみユニット   　"
-	db "NAVAL    　"
+	;db "そうこうユニット ", 0
+	db "ARMORED  ", 0
+	;db "ひそうこうユニット", 0
+	db "UNARMORED", 0
+	;db "そらユニット   ", 0
+	db "AIR      ", 0
+	;db "うみユニット   ", 0
+	db "NAVAL    ", 0
 	;db "せんすいかん"
 	db "SUB   "
 
 section "25:6349", romx[$6349], bank[$25]
-	;db "いどうりょく    /　"
-	db "MOVE      /　"
+	;db "いどうりょく    /", 0
+	db "MOVE      /", 0
 	;db "さいだいねんりょう""
 	db "MAX FUEL "
 
@@ -831,16 +831,16 @@ section "25:636b", romx[$636b], bank[$25]
 	db "LOAD"
 
 section "25:6ad2", romx[$6ad2], bank[$25]
-	;db "せいさんしょうひしきん　"
-	db "BUILD COST 　"
-	;db "[LF]", $04, "せいさんしょうひしざい"
-	db "[LF]", $04, "BUILD COST "
+	;db "せいさんしょうひしきん", 0
+	db "BUILD COST ", 0
+	;db "{LF}", $04, "せいさんしょうひしざい"
+	db "{LF}", $04, "BUILD COST "
 
 section "27:65a0", romx[$65a0], bank[$27]
-	;db "ユニット　"
-	db "UNIT　"
-	;db "せいさんユニット　"
-	db "DEPLOYED　"
+	;db "ユニット", 0
+	db "UNIT", 0
+	;db "せいさんユニット", 0
+	db "DEPLOYED", 0
 	;db "ぜんめつユニット"
 	db "LOST    "
 
@@ -869,64 +869,64 @@ section "27:78f8", romx[$78f8], bank[$27]
 db $00, $00, $49, $00, $4a, $00, $4a, $00, $4a, $00, $7a, $00, $49, $00, $00, $00, $00, $00, $9c, $00, $52, $00, $52, $00, $5c, $00, $52, $00, $92, $00, $00, $00, $00, $00, $9c, $00, $92, $00, $92, $00, $92, $00, $92, $00, $dc, $00, $00, $00, $00, $00, $04, $00, $07, $00, $04, $00, $04, $00, $04, $00, $04, $00, $00, $00, $00, $00, $99, $00, $a5, $00, $a5, $00, $bd, $00, $a5, $00, $a5, $00, $00, $00, $00, $00, $c0, $00, $20, $00, $20, $00, $c0, $00, $00, $00, $00, $00, $00
 
 section "29:4020", romx[$4020], bank[$29]
-	;db "デモ02　　"
+	;db "デモ02{ED}{ED}"
 	db "DEMO02"
 section "29:4212", romx[$4212], bank[$29]
-	;db "ボールジマ　  "
+	;db "ボールジマ{ED}  "
 	db "BALLISLE"
 section "29:4590", romx[$4590], bank[$29]
 	;db "トロピカルウェイ"
 	db "TROPICS "
 section "29:4d6d", romx[$4d6d], bank[$29]
-	;db "シーラビリンス　"
+	;db "シーラビリンス{ED}"
 	db "SEA MAZE"
 section "2c:468f", romx[$468f], bank[$2c]
-	;db "えんしゅう1　"
+	;db "えんしゅう1{ED}"
 	db "DRILL 1"
 section "2c:484e", romx[$484e], bank[$2c]
-	;db "えんしゅう2　"
+	;db "えんしゅう2{ED}"
 	db "DRILL 2"
 section "2c:4a19", romx[$4a19], bank[$2c]
-	;db "えんしゅう3　"
+	;db "えんしゅう3{ED}"
 	db "DRILL 3"
 section "2c:4bea", romx[$4bea], bank[$2c]
-	;db "えんしゅう4　"
+	;db "えんしゅう4{ED}"
 	db "DRILL 4"
 section "2c:4db8", romx[$4db8], bank[$2c]
-	;db "えんしゅう5　"
+	;db "えんしゅう5{ED}"
 	db "DRILL 5"
 section "2c:4f7a", romx[$4f7a], bank[$2c]
-	;db "えんしゅう6　"
+	;db "えんしゅう6{ED}"
 	db "DRILL 6"
 section "2c:5145", romx[$5145], bank[$2c]
-	;db "えんしゅう7　"
+	;db "えんしゅう7{ED}"
 	db "DRILL 7"
 section "2c:530a", romx[$530a], bank[$2c]
-	;db "えんしゅう8　"
+	;db "えんしゅう8{ED}"
 	db "DRILL 8"
 section "2c:54d2", romx[$54d2], bank[$2c]
-	;db "えんしゅう9　"
+	;db "えんしゅう9{ED}"
 	db "DRILL 9"
 section "2c:569a", romx[$569a], bank[$2c]
-	;db "えんしゅう10　"
+	;db "えんしゅう10{ED}"
 	db "DRILL 10"
 section "2c:5862", romx[$5862], bank[$2c]
-	;db "えんしゅう11　"
+	;db "えんしゅう11{ED}"
 	db "DRILL 11"
 section "2c:5a2d", romx[$5a2d], bank[$2c]
-	;db "えんしゅう12　"
+	;db "えんしゅう12{ED}"
 	db "DRILL 12"
 section "2c:5bfb", romx[$5bfb], bank[$2c]
-	;db "えんしゅう13　"
+	;db "えんしゅう13{ED}"
 	db "DRILL 13"
 section "2c:5dc3", romx[$5dc3], bank[$2c]
-	;db "えんしゅう14　"
+	;db "えんしゅう14{ED}"
 	db "DRILL 14"
 section "2c:5f8b", romx[$5f8b], bank[$2c]
-	;db "えんしゅう15　"
+	;db "えんしゅう15{ED}"
 	db "DRILL 15"
 section "2c:6153", romx[$6153], bank[$2c]
-	;db "えんしゅう16　"
+	;db "えんしゅう16{ED}"
 	db "DRILL 16"
 
 section "31:7203", romx[$7203], bank[$31]

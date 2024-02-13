@@ -1,5 +1,5 @@
-charmap "　",   $00
-charmap "[LF]", $01
+charmap "{ED}", $00
+charmap "{LF}", $01
 charmap "•",    $10
 charmap "◀",    $11
 charmap "▶",    $12
