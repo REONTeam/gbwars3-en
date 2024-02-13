@@ -1,6 +1,8 @@
 include "include/macros.inc"
 include "include/char_main.inc"
 
+def bank15_end_addr = $7a00
+
 section "01:4c1a", romx[$4c1a], bank[$01]
 ;db $fe, $01, $02, $fd, $fe, $01, $02, $fd, $04, $fb, $18, $e7, $60, $9f
 db $10, $ef, $10, $ef, $7c, $83, $38, $c7, $38, $c7, $44, $bb, $00, $ff
@@ -678,14 +680,17 @@ MainMenu_Desc_Vs:
 MainMenu_Desc_Map:
 	;db "マップをつくったり[LF]"
 	;db "IRつうしんでやりとりできます。　"
-	db "SHARE MAPS。　"
-	; TODO: Find space and improve this string
-
-MainMenu_Desc_Network:
-	db "ACCESS THE WARS[LF]"
-	db "NET CENTER。　"
+	db "CREATE AND SHARE[LF]"
+	db "MAPS USING IR。　"
 
 	section_end $5640
+
+section fragment "bank15_end", romx[bank15_end_addr], bank[$15]
+MainMenu_Desc_Network:
+	;db "ウォーズネットセンターに[LF]"
+	;db "アクセスします。　"
+	db "ACCESS THE WARS[LF]"
+	db "NET CENTER。　"
 
 section "15:5ec1", romx[$5ec1], bank[$15]
 ;db $be, $2d, $ef, $6c, $7f, $6c, $70, $2e
