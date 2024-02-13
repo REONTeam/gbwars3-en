@@ -598,8 +598,8 @@ section "13:5568", romx[$5568], bank[$13]
 	db "EDIT WHICH DATA"
 
 section "13:5657", romx[$5657], bank[$13]
-	;db "エディット コピー   あげる{LF}"
-	db "EDIT  COPY  END{LF}"
+	;db "エディット コピー   あげる[LF]"
+	db "EDIT  COPY  END[LF]"
 	;db "プレイ   デリート  もらう"
 	db "PLAY  ERASE GET"
 
@@ -694,24 +694,24 @@ MainMenu_Desc_NewGame:
 	db "START NEW GAME。", 0
 
 MainMenu_Desc_Vs:
-	;db "ほかのプレイヤーと{LF}"
+	;db "ほかのプレイヤーと[LF]"
 	;db "たいせんします。", 0
-	db "PLAY AGAINST{LF}"
+	db "PLAY AGAINST[LF]"
 	db "OTHER PLAYERS。", 0
 
 MainMenu_Desc_Map:
-	;db "マップをつくったり{LF}"
+	;db "マップをつくったり[LF]"
 	;db "IRつうしんでやりとりできます。", 0
-	db "CREATE AND SHARE{LF}"
+	db "CREATE AND SHARE[LF]"
 	db "MAPS USING IR。", 0
 
 	section_end $5640
 
 section fragment "bank15_end", romx[bank15_end_addr], bank[$15]
 MainMenu_Desc_Network:
-	;db "ウォーズネットセンターに{LF}"
+	;db "ウォーズネットセンターに[LF]"
 	;db "アクセスします。", 0
-	db "ACCESS THE WARS{LF}"
+	db "ACCESS THE WARS[LF]"
 	db "NET CENTER。", 0
 
 section "15:5ec1", romx[$5ec1], bank[$15]
@@ -833,8 +833,8 @@ section "25:636b", romx[$636b], bank[$25]
 section "25:6ad2", romx[$6ad2], bank[$25]
 	;db "せいさんしょうひしきん", 0
 	db "BUILD COST ", 0
-	;db "{LF}", $04, "せいさんしょうひしざい"
-	db "{LF}", $04, "BUILD COST "
+	;db "[LF]", $04, "せいさんしょうひしざい"
+	db "[LF]", $04, "BUILD COST "
 
 section "27:65a0", romx[$65a0], bank[$27]
 	;db "ユニット", 0
@@ -869,64 +869,64 @@ section "27:78f8", romx[$78f8], bank[$27]
 db $00, $00, $49, $00, $4a, $00, $4a, $00, $4a, $00, $7a, $00, $49, $00, $00, $00, $00, $00, $9c, $00, $52, $00, $52, $00, $5c, $00, $52, $00, $92, $00, $00, $00, $00, $00, $9c, $00, $92, $00, $92, $00, $92, $00, $92, $00, $dc, $00, $00, $00, $00, $00, $04, $00, $07, $00, $04, $00, $04, $00, $04, $00, $04, $00, $00, $00, $00, $00, $99, $00, $a5, $00, $a5, $00, $bd, $00, $a5, $00, $a5, $00, $00, $00, $00, $00, $c0, $00, $20, $00, $20, $00, $c0, $00, $00, $00, $00, $00, $00
 
 section "29:4020", romx[$4020], bank[$29]
-	;db "デモ02{ED}{ED}"
+	;db "デモ02[ED][ED]"
 	db "DEMO02"
 section "29:4212", romx[$4212], bank[$29]
-	;db "ボールジマ{ED}  "
+	;db "ボールジマ[ED]  "
 	db "BALLISLE"
 section "29:4590", romx[$4590], bank[$29]
 	;db "トロピカルウェイ"
 	db "TROPICS "
 section "29:4d6d", romx[$4d6d], bank[$29]
-	;db "シーラビリンス{ED}"
+	;db "シーラビリンス[ED]"
 	db "SEA MAZE"
 section "2c:468f", romx[$468f], bank[$2c]
-	;db "えんしゅう1{ED}"
+	;db "えんしゅう1[ED]"
 	db "DRILL 1"
 section "2c:484e", romx[$484e], bank[$2c]
-	;db "えんしゅう2{ED}"
+	;db "えんしゅう2[ED]"
 	db "DRILL 2"
 section "2c:4a19", romx[$4a19], bank[$2c]
-	;db "えんしゅう3{ED}"
+	;db "えんしゅう3[ED]"
 	db "DRILL 3"
 section "2c:4bea", romx[$4bea], bank[$2c]
-	;db "えんしゅう4{ED}"
+	;db "えんしゅう4[ED]"
 	db "DRILL 4"
 section "2c:4db8", romx[$4db8], bank[$2c]
-	;db "えんしゅう5{ED}"
+	;db "えんしゅう5[ED]"
 	db "DRILL 5"
 section "2c:4f7a", romx[$4f7a], bank[$2c]
-	;db "えんしゅう6{ED}"
+	;db "えんしゅう6[ED]"
 	db "DRILL 6"
 section "2c:5145", romx[$5145], bank[$2c]
-	;db "えんしゅう7{ED}"
+	;db "えんしゅう7[ED]"
 	db "DRILL 7"
 section "2c:530a", romx[$530a], bank[$2c]
-	;db "えんしゅう8{ED}"
+	;db "えんしゅう8[ED]"
 	db "DRILL 8"
 section "2c:54d2", romx[$54d2], bank[$2c]
-	;db "えんしゅう9{ED}"
+	;db "えんしゅう9[ED]"
 	db "DRILL 9"
 section "2c:569a", romx[$569a], bank[$2c]
-	;db "えんしゅう10{ED}"
+	;db "えんしゅう10[ED]"
 	db "DRILL 10"
 section "2c:5862", romx[$5862], bank[$2c]
-	;db "えんしゅう11{ED}"
+	;db "えんしゅう11[ED]"
 	db "DRILL 11"
 section "2c:5a2d", romx[$5a2d], bank[$2c]
-	;db "えんしゅう12{ED}"
+	;db "えんしゅう12[ED]"
 	db "DRILL 12"
 section "2c:5bfb", romx[$5bfb], bank[$2c]
-	;db "えんしゅう13{ED}"
+	;db "えんしゅう13[ED]"
 	db "DRILL 13"
 section "2c:5dc3", romx[$5dc3], bank[$2c]
-	;db "えんしゅう14{ED}"
+	;db "えんしゅう14[ED]"
 	db "DRILL 14"
 section "2c:5f8b", romx[$5f8b], bank[$2c]
-	;db "えんしゅう15{ED}"
+	;db "えんしゅう15[ED]"
 	db "DRILL 15"
 section "2c:6153", romx[$6153], bank[$2c]
-	;db "えんしゅう16{ED}"
+	;db "えんしゅう16[ED]"
 	db "DRILL 16"
 
 section "31:7203", romx[$7203], bank[$31]
