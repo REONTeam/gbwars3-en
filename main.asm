@@ -11,31 +11,32 @@ section "01:5152", romx[$5152], bank[$01]
 ;db $7e, $81, $42, $bd, $42, $bd, $7e, $81, $42, $bd, $42, $bd, $7e, $81
 db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 
-section "0f:45cf", romx[$45cf], bank[$0f]
 setcharmap unit
-	;db $7a, $62, $71, "モ―ド ", 0
+section "0f:45cf", romx[$45cf], bank[$0f]
+	;db "はいちモ―ド ", 0
 	db "LAYOUT ", 0
 	;db "サミマップサイズ"
 	db "サミSIZE  "
 
 section "0f:45e8", romx[$45e8], bank[$0f]
 	;db $6c, $e3, $62, 0
+	;db "しざい", 0
 	db "MTL", 0
-	;db "アメマップ", $79, $75, $7f, $64, 0
+	;db "アメマップのなまえ", 0
 	db "アメNAME   ", 0
-	;db "サメ", $77, $d8, $72, $ef, $6c, 0
+	;db "サメぬりつぶし", 0
 	db "サメFILL ", 0
-	;db "アモセ―ブ", $6d, $d9, 0
+	;db "アモセ―ブする", 0
 	db "アモSAVE ", 0
-	;db "サモ", $6c, $fd, $63, $d8, $fe, $63
+	;db "サモしゅうりょう"
 	db "サモEND   "
 
 section "0f:4d32", romx[$4d32], bank[$0f]
-	;db $7a, $62, $71, "モ―ド", 0
+	;db "はいちモ―ド", 0
 	db "LAYOUT", 0
 	;db "オムマップエディット", 0
 	db "オムMAP EDIT", 0
-	;db "オメユニット", $7a, $62, $71, " "
+	;db "オメユニットはいち "
 	db "オメSET UNIT"
 
 section "0f:5170", romx[$5170], bank[$0f]
@@ -408,7 +409,7 @@ section "12:4b66", romx[$4b66], bank[$12]
 
 section "12:4b8b", romx[$4b8b], bank[$12]
 	;db "ホキュウシャS  "
-	db "S TRUCK", $a7, "S"
+	db "S TRUCK-S"
 
 section "12:4bb0", romx[$4bb0], bank[$12]
 	;db "ユソウトラック"
@@ -416,7 +417,7 @@ section "12:4bb0", romx[$4bb0], bank[$12]
 
 section "12:4bd5", romx[$4bd5], bank[$12]
 	;db "ユソウトラックS "
-	db "T TRUCK", $a7, "S"
+	db "T TRUCK-S"
 
 section "12:4bfa", romx[$4bfa], bank[$12]
 	;db "コンバットバギ―"
@@ -424,7 +425,7 @@ section "12:4bfa", romx[$4bfa], bank[$12]
 
 section "12:4c1f", romx[$4c1f], bank[$12]
 	;db "コンバットバギ―S"
-	db "BUGGY", $a7, "S  "
+	db "BUGGY-S  "
 
 section "12:4c44", romx[$4c44], bank[$12]
 	;db "セントウシャリョウ"
@@ -432,7 +433,7 @@ section "12:4c44", romx[$4c44], bank[$12]
 
 section "12:4c69", romx[$4c69], bank[$12]
 	;db "セントウシャリョウS"
-	db "HUMVEE", $a7, "S  "
+	db "HUMVEE-S  "
 
 section "12:4c8e", romx[$4c8e], bank[$12]
 	;db "ソウコウユソウシャ"
@@ -440,7 +441,7 @@ section "12:4c8e", romx[$4c8e], bank[$12]
 
 section "12:4cb3", romx[$4cb3], bank[$12]
 	;db "ソウコウユソウシャS"
-	db "APC", $a7, "S     "
+	db "APC-S     "
 
 section "12:4cd9", romx[$4cd9], bank[$12]
 	;db "ランチャ― "
@@ -448,7 +449,7 @@ section "12:4cd9", romx[$4cd9], bank[$12]
 
 section "12:4cfe", romx[$4cfe], bank[$12]
 	;db "ランチャ―S  "
-	db "OCKETS", $a7, "S"
+	db "OCKETS-S"
 
 section "12:4d22", romx[$4d22], bank[$12]
 	;db "タイクウセンシャ"
@@ -464,7 +465,7 @@ section "12:4d6c", romx[$4d6c], bank[$12]
 
 section "12:4d91", romx[$4d91], bank[$12]
 	;db "タイクウミサイルS "
-	db "MISSILES", $a7, "S"
+	db "MISSILES-S"
 
 section "12:4db6", romx[$4db6], bank[$12]
 	;db "ジソウホウ   "
@@ -472,7 +473,7 @@ section "12:4db6", romx[$4db6], bank[$12]
 
 section "12:4ddb", romx[$4ddb], bank[$12]
 	;db "ジソウホウS    "
-	db "ARTILERY", $a7, "S"
+	db "ARTILERY-S"
 
 section "12:4e00", romx[$4e00], bank[$12]
 	;db "ホヘイセントウシャ"
@@ -480,7 +481,7 @@ section "12:4e00", romx[$4e00], bank[$12]
 
 section "12:4e25", romx[$4e25], bank[$12]
 	;db "ホヘイセントウシャS"
-	db "IFV", $a7, "S     "
+	db "IFV-S     "
 
 section "12:4e4a", romx[$4e4a], bank[$12]
 	;db "クチクセンシャ"
@@ -488,7 +489,7 @@ section "12:4e4a", romx[$4e4a], bank[$12]
 
 section "12:4e6f", romx[$4e6f], bank[$12]
 	;db "クチクセンシャ"
-	db "BUSTER", $a7
+	db "BUSTER-"
 
 section "12:4e94", romx[$4e94], bank[$12]
 	;db "センシャ"
@@ -500,27 +501,27 @@ section "12:4eb9", romx[$4eb9], bank[$12]
 
 section "12:4ede", romx[$4ede], bank[$12]
 	;db "セントウキA   "
-	db "FIGHTER", $a7, "A"
+	db "FIGHTER-A"
 
 section "12:4f03", romx[$4f03], bank[$12]
 	;db "セントウキB   "
-	db "FIGHTER", $a7, "B"
+	db "FIGHTER-B"
 
 section "12:4f28", romx[$4f28], bank[$12]
 	;db "セントウキS   "
-	db "FIGHTER", $a7, "S"
+	db "FIGHTER-S"
 
 section "12:4f4d", romx[$4f4d], bank[$12]
 	;db "コウゲキキA    "
-	db "ATTACKER", $a7, "A"
+	db "ATTACKER-A"
 
 section "12:4f72", romx[$4f72], bank[$12]
 	;db "コウゲキキB    "
-	db "ATTACKER", $a7, "B"
+	db "ATTACKER-B"
 
 section "12:4f97", romx[$4f97], bank[$12]
 	;db "コウゲキキS    "
-	db "ATTACKER", $a7, "S"
+	db "ATTACKER-S"
 
 section "12:4fbc", romx[$4fbc], bank[$12]
 	;db "バクゲキキ "
@@ -544,7 +545,7 @@ section "12:5050", romx[$5050], bank[$12]
 
 section "12:5075", romx[$5075], bank[$12]
 	;db "コウゲキヘリS   "
-	db "B COPTER", $a7, "S"
+	db "B COPTER-S"
 
 section "12:509a", romx[$509a], bank[$12]
 	;db "タイセンヘリ   "
@@ -556,7 +557,7 @@ section "12:50bf", romx[$50bf], bank[$12]
 
 section "12:50e4", romx[$50e4], bank[$12]
 	;db "ユソウヘリS    "
-	db "T COPTER", $a7, "S"
+	db "T COPTER-S"
 
 section "12:5109", romx[$5109], bank[$12]
 	;db "イ―ジスカン "
@@ -584,7 +585,7 @@ section "12:51e7", romx[$51e7], bank[$12]
 
 section "12:520c", romx[$520c], bank[$12]
 	;db "センスイカンS"
-	db "SUB", $a7, "S  "
+	db "SUB-S  "
 
 section "12:52a8", romx[$52a8], bank[$12]
 	;db "ナシ  "
@@ -592,15 +593,15 @@ section "12:52a8", romx[$52a8], bank[$12]
 
 section "12:52b8", romx[$52b8], bank[$12]
 	;db "マシンガンB "
-	db "M GUN", $a7, "B"
+	db "M GUN-B"
 
 section "12:52c8", romx[$52c8], bank[$12]
 	;db "マシンガンA "
-	db "M GUN", $a7, "A"
+	db "M GUN-A"
 
 section "12:52d8", romx[$52d8], bank[$12]
 	;db "キカンホウB  "
-	db "VULCAN", $a7, "B"
+	db "VULCAN-B"
 
 section "12:52e8", romx[$52e8], bank[$12]
 	;db "キカンホウB"
@@ -608,11 +609,11 @@ section "12:52e8", romx[$52e8], bank[$12]
 
 section "12:52f8", romx[$52f8], bank[$12]
 	;db "キカンホウA  "
-	db "VULCAN", $a7, "A"
+	db "VULCAN-A"
 
 section "12:5308", romx[$5308], bank[$12]
 	;db "キカンホウS  "
-	db "VULCAN", $a7, "S"
+	db "VULCAN-S"
 
 section "12:5318", romx[$5318], bank[$12]
 	;db "グレネ―ド  "
@@ -620,39 +621,39 @@ section "12:5318", romx[$5318], bank[$12]
 
 section "12:5328", romx[$5328], bank[$12]
 	;db "センシャホウB"
-	db "TANK", $a7, "B "
+	db "TANK-B "
 
 section "12:5338", romx[$5338], bank[$12]
 	;db "センシャホウA"
-	db "TANK", $a7, "A "
+	db "TANK-A "
 
 section "12:5348", romx[$5348], bank[$12]
 	;db "センシャホウS"
-	db "TANK", $a7, "S "
+	db "TANK-S "
 
 section "12:5358", romx[$5358], bank[$12]
 	;db "カノンホウB  "
-	db "CANNON", $a7, "B"
+	db "CANNON-B"
 
 section "12:5368", romx[$5368], bank[$12]
 	;db "カノンホウA  "
-	db "CANNON", $a7, "A"
+	db "CANNON-A"
 
 section "12:5378", romx[$5378], bank[$12]
 	;db "ロケットB   "
-	db "ROCKET", $a7, "B"
+	db "ROCKET-B"
 
 section "12:5388", romx[$5388], bank[$12]
 	;db "ロケットA   "
-	db "ROCKET", $a7, "A"
+	db "ROCKET-A"
 
 section "12:539a", romx[$539a], bank[$12]
 	;db "ミサイルB "
-	db " MSL", $a7, "B"
+	db " MSL-B"
 
 section "12:53aa", romx[$53aa], bank[$12]
 	;db "ミサイルA "
-	db " MSL", $a7, "A"
+	db " MSL-A"
 
 section "12:53b8", romx[$53b8], bank[$12]
 	;db "バクダン "
@@ -660,15 +661,15 @@ section "12:53b8", romx[$53b8], bank[$12]
 
 section "12:5418", romx[$5418], bank[$12]
 	;db "タイクウM", $a7, "B "
-	db "AA MSL", $a7, "B"
+	db "AA MSL-B"
 
 section "12:5428", romx[$5428], bank[$12]
 	;db "タイクウM", $a7, "A "
-	db "AA MSL", $a7, "A"
+	db "AA MSL-A"
 
 section "12:5438", romx[$5438], bank[$12]
 	;db "タイクウM", $a7, "S "
-	db "AA MSL", $a7, "S"
+	db "AA MSL-S"
 
 section "12:5478", romx[$5478], bank[$12]
 	;db "ホキュウブッシ "
@@ -678,8 +679,8 @@ section "12:5488", romx[$5488], bank[$12]
 	;db "シザイ     "
 	db "MATERIAL"
 
-section "13:5543", romx[$5543], bank[$13]
 setcharmap main
+section "13:5543", romx[$5543], bank[$13]
 	;db "エディット", 0 $07, $06
 	db "EDITト", 0, $07, $06
 	;db "プレイ", 0, $07, $07
