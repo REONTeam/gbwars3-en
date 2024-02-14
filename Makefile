@@ -10,7 +10,7 @@ all: $(name).gbc
 
 .PHONY: clean
 clean:
-	rm -f $(objects)
+	rm -f $(objects) $(objects:.o=.d)
 	rm -f $(name).gbc $(name).sym
 
 $(name).gbc: $(objects) | baserom.gbc
@@ -18,7 +18,9 @@ $(name).gbc: $(objects) | baserom.gbc
 	rgbfix -O -v $@
 
 %.o: %.asm
-	rgbasm -o $@ $<
+	rgbasm -MP -M $*.d -o $@ $<
 
 baserom.gbc:
 	@echo "Missing baserom.gbc!" >&2; false
+
+-include $(objects:.o=.d)
