@@ -181,9 +181,84 @@ func_4c3a:
 
 	section_end $4d65
 
-section "0f:5170", romx[$5170], bank[$0f]
-	;db "ユニット"
-	db "UNIT"
+section "0f:50ec", romx[$50ec], bank[$0f]
+func_50ec:
+    ld bc, $0020
+    ld de, $1406
+    rst $28
+	db $10, $09, $6a
+    ld hl, ._516e
+    call $336e
+    ld hl, ._5176
+    call $336e
+    ld hl, ._517a
+    call $336e
+    ld c, $00
+
+._510a:
+    ld a, c
+    call $517e
+    inc c
+    ld a, c
+    cp $06
+    jr nz, ._510a
+
+    ld a, $00
+    ldh [$83], a
+    ldh [$4f], a
+    ld a, $06
+    call $5218
+    ld a, $6a
+    rst $28
+	db $0b, $75, $76
+    ld bc, $0d21
+    call $0ed4
+    ld d, $6a
+    ld bc, $0003
+    ld a, $06
+    add a
+    add a
+    add $c0
+    rst $28
+	db $0b, $c9, $76
+    ld a, [$c991]
+    ld b, a
+    ld a, [$c992]
+    ld c, a
+    rst $28
+	db $0b, $70, $47
+    ld c, a
+    ld a, $00
+    ldh [$83], a
+    ldh [$4f], a
+    ld a, $07
+    call $5218
+    ld a, c
+    rst $28
+	db $0b, $77, $76
+    push bc
+    ld bc, $1021
+    call $0ed4
+    pop bc
+    ld d, c
+    ld a, $07
+    add a
+    add a
+    add $c0
+    ld bc, $0003
+    rst $28
+	db $0b, $cf, $76
+    ret
+
+._516e:
+	;db $01, $24, "ユニット/", 0
+	db $01, $24, "UNIT/", 0
+
+._5176:
+	db $0f, $21, $a9, 0
+
+._517a:
+	db $0f, $22, $a9, 0
 
 section "0f:520d", romx[$520d], bank[$0f]
 	;db "ユニットサクジョ"
