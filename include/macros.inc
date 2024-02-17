@@ -1,6 +1,7 @@
 macro section_end
 	if @ > \1
-		error "Section grew too big!"
+		def slack = @ - \1
+		fail "Section grew too big! slack = {slack}"
 	endc
 	ds \1 - @
 endm

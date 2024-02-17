@@ -13,24 +13,48 @@ section "01:5152", romx[$5152], bank[$01]
 db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 
 setcharmap unit
-section "0f:45cf", romx[$45cf], bank[$0f]
-	;db "はいちモ―ド ", 0
-	db "LAYOUT ", 0
-	;db "サミマップサイズ"
-	db "サミSIZE  "
+section "0f:45bd", romx[$45bd], bank[$0f]
+	dw _45bd_1
+	dw _45bd_2
+	dw _45bd_3
+	dw _45bd_4
+	dw _45bd_5
+	dw _45bd_6
+	dw _45bd_7
+	dw _45bd_8
 
-section "0f:45e8", romx[$45e8], bank[$0f]
-	;db $6c, $e3, $62, 0
-	;db "しざい", 0
-	db "MTL", 0
-	;db "アメマップのなまえ", 0
-	db "アメNAME   ", 0
-	;db "サメぬりつぶし", 0
-	db "サメFILL ", 0
-	;db "アモセ―ブする", 0
-	db "アモSAVE ", 0
-	;db "サモしゅうりょう"
-	db "サモEND   "
+_45bd_1:
+	;db $02, $21, "はいちモ―ド ", 0
+	db $02, $21, "LAYOUT ", 0
+
+_45bd_2:
+	;db $0c, $21, "マップサイズ", 0
+	db $0c, $21, "SIZE  ", 0
+
+_45bd_3:
+	db $02, $22, "しきん", 0
+
+_45bd_4:
+	;db $0c, $22, "しざい", 0
+	db $0c, $22, "MTL", 0
+
+_45bd_5:
+	;db $02, $23, "マップのなまえ", 0
+	db $02, $23, "NAME   ", 0
+
+_45bd_6:
+	;db $0c, $23, "ぬりつぶし", 0
+	db $0c, $23, "FILL ", 0
+
+_45bd_7:
+	;db $02, $24, "セ―ブする", 0
+	db $02, $24, "SAVE ", 0
+
+_45bd_8:
+	;db $0c, $24, "しゅうりょう", 0
+	db $0c, $24, "END   ", 0
+
+	section_end $460f
 
 section "0f:4d32", romx[$4d32], bank[$0f]
 	;db "はいちモ―ド", 0
@@ -1028,38 +1052,39 @@ section "2c:6153", romx[$6153], bank[$2c]
 	db "DRILL 16"
 
 setcharmap news
-section "31:7203", romx[$7203], bank[$31]
-;db "ようこそ!", 0, 0
-;db " ", 0, 0
-;db "ウォーズネットでりようできる", 0, 0
-;db "サービスをしょうかいします.", 0, 0
-;db "(1)マップデータダウンロード", 0, 0
-;db "(2)ようへいユニットよびだし", 0, 0
-;db "(3)センターからのメッセージ", 0, 0
-;db " ", 0, 0
-;db "[センターにアクセス]すると", 0, 0
-;db "マップじょうほうやバッジが", 0, 0
-;db "おくられてくることがあります.", 0, 0
-;db " ", 0, 0
-;db "ウォーズネットをりようすると", 0, 0
-;db "よりゲームをたのしめます.", 0, 0
-;db "モバイルシステムGBを", 0, 0
-;db "もっているプレイヤーは", 0, 0
-;db "ぜひアクセスしてください!"
-db "WELCOME!", 0, 0
-db " ", 0, 0
-db "List of WARS NET", 0, 0
-db "services:", 0, 0
-db "(1)DOWNLOAD MAPS", 0, 0
-db "(2)MERCENARIES", 0, 0
-db "(3)CENTER NEWS", 0, 0
-db " ", 0, 0
-db "[ACCESS CENTER]", 0, 0
-db "To receive map", 0, 0
-db "info and badges.", 0, 0
-db " ", 0, 0
-db "MOBILE ADAPTER", 0, 0
-db "players, go to", 0, 0
-db "the WARS NET", 0, 0
-db "CENTER for more", 0, 0
-db "fun! "
+section "News_Welcome", romx[$7203], bank[$31]
+News_Welcome:
+	;db "ようこそ!", 0, 0
+	;db " ", 0, 0
+	;db "ウォーズネットでりようできる", 0, 0
+	;db "サービスをしょうかいします.", 0, 0
+	;db "(1)マップデータダウンロード", 0, 0
+	;db "(2)ようへいユニットよびだし", 0, 0
+	;db "(3)センターからのメッセージ", 0, 0
+	;db " ", 0, 0
+	;db "[センターにアクセス]すると", 0, 0
+	;db "マップじょうほうやバッジが", 0, 0
+	;db "おくられてくることがあります.", 0, 0
+	;db " ", 0, 0
+	;db "ウォーズネットをりようすると", 0, 0
+	;db "よりゲームをたのしめます.", 0, 0
+	;db "モバイルシステムGBを", 0, 0
+	;db "もっているプレイヤーは", 0, 0
+	;db "ぜひアクセスしてください!"
+	db "WELCOME!", 0, 0
+	db " ", 0, 0
+	db "List of WARS NET", 0, 0
+	db "services:", 0, 0
+	db "(1)DOWNLOAD MAPS", 0, 0
+	db "(2)MERCENARIES", 0, 0
+	db "(3)CENTER NEWS", 0, 0
+	db " ", 0, 0
+	db "[ACCESS CENTER]", 0, 0
+	db "To receive map", 0, 0
+	db "info and badges.", 0, 0
+	db " ", 0, 0
+	db "MOBILE ADAPTER", 0, 0
+	db "players, go to", 0, 0
+	db "the WARS NET", 0, 0
+	db "CENTER for more", 0, 0
+	db "fun! "
