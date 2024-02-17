@@ -260,8 +260,26 @@ func_50ec:
 ._517a:
 	db $0f, $22, $a9, 0
 
-section "0f:520d", romx[$520d], bank[$0f]
-	;db "ユニットサクジョ"
+section "0f:51f2", romx[$51f2], bank[$0f]
+func_51f2:
+    push bc
+    ld a, [$ca66]
+    and a
+    jr z, ._5202
+    rst $28
+	db $12, $4f, $40
+    ld hl, $cd28
+    jr z, ._5205
+._5202:
+    ld hl, ._520d
+._5205:
+    ld bc, $0624
+    call $3353
+    pop bc
+    ret
+
+._520d
+	;db "ユニットサクジョ  ", 0
 	db "DELETE  "
 
 section "10:50b7", romx[$50b7], bank[$10]
