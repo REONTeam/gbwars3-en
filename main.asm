@@ -61,9 +61,7 @@ func_4c3a:
     ld bc, $0020
     ld de, $1405
     rst $28
-    db $10
-    add hl, bc
-    ld l, d
+    db $10, $09, $6a
     ld d, $55
     call $4de2
     ld a, [$c945]
