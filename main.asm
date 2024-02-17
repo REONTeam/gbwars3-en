@@ -56,13 +56,132 @@ _45bd_8:
 
 	section_end $460f
 
-section "0f:4d32", romx[$4d32], bank[$0f]
-	;db "はいちモ―ド", 0
-	db "LAYOUT", 0
-	;db "オムマップエディット", 0
-	db "オムMAP EDIT", 0
-	;db "オメユニットはいち "
-	db "オメSET UNIT"
+section "0f:4c3a", romx[$4c3a], bank[$0f]
+func_4c3a:
+    ld bc, $0020
+    ld de, $1405
+    rst $28
+    db $10
+    add hl, bc
+    ld l, d
+    ld d, $55
+    call $4de2
+    ld a, [$c945]
+    cp $00
+    jr z, ._4c60
+    cp $01
+    jr z, ._4c73
+    cp $02
+    jr z, ._4c87
+    cp $03
+    jr z, ._4c9b
+    cp $08
+    jr z, ._4caf
+
+._4c60:
+    ld hl, ._4d30
+    call $336e
+    ld hl, ._4d39
+    call $336e
+    ld hl, ._4d44
+    call $336e
+    ret
+
+._4c73:
+    ld hl, ._4cd5
+    call $336e
+    ld hl, ._4cde
+    call $336e
+    ld hl, ._4ce3
+    call $336e
+    jr ._4cc2
+
+._4c87:
+    ld hl, ._4ce8
+    call $336e
+    ld hl, ._4cee
+    call $336e
+    ld hl, ._4cfe
+    call $336e
+    jr ._4cc2
+
+._4c9b:
+    ld hl, ._4d0e
+    call $336e
+    ld hl, ._4d14
+    call $336e
+    ld hl, ._4d22
+    call $336e
+    jr ._4cc2
+
+._4caf:
+    ld hl, ._4d4f
+    call $336e
+    ld hl, ._4d5a
+    call $336e
+    ld hl, ._4d60
+    call $336e
+    ret
+
+._4cc2:
+    call $352e
+    ld a, $01
+    ld [$c940], a
+    call $4d65
+    xor a
+    ld [$c940], a
+    call $4d65
+    ret
+
+._4cd5:
+	db $02, $21, "マップサイズ", 0
+
+._4cde:
+	db $07, $22, "ヨコ", 0
+
+._4ce3:
+	db $07, $23, "タテ", 0
+
+._4ce8:
+	db $02, $21, "しきん", 0
+
+._4cee:
+	db $04, $22, "レッドスタ―    000", 0
+
+._4cfe:
+	db $04, $23, "ホワイトム―ン   000", 0
+
+._4d0e:
+	db $02, $21, "しざい", 0
+
+._4d14:
+	db $04, $22, "レッドスタ―    0", 0
+
+._4d22:
+	db $04, $23, "ホワイトム―ン   0", 0
+
+._4d30:
+	;db $02, $21, "はいちモ―ド", 0
+	db $02, $21, "LAYOUT", 0
+
+._4d39:
+	;db $06, $22, "マップエディット", 0
+	db $06, $22, "MAP EDIT", 0
+
+._4d44:
+	;db $06, $23, "ユニットはいち ", 0
+	db $06, $23, "SET UNIT", 0
+
+._4d4f:
+	db $02, $21, "よろしいですか?", 0
+
+._4d5a:
+	db $09, $22, "いいえ", 0
+
+._4d60:
+	db $09, $23, "はい", 0
+
+	section_end $4d65
 
 section "0f:5170", romx[$5170], bank[$0f]
 	;db "ユニット"
