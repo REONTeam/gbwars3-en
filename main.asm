@@ -280,7 +280,9 @@ func_51f2:
 
 ._520d
 	;db "ユニットサクジョ  ", 0
-	db "DELETE  "
+	db "DELETE    ", 0
+
+	section_end $5218
 
 section "10:50b7", romx[$50b7], bank[$10]
 ;db $06
