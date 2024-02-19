@@ -14,44 +14,46 @@ db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 
 setcharmap unit
 section "0f:45bd", romx[$45bd], bank[$0f]
-strings_45bd:
-    dw _45bd_1
-    dw _45bd_2
-    dw _45bd_3
-    dw _45bd_4
-    dw _45bd_5
-    dw _45bd_6
-    dw _45bd_7
-    dw _45bd_8
+EDITOR_MENU_STRINGS:
+    dw EDITOR_MENU_LAYOUT
+    dw EDITOR_MENU_SIZE
+    dw EDITOR_MENU_FUNDS
+    dw EDITOR_MENU_MATERIALS
+    dw EDITOR_MENU_NAME
+    dw EDITOR_MENU_FILL
+    dw EDITOR_MENU_SAVE
+    dw EDITOR_MENU_QUIT
 
-_45bd_1:
+; MAP EDITOR - MENU
+EDITOR_MENU_LAYOUT:
     ;db $02, $21, "はいちモ―ド ", 0
     db $02, $21, "LAYOUT ", 0
 
-_45bd_2:
+EDITOR_MENU_SIZE:
     ;db $0c, $21, "マップサイズ", 0
     db $0c, $21, "SIZE  ", 0
 
-_45bd_3:
+EDITOR_MENU_FUNDS:
+    ;db $02, $22, "しきん", 0
     db $02, $22, "しきん", 0
 
-_45bd_4:
+EDITOR_MENU_MATERIALS:
     ;db $0c, $22, "しざい", 0
     db $0c, $22, "MTL", 0
 
-_45bd_5:
+EDITOR_MENU_NAME:
     ;db $02, $23, "マップのなまえ", 0
     db $02, $23, "NAME   ", 0
 
-_45bd_6:
+EDITOR_MENU_FILL:
     ;db $0c, $23, "ぬりつぶし", 0
     db $0c, $23, "FILL ", 0
 
-_45bd_7:
+EDITOR_MENU_SAVE:
     ;db $02, $24, "セ―ブする", 0
     db $02, $24, "SAVE ", 0
 
-_45bd_8:
+EDITOR_MENU_QUIT:
     ;db $0c, $24, "しゅうりょう", 0
     db $0c, $24, "END   ", 0
 
@@ -67,58 +69,58 @@ func_4c3a:
     call $4de2
     ld a, [$c945]
     cp $00
-    jr z, ._4c60
+    jr z, ._4c60 ; SUBMENU - ARRANGE MODE
     cp $01
-    jr z, ._4c73
+    jr z, ._4c73 ; SUBMENU - SIZE
     cp $02
-    jr z, ._4c87
+    jr z, ._4c87 ; SUBMENU - FUNDS
     cp $03
-    jr z, ._4c9b
+    jr z, ._4c9b ; SUBMENU - MATERIALS
     cp $08
-    jr z, ._4caf
+    jr z, ._4caf ; SAVE
 
-._4c60:
-    ld hl, ._4d30
+._4c60: ; MAP EDITOR - ARRANGE MODE
+    ld hl, .EDITOR_SUBMENU_ARRANGE
     call $336e
-    ld hl, ._4d39
+    ld hl, .EDITOR_SUBMENU_ARRANGE_MAP
     call $336e
-    ld hl, ._4d44
+    ld hl, .EDITOR_SUBMENU_ARRANGE_UNIT
     call $336e
     ret
 
-._4c73:
-    ld hl, ._4cd5
+._4c73: ; MAP EDITOR - SIZE
+    ld hl, .EDITOR_SUBMENU_SIZE
     call $336e
-    ld hl, ._4cde
+    ld hl, .EDITOR_SUBMENU_SIZE_HORZ
     call $336e
-    ld hl, ._4ce3
-    call $336e
-    jr ._4cc2
-
-._4c87:
-    ld hl, ._4ce8
-    call $336e
-    ld hl, ._4cee
-    call $336e
-    ld hl, ._4cfe
+    ld hl, .EDITOR_SUBMENU_SIZE_VERT
     call $336e
     jr ._4cc2
 
-._4c9b:
-    ld hl, ._4d0e
+._4c87: ; MAP EDITOR - FUNDS
+    ld hl, .EDITOR_SUBMENU_FUNDS
     call $336e
-    ld hl, ._4d14
+    ld hl, .EDITOR_SUBMENU_FUNDS_RED
     call $336e
-    ld hl, ._4d22
+    ld hl, .EDITOR_SUBMENU_FUNDS_WHITE
     call $336e
     jr ._4cc2
 
-._4caf:
-    ld hl, ._4d4f
+._4c9b: ; MAP EDITOR - MATERIALS
+    ld hl, .EDITOR_SUBMENU_MATERIALS
     call $336e
-    ld hl, ._4d5a
+    ld hl, .EDITOR_SUBMENU_MATERIALS_RED
     call $336e
-    ld hl, ._4d60
+    ld hl, .EDITOR_SUBMENU_MATERIALS_WHITE
+    call $336e
+    jr ._4cc2
+
+._4caf: ; MAP EDITOR - SAVE
+    ld hl, .EDITOR_SUBMENU_SAVE
+    call $336e
+    ld hl, .EDITOR_SUBMENU_SAVE_NO
+    call $336e
+    ld hl, .EDITOR_SUBMENU_SAVE_YES
     call $336e
     ret
 
@@ -132,53 +134,64 @@ func_4c3a:
     call $4d65
     ret
 
-._4cd5:
-    db $02, $21, "マップサイズ", 0
+; MAP EDITOR - SUBMENU - MAP SIZE
+.EDITOR_SUBMENU_SIZE:
+    db $02, $21, "SIZE", 0
 
-._4cde:
-    db $07, $22, "ヨコ", 0
+.EDITOR_SUBMENU_SIZE_HORZ:
+    db $07, $22, "HOR", 0
 
-._4ce3:
-    db $07, $23, "タテ", 0
+.EDITOR_SUBMENU_SIZE_VERT:
+    db $07, $23, "VER", 0
 
-._4ce8:
-    db $02, $21, "しきん", 0
+; MAP EDITOR - SUBMENU - FUNDS
+.EDITOR_SUBMENU_FUNDS:
+    db $02, $21, "FUNDS", 0
 
-._4cee:
-    db $04, $22, "レッドスタ―    000", 0
+.EDITOR_SUBMENU_FUNDS_RED:
+    db $04, $22, "O.STAR    000", 0
 
-._4cfe:
-    db $04, $23, "ホワイトム―ン   000", 0
+.EDITOR_SUBMENU_FUNDS_WHITE:
+    db $04, $23, "W.MOON    000", 0
 
-._4d0e:
-    db $02, $21, "しざい", 0
+; MAP EDITOR - SUBMENU - MATERIALS
+.EDITOR_SUBMENU_MATERIALS:
+    ;db $02, $21, "しざい", 0
+	db $02, $21, "MTL", 0
 
-._4d14:
-    db $04, $22, "レッドスタ―    0", 0
+.EDITOR_SUBMENU_MATERIALS_RED:
+    ;db $04, $22, "レッドスタ―    0", 0
+    db $04, $22, "O.STAR    0", 0
 
-._4d22:
-    db $04, $23, "ホワイトム―ン   0", 0
+.EDITOR_SUBMENU_MATERIALS_WHITE:
+    ;db $04, $23, "ホワイトム―ン   0", 0
+    db $04, $23, "W.MOON    0", 0
 
-._4d30:
+; MAP EDITOR - SUBMENU - ARRANGE MODE
+.EDITOR_SUBMENU_ARRANGE:
     ;db $02, $21, "はいちモ―ド", 0
-    db $02, $21, "LAYOUT", 0
+    db $02, $21, "ARRANGE", 0
 
-._4d39:
+.EDITOR_SUBMENU_ARRANGE_MAP:
     ;db $06, $22, "マップエディット", 0
     db $06, $22, "MAP EDIT", 0
 
-._4d44:
+.EDITOR_SUBMENU_ARRANGE_UNIT:
     ;db $06, $23, "ユニットはいち ", 0
-    db $06, $23, "SET UNIT", 0
+    db $06, $23, " UNIT", 0
 
-._4d4f:
-    db $02, $21, "よろしいですか?", 0
+; MAP EDITOR - SUBMENU - SAVE PROMPT
+.EDITOR_SUBMENU_SAVE:
+	;db $02, $21, "よろしいですか?", 0
+    db $02, $21, "?", 0
 
-._4d5a:
-    db $09, $22, "いいえ", 0
+.EDITOR_SUBMENU_SAVE_NO:
+    ;db $09, $22, "いいえ", 0
+	db $09, $22, "NO", 0
 
-._4d60:
-    db $09, $23, "はい", 0
+.EDITOR_SUBMENU_SAVE_YES:
+    ;db $09, $23, "はい", 0
+	db $09, $23, "YES", 0
 
     section_end $4d65
 
