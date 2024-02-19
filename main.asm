@@ -14,48 +14,48 @@ db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 
 setcharmap unit
 section "0f:45bd", romx[$45bd], bank[$0f]
-EDITOR_MENU_STRINGS:
-    dw EDITOR_MENU_LAYOUT
-    dw EDITOR_MENU_SIZE
-    dw EDITOR_MENU_FUNDS
-    dw EDITOR_MENU_MATERIALS
-    dw EDITOR_MENU_NAME
-    dw EDITOR_MENU_FILL
-    dw EDITOR_MENU_SAVE
-    dw EDITOR_MENU_QUIT
+EditorMenu_Strings:
+    dw EditorMenu_Layout
+    dw EditorMenu_Size
+    dw EditorMenu_Funds
+    dw EditorMenu_Materials
+    dw EditorMenu_Name
+    dw EditorMenu_Fill
+    dw EditorMenu_Save
+    dw EditorMenu_Quit
 
-; MAP EDITOR - MENU
-EDITOR_MENU_LAYOUT:
+; Map Editor - Menu
+EditorMenu_Layout:
     ;db $02, $21, "はいちモ―ド ", 0
-    db $02, $21, "LAYOUT ", 0
+    db $02, $21, "ARRANGE", 0
 
-EDITOR_MENU_SIZE:
+EditorMenu_Size:
     ;db $0c, $21, "マップサイズ", 0
-    db $0c, $21, "SIZE  ", 0
+    db $0c, $21, "SIZE", 0
 
-EDITOR_MENU_FUNDS:
+EditorMenu_Funds:
     ;db $02, $22, "しきん", 0
-    db $02, $22, "しきん", 0
+    db $02, $22, "FUNDS", 0
 
-EDITOR_MENU_MATERIALS:
+EditorMenu_Materials:
     ;db $0c, $22, "しざい", 0
-    db $0c, $22, "MTL", 0
+    db $0c, $22, "MATERIA", 0
 
-EDITOR_MENU_NAME:
+EditorMenu_Name:
     ;db $02, $23, "マップのなまえ", 0
-    db $02, $23, "NAME   ", 0
+    db $02, $23, "NAME", 0
 
-EDITOR_MENU_FILL:
+EditorMenu_Fill:
     ;db $0c, $23, "ぬりつぶし", 0
-    db $0c, $23, "FILL ", 0
+    db $0c, $23, "FILL", 0
 
-EDITOR_MENU_SAVE:
+EditorMenu_Save:
     ;db $02, $24, "セ―ブする", 0
-    db $02, $24, "SAVE ", 0
+    db $02, $24, "SAVE", 0
 
-EDITOR_MENU_QUIT:
+EditorMenu_Quit:
     ;db $0c, $24, "しゅうりょう", 0
-    db $0c, $24, "END   ", 0
+    db $0c, $24, "END", 0
 
     section_end $460f
 
@@ -69,58 +69,58 @@ func_4c3a:
     call $4de2
     ld a, [$c945]
     cp $00
-    jr z, ._4c60 ; SUBMENU - ARRANGE MODE
+    jr z, ._4c60 ; Submenu - Arrange Mode
     cp $01
-    jr z, ._4c73 ; SUBMENU - SIZE
+    jr z, ._4c73 ; Submenu - Size
     cp $02
-    jr z, ._4c87 ; SUBMENU - FUNDS
+    jr z, ._4c87 ; Submenu - Funds
     cp $03
-    jr z, ._4c9b ; SUBMENU - MATERIALS
+    jr z, ._4c9b ; Submenu - Materials
     cp $08
-    jr z, ._4caf ; SAVE
+    jr z, ._4caf ; Save
 
-._4c60: ; MAP EDITOR - ARRANGE MODE
-    ld hl, .EDITOR_SUBMENU_ARRANGE
+._4c60: ; Map Editor - Arrange Mode
+    ld hl, .EditorSubmenu_Arrange
     call $336e
-    ld hl, .EDITOR_SUBMENU_ARRANGE_MAP
+    ld hl, .EditorSubmenu_Arrange_Map
     call $336e
-    ld hl, .EDITOR_SUBMENU_ARRANGE_UNIT
+    ld hl, .EditorSubmenu_Arrange_Unit
     call $336e
     ret
 
-._4c73: ; MAP EDITOR - SIZE
-    ld hl, .EDITOR_SUBMENU_SIZE
+._4c73: ; Map Editor - Size
+    ld hl, .EditorSubmenu_Size
     call $336e
-    ld hl, .EDITOR_SUBMENU_SIZE_HORZ
+    ld hl, .EditorSubmenu_Size_Horz
     call $336e
-    ld hl, .EDITOR_SUBMENU_SIZE_VERT
-    call $336e
-    jr ._4cc2
-
-._4c87: ; MAP EDITOR - FUNDS
-    ld hl, .EDITOR_SUBMENU_FUNDS
-    call $336e
-    ld hl, .EDITOR_SUBMENU_FUNDS_RED
-    call $336e
-    ld hl, .EDITOR_SUBMENU_FUNDS_WHITE
+    ld hl, .EditorSubmenu_Size_Vert
     call $336e
     jr ._4cc2
 
-._4c9b: ; MAP EDITOR - MATERIALS
-    ld hl, .EDITOR_SUBMENU_MATERIALS
+._4c87: ; Map Editor - Funds
+    ld hl, .EditorSubmenu_Funds
     call $336e
-    ld hl, .EDITOR_SUBMENU_MATERIALS_RED
+    ld hl, .EditorSubmenu_Funds_Red
     call $336e
-    ld hl, .EDITOR_SUBMENU_MATERIALS_WHITE
+    ld hl, .EditorSubmenu_Funds_White
     call $336e
     jr ._4cc2
 
-._4caf: ; MAP EDITOR - SAVE
-    ld hl, .EDITOR_SUBMENU_SAVE
+._4c9b: ; Map Editor - Materials
+    ld hl, .EditorSubmenu_Materials
     call $336e
-    ld hl, .EDITOR_SUBMENU_SAVE_NO
+    ld hl, .EditorSubmenu_Materials_Red
     call $336e
-    ld hl, .EDITOR_SUBMENU_SAVE_YES
+    ld hl, .EditorSubmenu_Materials_White
+    call $336e
+    jr ._4cc2
+
+._4caf: ; Map Editor - Save
+    ld hl, .EditorSubmenu_Save
+    call $336e
+    ld hl, .EditorSubmenu_Save_No
+    call $336e
+    ld hl, .EditorSubmenu_Save_Yes
     call $336e
     ret
 
@@ -134,62 +134,62 @@ func_4c3a:
     call $4d65
     ret
 
-; MAP EDITOR - SUBMENU - MAP SIZE
-.EDITOR_SUBMENU_SIZE:
+; Map Editor - Submenu - Map Size
+.EditorSubmenu_Size:
     db $02, $21, "SIZE", 0
 
-.EDITOR_SUBMENU_SIZE_HORZ:
+.EditorSubmenu_Size_Horz:
     db $07, $22, "HOR", 0
 
-.EDITOR_SUBMENU_SIZE_VERT:
+.EditorSubmenu_Size_Vert:
     db $07, $23, "VER", 0
 
-; MAP EDITOR - SUBMENU - FUNDS
-.EDITOR_SUBMENU_FUNDS:
+; Map Editor - Submenu - Funds
+.EditorSubmenu_Funds:
     db $02, $21, "FUNDS", 0
 
-.EDITOR_SUBMENU_FUNDS_RED:
+.EditorSubmenu_Funds_Red:
     db $04, $22, "O.STAR    000", 0
 
-.EDITOR_SUBMENU_FUNDS_WHITE:
+.EditorSubmenu_Funds_White:
     db $04, $23, "W.MOON    000", 0
 
-; MAP EDITOR - SUBMENU - MATERIALS
-.EDITOR_SUBMENU_MATERIALS:
+; Map Editor - Submenu - Materials
+.EditorSubmenu_Materials:
     ;db $02, $21, "しざい", 0
 	db $02, $21, "MTL", 0
 
-.EDITOR_SUBMENU_MATERIALS_RED:
+.EditorSubmenu_Materials_Red:
     ;db $04, $22, "レッドスタ―    0", 0
     db $04, $22, "O.STAR    0", 0
 
-.EDITOR_SUBMENU_MATERIALS_WHITE:
+.EditorSubmenu_Materials_White:
     ;db $04, $23, "ホワイトム―ン   0", 0
     db $04, $23, "W.MOON    0", 0
 
-; MAP EDITOR - SUBMENU - ARRANGE MODE
-.EDITOR_SUBMENU_ARRANGE:
+; Map Editor - Submenu - Arrange Mode
+.EditorSubmenu_Arrange:
     ;db $02, $21, "はいちモ―ド", 0
     db $02, $21, "ARRANGE", 0
 
-.EDITOR_SUBMENU_ARRANGE_MAP:
+.EditorSubmenu_Arrange_Map:
     ;db $06, $22, "マップエディット", 0
     db $06, $22, "MAP EDIT", 0
 
-.EDITOR_SUBMENU_ARRANGE_UNIT:
+.EditorSubmenu_Arrange_Unit:
     ;db $06, $23, "ユニットはいち ", 0
-    db $06, $23, " UNIT", 0
+    db $06, $23, "PLACE UNIT", 0
 
-; MAP EDITOR - SUBMENU - SAVE PROMPT
-.EDITOR_SUBMENU_SAVE:
+; Map Editor - Submenu - Save Prompt
+.EditorSubmenu_Save:
 	;db $02, $21, "よろしいですか?", 0
-    db $02, $21, "?", 0
+    db $02, $21, "OK?", 0
 
-.EDITOR_SUBMENU_SAVE_NO:
+.EditorSubmenu_Save_No:
     ;db $09, $22, "いいえ", 0
 	db $09, $22, "NO", 0
 
-.EDITOR_SUBMENU_SAVE_YES:
+.EditorSubmenu_Save_Yes:
     ;db $09, $23, "はい", 0
 	db $09, $23, "YES", 0
 
@@ -201,7 +201,7 @@ func_50ec:
     ld de, $1406
     rst $28
     db $10, $09, $6a
-    ld hl, ._516e
+    ld hl, .EditorSubmenu_Unit_Selection
     call $336e
     ld hl, ._5176
     call $336e
@@ -264,7 +264,7 @@ func_50ec:
     db $0b, $cf, $76
     ret
 
-._516e:
+.EditorSubmenu_Unit_Selection:
     ;db $01, $24, "ユニット/", 0
     db $01, $24, "UNIT/", 0
 
@@ -285,14 +285,14 @@ func_51f2:
     ld hl, $cd28
     jr z, ._5205
 ._5202:
-    ld hl, ._520d
+    ld hl, .EditorSubmenu_Unit_Delete
 ._5205:
     ld bc, $0624
     call $3353
     pop bc
     ret
 
-._520d
+.EditorSubmenu_Unit_Delete
     ;db "ユニットサクジョ  ", 0
     db "DELETE    ", 0
 
@@ -638,6 +638,7 @@ section "11:7620", romx[$7620], bank[$11]
 ;db $a0, $5f, $90, $6f, $e8, $17, $86, $79, $80, $7f, $80, $7f, $00, $ff, $ff, $00, $01, $fe, $fd, $02, $85, $7a, $85, $7a, $85, $7a, $fd, $02, $00, $ff, $ff, $00, $20, $df, $23, $dc, $24, $db, $24, $db, $c4, $3b, $03, $fc, $00, $ff, $ff, $00, $20, $df, $e0, $1f, $38, $c7, $26, $d9, $21, $de, $c0, $3f, $00, $ff, $ff, $00, $60, $9f, $60, $9f, $20, $df, $00, $ff, $01, $fe, $1e, $e1, $00, $ff, $ff, $00, $4d, $b2, $45, $ba, $45, $ba, $85, $7a, $06, $f9, $09, $f6, $00, $ff, $ff, $00, $fe, $01, $22, $dd, $fe, $01, $22, $dd, $0c, $f3, $fe, $01, $00, $ff, $ff, $00, $27, $d8, $20, $df, $27, $d8, $24, $db, $24, $db, $27, $d8, $00, $ff, $ff, $00, $f1, $0e, $01, $fe, $f1, $0e, $11, $ee, $11, $ee, $f1, $0e
 db $13, $ec, $12, $ed, $12, $ed, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $9e, $61, $52, $ad, $52, $ad, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $b1, $4e, $91, $6e, $97, $68, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $4a, $b5, $4a, $b5, $4a, $b5, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $22, $dd, $22, $dd, $ee, $11, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $a5, $5a, $a5, $5a, $99, $66, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $60, $9f, $20, $df, $20, $df, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe
 
+; Unit Names
 section "12:4ad2", romx[$4ad2], bank[$12]
     ;db "ホヘイ     "
     db "INFANTRY"
@@ -838,6 +839,7 @@ section "12:520c", romx[$520c], bank[$12]
     ;db "センスイカンS"
     db "SUB-S  "
 
+; Weapon Names
 section "12:52a8", romx[$52a8], bank[$12]
     ;db "ナシ  "
     db "NONE"
@@ -941,27 +943,29 @@ section "13:5543", romx[$5543], bank[$13]
     ;db "デリー"
     db "DEL"
 
-section "13:5568", romx[$5568], bank[$13]
+section "13:5568", romx[$5568], bank[$13] ; Map Editor - Menu - Edit Which
     ;db "どのデータをエディットしますか"
     db "EDIT WHICH DATA"
 
-section "13:5657", romx[$5657], bank[$13]
+section "13:5657", romx[$5657], bank[$13] ; Map Editor - Menu
     ;db "エディット コピー   あげる[LF]"
     db "EDIT  COPY  END[LF]"
+	
     ;db "プレイ   デリート  もらう"
     db "PLAY  ERASE GET"
 
-section "13:570f", romx[$570f], bank[$13]
+section "13:570f", romx[$570f], bank[$13] ; Map Editor - Menu - Edit Description
     ;db "マップをつくります。"
     db "EDIT MAP。 "
 
-section "13:573a", romx[$573a], bank[$13]
+section "13:573a", romx[$573a], bank[$13] ; Map Editor - Menu - Copy/Erase Description
     ;db "マップデータをコピーします。", 0
+	db "COPY MAP DATA。", 0
+	
     ;db "マップデータをさくじょします"
-    db "COPY MAP DATA。", 0
     db "ERASE MAP DATA"
 
-section "13:57be", romx[$57be], bank[$13]
+section "13:57be", romx[$57be], bank[$13] ; Map Editor - Menu - Map Selection
     ;db "マップデータがありません。"
     db "NO MAP DATA。", 0
 
@@ -1017,7 +1021,7 @@ section "15:4856", romx[$4856], bank[$15]
 ;db $44, $00, $44, $00, $fe, $00, $44, $00, $4c, $00, $40, $00, $3e, $00, $00, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $02, $00, $04, $00, $38, $00, $00, $00, $08, $00, $bc, $00, $4a, $00, $d2, $00, $b2, $00, $a2, $00, $44, $00, $00, $00, $00, $00, $84, $00, $82, $00, $82, $00, $82, $00, $a2, $00, $40
 db $73, $00, $4a, $00, $4b, $00, $4a, $00, $4a, $00, $73, $00, $00, $00, $00, $00, $b9, $00, $12, $00, $92, $00, $13, $00, $12, $00, $92, $00, $00, $00, $00, $00, $94, $00, $54, $00, $54, $00, $d4, $00, $54, $00, $56, $00, $00, $00, $00, $00, $e0, $00, $80, $00, $e0, $00, $20, $00, $20, $00, $e0, $00, $00
 
-section "15:4a3b", romx[$4a3b], bank[$15]
+section "15:4a3b", romx[$4a3b], bank[$15] ; Mode Names
     ;db "ビギナーモード    ", 0
     db "BEGINNER   ", 0
     ;db "キャンペーンモード  ", 0
@@ -1025,7 +1029,7 @@ section "15:4a3b", romx[$4a3b], bank[$15]
     ;db "スタンダードモード"
     db "STANDARD "
 
-section "MainMenu_Desc", romx[$55d2], bank[$15]
+section "MainMenu_Desc", romx[$55d2], bank[$15] ; Main Menu - Descriptions
 MainMenu_Desc:
     dw MainMenu_Desc_Continue
     dw MainMenu_Desc_NewGame
@@ -1066,19 +1070,19 @@ section "15:5ec1", romx[$5ec1], bank[$15]
     ;db "セーブしました。"
     db "SAVED。  "
 
-section "15:5f81", romx[$5f81], bank[$15]
+section "15:5f81", romx[$5f81], bank[$15] ; Suspend Menu - Coordinates
     ;db $06
     db $07
 
-section "15:5f98", romx[$5f98], bank[$15]
+section "15:5f98", romx[$5f98], bank[$15] ; Suspend Menu - Coordinates
     ;db $08
     db $05
 
-section "15:5fbc", romx[$5fbc], bank[$15]
+section "15:5fbc", romx[$5fbc], bank[$15] ; Suspend Menu - Coordinates
     ;db $02
     db $05
 
-section "15:5fc9", romx[$5fc9], bank[$15]
+section "15:5fc9", romx[$5fc9], bank[$15] ; Suspend Menu - Mode Names
     ;db "ビギナーモード", 0
     db "BEGINNER"
     ;db "キャンペーンモード", 0
@@ -1128,7 +1132,7 @@ section "18:7e30", romx[$7e30], bank[$18]
 ;db $08, $f7, $30, $cf, $c0, $3f, $00, $ff, $1a, $e5, $0b, $f4, $0a, $f5, $0b, $f4, $0c, $f3, $13, $ec, $00, $ff, $00, $ff, $20, $df, $f8, $07, $20, $df, $fc, $03, $00, $ff, $fe, $01, $00, $ff, $00, $ff, $31, $ce, $11, $ee, $11, $ee, $11, $ee, $11, $ee, $11, $ee, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $08, $f7, $08, $f7
 db $24, $db, $24, $db, $27, $d8, $00, $ff, $00, $ff, $e7, $18, $94, $6b, $94, $6b, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $19, $e6, $a5, $5a, $a5, $5a, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $26, $d9, $e9, $16, $29, $d6, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $77, $88, $24, $db, $27, $d8
 
-section "19:55c5", romx[$55c5], bank[$19]
+section "19:55c5", romx[$55c5], bank[$19] ; Network Menu - Descriptions
     ;db "メッセージをよむ", 0, $03, $07
     db "SEE MAIL", 0, $03, $07
     ;db "マップデータをダウンロード", 0, $03, $08
@@ -1152,11 +1156,11 @@ section "22:77c4", romx[$77c4], bank[$22]
 ;db $f0, $d2, $ca, $0d, $c7, $c4, $0d, $e2, $c8
 db $1d, $15, $23, $23, $11, $17, $15, $23, $5f
 
-section "25:48a0", romx[$48a0], bank[$25]
+section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Win Count
     ;db "しょうりかいすう"
     db "WINS    "
 
-section "25:5e49", romx[$5e49], bank[$25]
+section "25:5e49", romx[$5e49], bank[$25] ; Unit Types
     ;db "そうこうユニット ", 0
     db "ARMORED  ", 0
     ;db "ひそうこうユニット", 0
@@ -1168,6 +1172,7 @@ section "25:5e49", romx[$5e49], bank[$25]
     ;db "せんすいかん"
     db "SUB   "
 
+; Unit Status
 section "25:6349", romx[$6349], bank[$25]
     ;db "いどうりょく    /", 0
     db "MOVE      /", 0
@@ -1178,6 +1183,7 @@ section "25:636b", romx[$636b], bank[$25]
     ;db "とうさい"
     db "LOAD"
 
+; Unit Creation
 section "25:6ad2", romx[$6ad2], bank[$25]
     ;db "せいさんしょうひしきん", 0
     db "BUILD COST ", 0
@@ -1198,7 +1204,7 @@ db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 
 section "27:6c30", romx[$6c30], bank[$27]
     ;db "どこにセーブしますか"
-    db "SAVE WHERE"
+    db "SAVE WHERE?"
 
 section "27:6caa", romx[$6caa], bank[$27]
 ;db $be, $2d, $ef, $6c, $7f, $6c, $70
@@ -1216,6 +1222,7 @@ section "27:78f8", romx[$78f8], bank[$27]
 ;db $0a, $00, $40, $00, $44, $00, $fe, $00, $44, $00, $4c, $00, $40, $00, $3e, $00, $00, $00, $10, $00, $20, $00, $20, $00, $70, $00, $48, $00, $8a, $00, $8c, $00, $00, $00, $40, $00, $fc, $00, $40, $00, $5e, $00, $80, $00, $a0, $00, $9e, $00, $00, $00, $00, $00, $84, $00, $82, $00, $82, $00, $82, $00, $a2, $00, $40, $00, $00, $00, $40, $00, $fc, $00, $40, $00, $7c, $00, $c2, $00, $02, $00, $3c, $00, $0a, $00, $10, $00, $fc, $00, $38, $00, $48, $00, $38, $00, $08, $00, $70
 db $00, $00, $49, $00, $4a, $00, $4a, $00, $4a, $00, $7a, $00, $49, $00, $00, $00, $00, $00, $9c, $00, $52, $00, $52, $00, $5c, $00, $52, $00, $92, $00, $00, $00, $00, $00, $9c, $00, $92, $00, $92, $00, $92, $00, $92, $00, $dc, $00, $00, $00, $00, $00, $04, $00, $07, $00, $04, $00, $04, $00, $04, $00, $04, $00, $00, $00, $00, $00, $99, $00, $a5, $00, $a5, $00, $bd, $00, $a5, $00, $a5, $00, $00, $00, $00, $00, $c0, $00, $20, $00, $20, $00, $c0, $00, $00, $00, $00, $00, $00
 
+; Standard Map Names
 section "29:4020", romx[$4020], bank[$29]
     ;db "デモ02[ED][ED]"
     db "DEMO02"
@@ -1277,6 +1284,7 @@ section "2c:6153", romx[$6153], bank[$2c]
     ;db "えんしゅう16[ED]"
     db "DRILL 16"
 
+; Preloaded News
 setcharmap news
 section "News_Welcome", romx[$7203], bank[$31]
 News_Welcome:
