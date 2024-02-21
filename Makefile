@@ -14,7 +14,7 @@ clean:
 	rm -f $(name).gbc $(name).sym
 
 $(name).gbc: $(objects) | baserom.gbc
-	rgblink -O baserom.gbc -n $@.sym -o $@ $^
+	rgblink -O baserom.gbc -n $(@:.gbc=.sym) -o $@ $^
 	rgbfix -O -v $@
 
 %.o: %.asm
