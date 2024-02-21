@@ -774,4 +774,4 @@ if __name__ == "__main__":
 
     rom = open("baserom.gbc", "rb").read()
     pos = bank * 0x4000 + addr % 0x4000
-    print(translate(charmap_unit, rom[pos:pos+size]))
+    print(translate(charmap_main, rom[pos:pos+size]))

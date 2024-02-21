@@ -10,7 +10,8 @@ objects := \
 	main.o \
 	source/unit.o \
 	source/news.o \
-	source/editor.o
+	source/editor.o \
+	source/maps.o
 
 .PHONY: all
 all: $(name).gbc
