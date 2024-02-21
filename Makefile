@@ -8,7 +8,8 @@ dir_build := build
 
 objects := \
 	main.o \
-	source/unit.o
+	source/unit.o \
+	source/news.o
 
 .PHONY: all
 all: $(name).gbc
