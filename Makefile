@@ -9,7 +9,8 @@ dir_build := build
 objects := \
 	main.o \
 	source/unit.o \
-	source/news.o
+	source/news.o \
+	source/editor.o
 
 .PHONY: all
 all: $(name).gbc
