@@ -7,7 +7,8 @@ RGBFIXFLAGS := -O -v -p 0xff
 dir_build := build
 
 objects := \
-	main.o
+	main.o \
+	source/unit.o
 
 .PHONY: all
 all: $(name).gbc
