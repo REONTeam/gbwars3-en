@@ -15,52 +15,52 @@ db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
 setcharmap unit
 section "0f:45bd", romx[$45bd], bank[$0f]
 EditorMenu_Strings:
-    dw EditorMenu_Layout
-    dw EditorMenu_Size
-    dw EditorMenu_Funds
-    dw EditorMenu_Materials
-    dw EditorMenu_Name
-    dw EditorMenu_Fill
-    dw EditorMenu_Save
-    dw EditorMenu_Quit
+    dw .layout
+    dw .size
+    dw .funds
+    dw .materials
+    dw .name
+    dw .fill
+    dw .save
+    dw .quit
 
 ; Map Editor - Menu
-EditorMenu_Layout:
+.layout:
     ;db $02, $21, "はいちモ―ド ", 0
     db $02, $21, "ARRANGE", 0
 
-EditorMenu_Size:
+.size:
     ;db $0c, $21, "マップサイズ", 0
     db $0c, $21, "SIZE", 0
 
-EditorMenu_Funds:
+.funds:
     ;db $02, $22, "しきん", 0
     db $02, $22, "FUNDS", 0
 
-EditorMenu_Materials:
+.materials:
     ;db $0c, $22, "しざい", 0
     db $0c, $22, "MATERIA", 0
 
-EditorMenu_Name:
+.name:
     ;db $02, $23, "マップのなまえ", 0
     db $02, $23, "NAME", 0
 
-EditorMenu_Fill:
+.fill:
     ;db $0c, $23, "ぬりつぶし", 0
     db $0c, $23, "FILL", 0
 
-EditorMenu_Save:
+.save:
     ;db $02, $24, "セ―ブする", 0
     db $02, $24, "SAVE", 0
 
-EditorMenu_Quit:
+.quit:
     ;db $0c, $24, "しゅうりょう", 0
     db $0c, $24, "END", 0
 
     section_end $460f
 
 section "0f:4c3a", romx[$4c3a], bank[$0f]
-func_4c3a:
+EditorSubmenu:
     ld bc, $0020
     ld de, $1405
     rst $28
@@ -69,62 +69,62 @@ func_4c3a:
     call $4de2
     ld a, [$c945]
     cp $00
-    jr z, ._4c60 ; Submenu - Arrange Mode
+    jr z, .arrange ; Submenu - Arrange Mode
     cp $01
-    jr z, ._4c73 ; Submenu - Size
+    jr z, .size ; Submenu - Size
     cp $02
-    jr z, ._4c87 ; Submenu - Funds
+    jr z, .funds ; Submenu - Funds
     cp $03
-    jr z, ._4c9b ; Submenu - Materials
+    jr z, .materials ; Submenu - Materials
     cp $08
-    jr z, ._4caf ; Save
+    jr z, .save ; Save
 
-._4c60: ; Map Editor - Arrange Mode
-    ld hl, .EditorSubmenu_Arrange
+.arrange: ; Map Editor - Arrange Mode
+    ld hl, .string_arrange
     call $336e
-    ld hl, .EditorSubmenu_Arrange_Map
+    ld hl, .string_arrange_map
     call $336e
-    ld hl, .EditorSubmenu_Arrange_Unit
+    ld hl, .string_arrange_unit
     call $336e
     ret
 
-._4c73: ; Map Editor - Size
-    ld hl, .EditorSubmenu_Size
+.size: ; Map Editor - Size
+    ld hl, .string_size
     call $336e
-    ld hl, .EditorSubmenu_Size_Horz
+    ld hl, .string_size_horz
     call $336e
-    ld hl, .EditorSubmenu_Size_Vert
+    ld hl, .string_size_vert
     call $336e
-    jr ._4cc2
+    jr .end
 
-._4c87: ; Map Editor - Funds
-    ld hl, .EditorSubmenu_Funds
+.funds: ; Map Editor - Funds
+    ld hl, .string_funds
     call $336e
-    ld hl, .EditorSubmenu_Funds_Red
+    ld hl, .string_funds_red
     call $336e
-    ld hl, .EditorSubmenu_Funds_White
+    ld hl, .string_funds_white
     call $336e
-    jr ._4cc2
+    jr .end
 
-._4c9b: ; Map Editor - Materials
-    ld hl, .EditorSubmenu_Materials
+.materials: ; Map Editor - Materials
+    ld hl, .string_materials
     call $336e
-    ld hl, .EditorSubmenu_Materials_Red
+    ld hl, .string_materials_red
     call $336e
-    ld hl, .EditorSubmenu_Materials_White
+    ld hl, .string_materials_white
     call $336e
-    jr ._4cc2
+    jr .end
 
-._4caf: ; Map Editor - Save
-    ld hl, .EditorSubmenu_Save
+.save: ; Map Editor - Save
+    ld hl, .string_save
     call $336e
-    ld hl, .EditorSubmenu_Save_No
+    ld hl, .string_save_no
     call $336e
-    ld hl, .EditorSubmenu_Save_Yes
+    ld hl, .string_save_yes
     call $336e
     ret
 
-._4cc2:
+.end:
     call $352e
     ld a, $01
     ld [$c940], a
@@ -135,73 +135,73 @@ func_4c3a:
     ret
 
 ; Map Editor - Submenu - Map Size
-.EditorSubmenu_Size:
+.string_size:
     db $02, $21, "SIZE", 0
 
-.EditorSubmenu_Size_Horz:
+.string_size_horz:
     db $07, $22, "HOR", 0
 
-.EditorSubmenu_Size_Vert:
+.string_size_vert:
     db $07, $23, "VER", 0
 
 ; Map Editor - Submenu - Funds
-.EditorSubmenu_Funds:
+.string_funds:
     db $02, $21, "FUNDS", 0
 
-.EditorSubmenu_Funds_Red:
+.string_funds_red:
     db $04, $22, "O.STAR    000", 0
 
-.EditorSubmenu_Funds_White:
+.string_funds_white:
     db $04, $23, "W.MOON    000", 0
 
 ; Map Editor - Submenu - Materials
-.EditorSubmenu_Materials:
+.string_materials:
     ;db $02, $21, "しざい", 0
 	db $02, $21, "MTL", 0
 
-.EditorSubmenu_Materials_Red:
+.string_materials_red:
     ;db $04, $22, "レッドスタ―    0", 0
     db $04, $22, "O.STAR    0", 0
 
-.EditorSubmenu_Materials_White:
+.string_materials_white:
     ;db $04, $23, "ホワイトム―ン   0", 0
     db $04, $23, "W.MOON    0", 0
 
 ; Map Editor - Submenu - Arrange Mode
-.EditorSubmenu_Arrange:
+.string_arrange:
     ;db $02, $21, "はいちモ―ド", 0
     db $02, $21, "ARRANGE", 0
 
-.EditorSubmenu_Arrange_Map:
+.string_arrange_map:
     ;db $06, $22, "マップエディット", 0
     db $06, $22, "MAP EDIT", 0
 
-.EditorSubmenu_Arrange_Unit:
+.string_arrange_unit:
     ;db $06, $23, "ユニットはいち ", 0
     db $06, $23, "PLACE UNIT", 0
 
 ; Map Editor - Submenu - Save Prompt
-.EditorSubmenu_Save:
+.string_save:
 	;db $02, $21, "よろしいですか?", 0
     db $02, $21, "OK?", 0
 
-.EditorSubmenu_Save_No:
+.string_save_no:
     ;db $09, $22, "いいえ", 0
 	db $09, $22, "NO", 0
 
-.EditorSubmenu_Save_Yes:
+.string_save_yes:
     ;db $09, $23, "はい", 0
 	db $09, $23, "YES", 0
 
     section_end $4d65
 
 section "0f:50ec", romx[$50ec], bank[$0f]
-func_50ec:
+EditorSubmenu_Unit_Selection:
     ld bc, $0020
     ld de, $1406
     rst $28
     db $10, $09, $6a
-    ld hl, .EditorSubmenu_Unit_Selection
+    ld hl, .string_unit
     call $336e
     ld hl, ._5176
     call $336e
@@ -209,13 +209,13 @@ func_50ec:
     call $336e
     ld c, $00
 
-._510a:
+.loop:
     ld a, c
     call $517e
     inc c
     ld a, c
     cp $06
-    jr nz, ._510a
+    jr nz, .loop
 
     ld a, $00
     ldh [$83], a
@@ -264,7 +264,7 @@ func_50ec:
     db $0b, $cf, $76
     ret
 
-.EditorSubmenu_Unit_Selection:
+.string_unit:
     ;db $01, $24, "ユニット/", 0
     db $01, $24, "UNIT/", 0
 
@@ -275,24 +275,24 @@ func_50ec:
     db $0f, $22, $a9, 0
 
 section "0f:51f2", romx[$51f2], bank[$0f]
-func_51f2:
+EditorSubmenu_Unit_Delete:
     push bc
     ld a, [$ca66]
     and a
-    jr z, ._5202
+    jr z, .delete
     rst $28
     db $12, $4f, $40
     ld hl, $cd28
-    jr z, ._5205
-._5202:
-    ld hl, .EditorSubmenu_Unit_Delete
-._5205:
+    jr z, .from_ram
+.delete:
+    ld hl, .string_delete
+.from_ram:
     ld bc, $0624
     call $3353
     pop bc
     ret
 
-.EditorSubmenu_Unit_Delete
+.string_delete
     ;db "ユニットサクジョ  ", 0
     db "DELETE    ", 0
 
