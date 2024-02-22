@@ -352,41 +352,416 @@ section "11:7620", romx[$7620], bank[$11]
 db $13, $ec, $12, $ed, $12, $ed, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $9e, $61, $52, $ad, $52, $ad, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $b1, $4e, $91, $6e, $97, $68, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $4a, $b5, $4a, $b5, $4a, $b5, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $22, $dd, $22, $dd, $ee, $11, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $a5, $5a, $a5, $5a, $99, $66, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $60, $9f, $20, $df, $20, $df, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe
 
 setcharmap main
-section "13:5543", romx[$5543], bank[$13]
-    ;db "エディット", 0 $07, $06
-    db "EDITト", 0, $07, $06
-    ;db "プレイ", 0, $07, $07
-    db "PLA", 0, $07, $07
-    ;db "コピー", 0, $07, $08
-    db "COP", 0, $07, $08
-    ;db "デリー"
-    db "DEL"
+section "MapEditor_Code_4213", romx[$4213], bank[$13]
+    ld hl, MapEditor_Strings._5541
+    call $336e
+    ld hl, MapEditor_Strings._5549
+    call $336e
+    ld hl, MapEditor_Strings._554f
+    call $336e
+    ld hl, MapEditor_Strings._5555
+    call $336e
+    ld hl, MapEditor_Strings._555c
+    call $336e
 
-section "13:5568", romx[$5568], bank[$13] ; Map Editor - Menu - Edit Which
-    ;db "どのデータをエディットしますか"
-    db "EDIT WHICH DATA"
+section "MapEditor_Code_43e3", romx[$43e3], bank[$13]
+MapEditor_Code_43e3:
+    ld [$dc4d], a
+    cp $00
+    jr z, ._4412
+    cp $01
+    jr z, ._4417
+    cp $02
+    jr z, ._441c
+    cp $03
+    jr z, ._4421
+    cp $04
+    jr z, ._4426
+    cp $05
+    jr z, ._442b
+    cp $06
+    jr z, ._4444
+    cp $08
+    jr z, ._4430
+    cp $09
+    jr z, ._4435
+    cp $0a
+    jr z, ._443a
+    cp $07
+    jr z, ._443f
 
-section "13:5657", romx[$5657], bank[$13] ; Map Editor - Menu
-    ;db "エディット コピー   あげる[LF]"
-    db "EDIT  COPY  END[LF]"
-	
-    ;db "プレイ   デリート  もらう"
-    db "PLAY  ERASE GET"
+._4412:
+    ld hl, MapEditor_Strings._5566
+    jr ._4449
+._4417:
+    ld hl, MapEditor_Strings._5579
+    jr ._4449
+._441c:
+    ld hl, MapEditor_Strings._558a
+    jr ._4449
+._4421:
+    ld hl, MapEditor_Strings._559b
+    jr ._4449
+._4426:
+    ld hl, MapEditor_Strings._55ad
+    jr ._4449
+._442b:
+    ld hl, MapEditor_Strings._55bc
+    jr ._4449
+._4430:
+    ld hl, MapEditor_Strings._55cd
+    jr ._4449
+._4435:
+    ld hl, MapEditor_Strings._55de
+    jr ._4449
+._443a:
+    ld hl, MapEditor_Strings._55ed
+    jr ._4449
+._443f:
+    ld hl, MapEditor_Strings._55fc
+    jr ._4449
+._4444:
+    ld hl, MapEditor_Strings._560d
+    jr ._4449
+._4449:
+    call $336e
 
-section "13:570f", romx[$570f], bank[$13] ; Map Editor - Menu - Edit Description
-    ;db "マップをつくります。"
-    db "EDIT MAP。 "
+section "MapEditor_Code_4638", romx[$4638], bank[$13]
+MapEditor_Code_4638:
+    cp $00
+    jr z, ._4656
+    ld hl, $ca6a
+    ld bc, $020d
+    call $3353
+    ld hl, MapEditor_Strings._564e
+    call $336e
+    ld hl, $dc44
+    ld bc, $080e
+    call $3353
+    jr ._465f
+._4656:
+    ld hl, MapEditor_Strings._57be
+    ld bc, $020d
+    call $3353
+._465f:
+    call $059b
+    ret
 
-section "13:573a", romx[$573a], bank[$13] ; Map Editor - Menu - Copy/Erase Description
+section "MapEditor_Code_46af", romx[$46af], bank[$13]
+    ld hl, MapEditor_Strings._564e
+    call $336e
+
+section "MapEditor_Code_46ff", romx[$46ff], bank[$13]
+    ld hl, MapEditor_Strings._57be
+    ld bc, $020d
+    call $3353
+
+section "MapEditor_Code_4a75", romx[$4a75], bank[$13]
+    ld hl, MapEditor_Strings._5657
+    ld bc, $0302
+    call $2b38
+
+section "MapEditor_Func_4b49", romx[$4b49], bank[$13]
+MapEditor_Func_4b49:
+    ld a, [$dc36]
+    cp $00
+    jr z, ._4b64
+    cp $01
+    jr z, ._4b69
+    cp $02
+    jr z, ._4b6e
+    cp $03
+    jr z, ._4b73
+    cp $04
+    jr z, ._4b78
+    cp $05
+    jr z, ._4b7d
+
+._4b64:
+    ld hl, MapEditor_Strings._5566
+    jr ._4b82
+._4b69:
+    ld hl, MapEditor_Strings._558a
+    jr ._4b82
+._4b6e:
+    ld hl, MapEditor_Strings._55ad
+    jr ._4b82
+._4b73:
+    ld hl, MapEditor_Strings._5579
+    jr ._4b82
+._4b78:
+    ld hl, MapEditor_Strings._559b
+    jr ._4b82
+._4b7d:
+    ld hl, MapEditor_Strings._55bc
+    jr ._4b82
+._4b82:
+    call $336e
+    ret
+
+section "MapEditor_Code_4d4f", romx[$4d4f], bank[$13]
+    ld hl, MapEditor_Strings._5677
+    call $336e
+
+section "MapEditor_Code_51f3", romx[$51f3], bank[$13]
+    ld hl, MapEditor_Strings._5677
+    call $336e
+
+section "MapEditor_Code_532b", romx[$532b], bank[$13]
+MapEditor_Code_532b:
+    cp $00
+    jr nz, ._5337
+    ld hl, MapEditor_Strings._568e
+    call $336e
+    jr ._533d
+._5337:
+    ld hl, MapEditor_Strings._569a
+    call $336e
+._533d:
+    ld bc, $070f
+    call $53d7
+
+section "MapEditor_Func_5400", romx[$5400], bank[$13]
+MapEditor_Func_5400:
+    call $04f3
+    call $34ce
+    call $2d7c
+    xor a
+    ldh [$95], a
+    ldh [$96], a
+    rst $28
+    db $10, $a8, $68
+    rst $28
+    db $01, $00, $40
+    call $0618
+    call $0f02
+    ld a, $00
+    ldh [$83], a
+    ldh [$4f], a
+    ld a, $00
+    rst $28
+    db $15, $91, $66
+    ld bc, $0101
+    ld de, $1205
+    rst $28
+    db $22, $47, $62
+    ld bc, $0106
+    ld de, $120b
+    rst $28
+    db $22, $47, $62
+    ld hl, MapEditor_Strings._56af
+    call $336e
+    ld hl, MapEditor_Strings._56be
+    call $336e
+    ld bc, $070b
+    call $53ae
+    xor a
+    ld [$dc4f], a
+    ld hl, MapEditor_Strings._56ce
+    call $336e
+    ld a, [$c633]
+    srl a
+    inc a
+    ld bc, $0203
+    ld d, $02
+    call $31f5
+    ld hl, MapEditor_Strings._56f5
+    call $336e
+    ld a, [$ca1f]
+    inc a
+    ld bc, $0602
+    ld d, $02
+    call $3237
+    ld de, $ca41
+    ld hl, $dc3b
+    ld bc, $0008
+    call $3b50
+    ld hl, $dc3b
+    ld bc, $0902
+    call $3353
+    ld hl, MapEditor_Strings._56d5
+    call $336e
+    ld hl, MapEditor_Strings._56dc
+    call $336e
+    ld hl, MapEditor_Strings._56e6
+    call $336e
+    ld a, [$c62f]
+    cp $03
+    jr nz, ._54a7
+    ret
+
+._54a7:
+    ld a, [$c630]
+    cp $01
+    jr z, ._54b2
+    cp $00
+    jr z, ._54b9
+
+._54b2:
+    ld hl, MapEditor_Strings._56fb
+    call $336e
+    ret
+
+._54b9:
+    ld hl, MapEditor_Strings._5708
+    call $336e
+    ret
+
+section "MapEditor_Strings", romx[$5541], bank[$13]
+MapEditor_Strings:
+
+._5541:
+    ;db $07, $05, "エディット", 0
+    db $07, $05, "EDITト", 0
+
+._5549:
+    ;db $07, $06, "プレイ", 0
+    db $07, $06, "PLA", 0
+
+._554f:
+    ;db $07, $07, "コピー", 0
+    db $07, $07, "COP", 0
+
+._5555:
+    ;db $07, $08, "デリート", 0
+    db $07, $08, "DELト", 0
+
+._555c:
+    db $07, $09, "マップつうしん", 0
+
+._5566:
+    ;db $02, $02, "どのデータをエディットしますか?", 0
+    db $02, $02, "EDIT WHICH DATA?", 0
+
+._5579:
+    db $02, $02, "どのデータをプレイしますか?", 0
+
+._558a:
+    db $02, $02, "どのデータをコピーしますか?", 0
+
+._559b:
+    db $02, $02, "どのデータをさくじょしますか?", 0
+
+._55ad:
+    db $02, $02, "どのデータをあげますか?", 0
+
+._55bc:
+    db $02, $02, "どこにデータをもらいますか?", 0
+
+._55cd:
+    db $02, $02, "どこにアップロードしますか?", 0
+
+._55de:
+    db $02, $02, "どれをさくじょしますか?", 0
+
+._55ed:
+    db $02, $02, "どれをとうこうしますか?", 0
+
+._55fc:
+    db $02, $02, "どのデータをアップしますか?", 0
+
+._560d:
+    db $02, $02, "どこにデータをセーブしますか?", 0
+
+    section_end $561f
+._561f:  ; not found
+    db $03, $0d, "げんざいマップダウンロードの", 0
+
+    section_end $5630
+._5630:  ; not found
+    db $03, $0d, "げんざいマップアップロードの", 0
+
+    section_end $5641
+._5641:  ; not found
+    db $03, $0e, "リクエストちゅうです", 0
+
+._564e:
+    db $02, $0e, "マップNO/", 0
+
+._5657:
+    ;db "エディット コピー   あげる[LF]プレイ   デリート  もらう", 0
+    db "EDIT  COPY  END[LF]PLAY  ERASE GET", 0
+
+._5677:
+    db $02, $02, "どこにコピーしますか?", 0
+
+    section_end $5685
+._5685:  ; not found
+    db $03, $0d, "このデータを", 0
+
+._568e:
+    db $03, $0d, "さくじょしますか?", 0
+
+._569a:
+    db $03, $0d, "うわがきしますか?", 0
+
+    section_end $56a6
+._56a6:  ; not found
+    db $03, $0e, "いいですか?", 0
+
+._56af:
+    db $03, $07, "ぜんかいのセーブデータの", 0
+
+._56be:
+    db $03, $08, "つづきからプレイしますか?", 0
+
+._56ce:
+    db $02, $02, "マップ=", 0
+
+._56d5:
+    db $07, $0d, "ちゅうい", 0
+
+._56dc:
+    db $06, $0e, "NOをえらぶと", 0
+
+._56e6:
+    db $04, $0f, "セーブデータはきえます。", 0
+
+._56f5:
+    db $04, $03, "にちめ", 0
+
+._56fb:
+    db $02, $04, "IRつうしんたいせん", 0
+
+._5708:
+    db $02, $04, "たいせん", 0
+
+    section_end $570f
+._570f:  ; not found
+    ;db "マップをつくります。", 0
+    db "EDIT MAP。 ", 0
+
+    section_end $571a
+._571a:  ; not found
+    db "エディットしたマップや[LF]ダウンロードしたマップを[LF]あそびます。", 0
+
+    section_end $573a
+._573a:  ; not found
     ;db "マップデータをコピーします。", 0
-	db "COPY MAP DATA。", 0
-	
-    ;db "マップデータをさくじょします"
-    db "ERASE MAP DATA"
+    db "COPY MAP DATA。", 0
 
-section "13:57be", romx[$57be], bank[$13] ; Map Editor - Menu - Map Selection
-    ;db "マップデータがありません。"
-    db "NO MAP DATA。", 0
+    section_end $5749
+._5749:  ; not found
+    ;db "マップデータをさくじょします。", 0
+    db "ERASE MAP DATA。", 0
+
+    section_end $5759
+._5759:  ; not found
+    db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
+
+    section_end $5778
+._5778:  ; not found
+    db "IRつうしんをつかって[LF]じぶんがつくったマップデータを[LF]あいてにあげます。", 0
+
+    section_end $579e
+._579e:  ; not found
+    db "IRつうしんをつかって[LF]マップデータを[LF]あいてからもらいます。", 0
+
+._57be:
+    ;db "マップデータがありません。", 0
+    db "NO MAP DATA。 ", 0
+
+    section_end $57cc
 
 section "13:582f", romx[$582f], bank[$13]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
