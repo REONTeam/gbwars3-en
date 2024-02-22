@@ -16,36 +16,36 @@ EditorMenu_Strings:
 
 ; Map Editor - Menu
 .layout:
-    ;db $02, $21, "はいちモ―ド ", 0
-    db $02, $21, "ARRANGE", 0
+    ;db 2, 33, "はいちモ―ド ", 0
+    db 2, 33, "ARRANGE", 0
 
 .size:
-    ;db $0c, $21, "マップサイズ", 0
-    db $0c, $21, "SIZE", 0
+    ;db 12, 33, "マップサイズ", 0
+    db 12, 33, "SIZE", 0
 
 .funds:
-    ;db $02, $22, "しきん", 0
-    db $02, $22, "FUNDS", 0
+    ;db 2, 34, "しきん", 0
+    db 2, 34, "FUNDS", 0
 
 .materials:
-    ;db $0c, $22, "しざい", 0
-    db $0c, $22, "MATERIA", 0
+    ;db c, 34, "しざい", 0
+    db 12, 34, "MATERIA", 0
 
 .name:
-    ;db $02, $23, "マップのなまえ", 0
-    db $02, $23, "NAME", 0
+    ;db 2, 35, "マップのなまえ", 0
+    db 2, 35, "NAME", 0
 
 .fill:
-    ;db $0c, $23, "ぬりつぶし", 0
-    db $0c, $23, "FILL", 0
+    ;db 12, 35, "ぬりつぶし", 0
+    db 12, 35, "FILL", 0
 
 .save:
-    ;db $02, $24, "セ―ブする", 0
-    db $02, $24, "SAVE", 0
+    ;db 2, 36, "セ―ブする", 0
+    db 2, 36, "SAVE", 0
 
 .quit:
-    ;db $0c, $24, "しゅうりょう", 0
-    db $0c, $24, "END", 0
+    ;db 12, 36, "しゅうりょう", 0
+    db 12, 36, "END", 0
 
     section_end $460f
 
@@ -126,62 +126,62 @@ EditorSubmenu:
 
 ; Map Editor - Submenu - Map Size
 .string_size:
-    db $02, $21, "SIZE", 0
+    db 2, 33, "SIZE", 0
 
 .string_size_horz:
-    db $07, $22, "HOR", 0
+    db 7, 34, "HOR", 0
 
 .string_size_vert:
-    db $07, $23, "VER", 0
+    db 7, 35, "VER", 0
 
 ; Map Editor - Submenu - Funds
 .string_funds:
-    db $02, $21, "FUNDS", 0
+    db 2, 33, "FUNDS", 0
 
 .string_funds_red:
-    db $04, $22, "O.STAR    000", 0
+    db 4, 34, "O.STAR    000", 0
 
 .string_funds_white:
-    db $04, $23, "W.MOON    000", 0
+    db 4, 35, "W.MOON    000", 0
 
 ; Map Editor - Submenu - Materials
 .string_materials:
-    ;db $02, $21, "しざい", 0
-	db $02, $21, "MTL", 0
+    ;db 2, 33, "しざい", 0
+	db 2, 33, "MTL", 0
 
 .string_materials_red:
-    ;db $04, $22, "レッドスタ―    0", 0
-    db $04, $22, "O.STAR    0", 0
+    ;db 4, 34, "レッドスタ―    0", 0
+    db 4, 34, "O.STAR    0", 0
 
 .string_materials_white:
-    ;db $04, $23, "ホワイトム―ン   0", 0
-    db $04, $23, "W.MOON    0", 0
+    ;db 4, 35, "ホワイトム―ン   0", 0
+    db 4, 35, "W.MOON    0", 0
 
 ; Map Editor - Submenu - Arrange Mode
 .string_arrange:
-    ;db $02, $21, "はいちモ―ド", 0
-    db $02, $21, "ARRANGE", 0
+    ;db 2, 33, "はいちモ―ド", 0
+    db 2, 33, "ARRANGE", 0
 
 .string_arrange_map:
-    ;db $06, $22, "マップエディット", 0
-    db $06, $22, "MAP EDIT", 0
+    ;db 6, 34, "マップエディット", 0
+    db 6, 34, "MAP EDIT", 0
 
 .string_arrange_unit:
-    ;db $06, $23, "ユニットはいち ", 0
-    db $06, $23, "PLACE UNIT", 0
+    ;db 6, 35, "ユニットはいち ", 0
+    db 6, 35, "PLACE UNIT", 0
 
 ; Map Editor - Submenu - Save Prompt
 .string_save:
-	;db $02, $21, "よろしいですか?", 0
-    db $02, $21, "OK?", 0
+	;db 2, 33, "よろしいですか?", 0
+    db 2, 33, "OK?", 0
 
 .string_save_no:
-    ;db $09, $22, "いいえ", 0
-	db $09, $22, "NO", 0
+    ;db 9, 34, "いいえ", 0
+	db 9, 34, "NO", 0
 
 .string_save_yes:
-    ;db $09, $23, "はい", 0
-	db $09, $23, "YES", 0
+    ;db 9, 35, "はい", 0
+	db 9, 35, "YES", 0
 
     section_end $4d65
 
@@ -193,9 +193,9 @@ EditorSubmenu_Unit_Selection:
     db $10, $09, $6a
     ld hl, .string_unit
     call $336e
-    ld hl, ._5176
+    ld hl, .divider1
     call $336e
-    ld hl, ._517a
+    ld hl, .divider2
     call $336e
     ld c, $00
 
@@ -255,14 +255,14 @@ EditorSubmenu_Unit_Selection:
     ret
 
 .string_unit:
-    ;db $01, $24, "ユニット/", 0
-    db $01, $24, "UNIT/", 0
+    ;db 1, 36, "ユニット/", 0
+    db 1, 36, "UNIT/", 0
 
-._5176:
-    db $0f, $21, $a9, 0
+.divider1:
+    db 15, 33, $a9, 0
 
-._517a:
-    db $0f, $22, $a9, 0
+.divider2:
+    db 15, 34, $a9, 0
 
 section "0f:51f2", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
