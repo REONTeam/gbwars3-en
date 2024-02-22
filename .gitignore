@@ -1,4 +1,7 @@
 *.d
 *.gbc
+*.sa1
+*.sa2
+*.sav
 *.o
 *.sym
