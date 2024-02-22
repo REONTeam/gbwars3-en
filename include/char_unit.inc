@@ -170,8 +170,8 @@ charmap ".",     $a5
 charmap "/",     $a6
 charmap "-",     $a7
 charmap "[DAY]", $a8
-charmap "",      $a9
-charmap "",      $aa
+charmap "|",     $a9
+charmap "_",     $aa
 charmap "",      $ab
 charmap "",      $ac
 charmap "",      $ad

@@ -259,10 +259,10 @@ EditorSubmenu_Unit_Selection:
     db 1, 36, "UNIT/", 0
 
 .divider1:
-    db 15, 33, $a9, 0
+    db 15, 33, "|", 0
 
 .divider2:
-    db 15, 34, $a9, 0
+    db 15, 34, "|", 0
 
 section "0f:51f2", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
