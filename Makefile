@@ -11,7 +11,8 @@ objects := \
 	source/unit.o \
 	source/news.o \
 	source/editor.o \
-	source/maps.o
+	source/maps.o \
+	source/suspend.o
 
 .PHONY: all
 all: $(name).gbc

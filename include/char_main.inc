@@ -41,7 +41,7 @@ charmap "6",    $36
 charmap "7",    $37
 charmap "8",    $38
 charmap "9",    $39
-charmap "=",    $3a
+charmap ":",    $3a
 charmap ";",    $3b
 charmap "<",    $3c
 charmap "\"",   $3d
