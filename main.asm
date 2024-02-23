@@ -522,7 +522,7 @@ MapMenu_Confirm_Prompt:
     call $53d7
 
 section "MapMenu_Suspend", romx[$5400], bank[$13]
-MapMenu_Suspend
+MapMenu_Suspend:
     call $04f3
     call $34ce
     call $2d7c
