@@ -352,7 +352,7 @@ section "11:7620", romx[$7620], bank[$11]
 db $13, $ec, $12, $ed, $12, $ed, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $9e, $61, $52, $ad, $52, $ad, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $b1, $4e, $91, $6e, $97, $68, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $4a, $b5, $4a, $b5, $4a, $b5, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $22, $dd, $22, $dd, $ee, $11, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $a5, $5a, $a5, $5a, $99, $66, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $60, $9f, $20, $df, $20, $df, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $ff, $00, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe, $01, $fe
 
 setcharmap main
-section "MapMenu_Code_4213", romx[$4213], bank[$13]
+section "MapMenu_code4213", romx[$4213], bank[$13]
     ld hl, MapMenu_Strings.edit
     call $336e
     ld hl, MapMenu_Strings.play
@@ -364,8 +364,8 @@ section "MapMenu_Code_4213", romx[$4213], bank[$13]
     ld hl, MapMenu_Strings.map_communication
     call $336e
 
-section "MapMenu_Menu_Alternate", romx[$43e3], bank[$13]
-MapMenu_Menu_Alternate:
+section "MapMenu_Menu_Alternate_code43e3", romx[$43e3], bank[$13]
+MapMenu_Menu_Alternate_code43e3:
     ld [$dc4d], a
     cp $00
     jr z, .edit
@@ -426,8 +426,8 @@ MapMenu_Menu_Alternate:
 .select_map:
     call $336e
 
-section "MapMenu_Display_Data", romx[$4638], bank[$13]
-MapMenu_Display_Data:
+section "MapMenu_Display_Data_code4638", romx[$4638], bank[$13]
+MapMenu_Display_Data_code4638:
     cp $00
     jr z, .no_map
     ld hl, $ca6a
@@ -447,16 +447,16 @@ MapMenu_Display_Data:
     call $059b
     ret
 
-section "MapMenu_Code_46af", romx[$46af], bank[$13]
+section "MapMenu_code46af", romx[$46af], bank[$13]
     ld hl, MapMenu_Strings.map_number
     call $336e
 
-section "MapMenu_Code_46ff", romx[$46ff], bank[$13]
+section "MapMenu_code46ff", romx[$46ff], bank[$13]
     ld hl, MapMenu_Strings.no_map_data
     ld bc, $020d
     call $3353
 
-section "MapMenu_Code_4a75", romx[$4a75], bank[$13]
+section "MapMenu_code4a75", romx[$4a75], bank[$13]
     ld hl, MapMenu_Strings.main_menu
     ld bc, $0302
     call $2b38
@@ -499,16 +499,16 @@ MapMenu_Menu:
     call $336e
     ret
 
-section "MapMenu_Code_4d4f", romx[$4d4f], bank[$13]
+section "MapMenu_code4d4f", romx[$4d4f], bank[$13]
     ld hl, MapMenu_Strings.copy_where
     call $336e
 
-section "MapMenu_Code_51f3", romx[$51f3], bank[$13]
+section "MapMenu_code51f3", romx[$51f3], bank[$13]
     ld hl, MapMenu_Strings.copy_where
     call $336e
 
-section "MapMenu_Confirm_Prompt", romx[$532b], bank[$13]
-MapMenu_Confirm_Prompt:
+section "MapMenu_Confirm_Prompt_code532b", romx[$532b], bank[$13]
+MapMenu_Confirm_Prompt_code532b:
     cp $00
     jr nz, ._5337
     ld hl, MapMenu_Strings.delete_prompt
