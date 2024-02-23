@@ -224,3 +224,5 @@ MovementData:
 ._5608: db 0, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,  0, 24, 48, 48, 64,  0,  0
 
     section_end $8000  ; free real estate
+
+; vim:nowrap
