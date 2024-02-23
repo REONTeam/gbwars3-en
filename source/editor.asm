@@ -193,9 +193,9 @@ EditorSubmenu_Unit_Selection:
     db $10, $09, $6a
     ld hl, .string_unit
     call $336e
-    ld hl, .divider1
+    ld hl, .string_divider_1
     call $336e
-    ld hl, .divider2
+    ld hl, .string_divider_2
     call $336e
     ld c, $00
 
@@ -258,10 +258,11 @@ EditorSubmenu_Unit_Selection:
     ;db 1, 36, "ユニット/", 0
     db 1, 36, "UNIT/", 0
 
-.divider1:
+; Two vertical dividers between the placeable units and the currently selected hex
+.string_divider_1:
     db 15, 33, "|", 0
 
-.divider2:
+.string_divider_2:
     db 15, 34, "|", 0
 
 section "0f:51f2", romx[$51f2], bank[$0f]
