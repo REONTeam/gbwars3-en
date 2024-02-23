@@ -510,14 +510,14 @@ section "MapMenu_code51f3", romx[$51f3], bank[$13]
 section "MapMenu_Confirm_Prompt_code532b", romx[$532b], bank[$13]
 MapMenu_Confirm_Prompt_code532b:
     cp $00
-    jr nz, ._5337
+    jr nz, .copy
     ld hl, MapMenu_Strings.delete_prompt
     call $336e
-    jr ._533d
-._5337:
+    jr .end
+.copy:
     ld hl, MapMenu_Strings.copy_prompt_overwrite
     call $336e
-._533d:
+.end:
     ld bc, $070f
     call $53d7
 
@@ -590,6 +590,7 @@ MapMenu_Suspend:
     jr nz, ._54a7
     ret
 
+; These three seem to be for a menu for a suspended IR battle, need to look for the menu in-game.
 ._54a7:
     ld a, [$c630]
     cp $01
@@ -676,10 +677,12 @@ MapMenu_Strings:
 
     section_end $561f
 .current_map_download:  ; not found
+    ;db 3, 13, "げんざいマップダウンロードの", 0
     db 3, 13, "げんざいマップダウンロードの", 0
 
     section_end $5630
 .current_map_upload:  ; not found
+    ;db 3, 13, "げんざいマップアップロードの", 0
     db 3, 13, "げんざいマップアップロードの", 0
 
     section_end $5641
@@ -688,8 +691,8 @@ MapMenu_Strings:
     db 3, 14, "REQUESTING", 0
 
 .map_number:
-    ;db 2, 14, "マップNO/", 0
-    db 2, 14, "MAPNO/", 0
+    db 2, 14, "マップNO/", 0
+    ;db 2, 14, "MAP NO/", 0 ; Need to find the coordinate for the number after it to shift it as well
 
 .main_menu:
     ;db "エディット コピー   あげる", 1
@@ -740,9 +743,11 @@ MapMenu_Strings:
 
 .IR_battle: ; May be used for suspending an IR battle on a custom map?
     db 2, 4, "IRつうしんたいせん", 0
+    ;db 2, 4, "IR COMM BATTLE", 0
 
 .battle:
     db 2, 4, "たいせん", 0
+    ;db 2, 4, "BATTLE", 0
 
     section_end $570f
 .edit_description:  ; not found
@@ -860,24 +865,24 @@ MainMenu_Desc_NewGame:
     db "START NEW GAME。", 0
 
 MainMenu_Desc_Vs:
-    ;db "ほかのプレイヤーと[LF]"
+    ;db "ほかのプレイヤーと", 1
     ;db "たいせんします。", 0
-    db "PLAY AGAINST[LF]"
+    db "PLAY AGAINST", 1
     db "OTHER PLAYERS。", 0
 
 MainMenu_Desc_Map:
-    ;db "マップをつくったり[LF]"
+    ;db "マップをつくったり", 1
     ;db "IRつうしんでやりとりできます。", 0
-    db "CREATE AND SHARE[LF]"
+    db "CREATE AND SHARE", 1
     db "MAPS USING IR。", 0
 
     section_end $5640
 
 section fragment "bank15_end", romx[bank15_end_addr], bank[$15]
 MainMenu_Desc_Network:
-    ;db "ウォーズネットセンターに[LF]"
+    ;db "ウォーズネットセンターに", 1
     ;db "アクセスします。", 0
-    db "ACCESS THE WARS[LF]"
+    db "ACCESS THE WARS", 1
     db "NET CENTER。", 0
 
 section "15:5ec1", romx[$5ec1], bank[$15]
@@ -920,13 +925,13 @@ section "18:7e30", romx[$7e30], bank[$18]
 ;db $08, $f7, $30, $cf, $c0, $3f, $00, $ff, $1a, $e5, $0b, $f4, $0a, $f5, $0b, $f4, $0c, $f3, $13, $ec, $00, $ff, $00, $ff, $20, $df, $f8, $07, $20, $df, $fc, $03, $00, $ff, $fe, $01, $00, $ff, $00, $ff, $31, $ce, $11, $ee, $11, $ee, $11, $ee, $11, $ee, $11, $ee, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $08, $f7, $08, $f7
 db $24, $db, $24, $db, $27, $d8, $00, $ff, $00, $ff, $e7, $18, $94, $6b, $94, $6b, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $19, $e6, $a5, $5a, $a5, $5a, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $26, $d9, $e9, $16, $29, $d6, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $77, $88, $24, $db, $27, $d8
 
-section "19:55c5", romx[$55c5], bank[$19] ; Network Menu - Descriptions
-    ;db "メッセージをよむ", 0, $03, $07
-    db "SEE MAIL", 0, $03, $07
-    ;db "マップデータをダウンロード", 0, $03, $08
-    db "DOWNLOAD MAPS", 0, $03, $08
-    ;db "センターにアクセス"
-    db "WARS NET "
+section "19:55c5", romx[$55c3], bank[$19] ; Network Menu - Descriptions
+    ;db 3, 6, "メッセージをよむ", 0
+    db 3, 6, "READ MESSAGES", 0
+    ;db 3, 7, "マップデータをダウンロード", 0
+    db 3, 7, "DOWNLOAD MAPS", 0
+    ;db 3, 8, "センターにアクセス", 0
+    db 3, 8, "ACCESS CENTER", 0
 
 section "19:768f", romx[$768f], bank[$19]
 ;db $1e, $00, $84, $00, $9e, $00, $84, $00, $9c, $00, $a6, $00, $5a, $00, $0a, $00, $7a, $00, $10, $00, $60, $00, $fe, $00, $20, $00, $20, $00, $1c, $00, $00, $00, $10, $00, $20, $00, $20, $00, $70, $00, $48, $00, $8a, $00, $8c, $00, $00, $00, $44, $00, $44, $00, $fe, $00, $44, $00, $4c, $00, $40, $00, $3e, $00, $00, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $02, $00, $04, $00, $38, $00, $0a, $00, $7a, $00, $10, $00, $60, $00, $fe, $00, $20, $00, $20, $00, $1c, $00, $00, $00, $06, $00, $18, $00, $60, $00, $80, $00, $60, $00, $18, $00, $06, $00, $00, $00, $00, $00, $20, $00, $50, $00, $88, $00, $04, $00, $02, $00, $00, $00, $00, $00, $10, $00, $20, $00, $20, $00, $70, $00, $48, $00, $8a, $00, $8c, $00, $00, $00, $78, $00, $04, $00, $00, $00, $00, $00, $80, $00, $80, $00, $7c, $00, $00, $00, $38, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $04, $00, $78, $00, $00, $00, $04, $00, $84, $00, $be, $00, $84, $00, $84, $00, $84, $00, $48, $00, $00, $00, $08, $00, $fe, $00, $38, $00, $48, $00, $38, $00, $08, $00, $70, $00, $0a, $00, $20, $00, $3e, $00, $42, $00, $b2, $00, $0c, $00, $04, $00, $78, $00, $00, $00, $10, $00, $fe, $00, $82, $00, $82, $00, $02, $00, $04, $00, $38, $00, $00, $00, $c0, $00, $22, $00, $02, $00, $04, $00, $04, $00, $18, $00, $e0, $00, $00, $00, $fe, $00, $82, $00, $82, $00, $82, $00, $82, $00, $82, $00, $fe
