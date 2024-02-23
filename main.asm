@@ -628,7 +628,7 @@ MapMenu_Strings:
 
 .map_communication:
     db 7, 9, "マップつうしん", 0
-	;db 7, 9, "MAP COMM", 0
+    ;db 7, 9, "MAP COMM", 0
 
 .edit_which:
     ;db 2, 2, "どのデータをエディットしますか?", 0
@@ -636,43 +636,43 @@ MapMenu_Strings:
 
 .play_which:
     ;db 2, 2, "どのデータをプレイしますか?", 0
-	db 2, 2, "PLAY WHICH DATA?", 0
+    db 2, 2, "PLAY WHICH DATA?", 0
 
 .copy_which:
     db 2, 2, "どのデータをコピーしますか?", 0
-	;db 2, 2, "COPY WHICH DATA?", 0
+    ;db 2, 2, "COPY WHICH DATA?", 0
 
 .delete_which:
     db 2, 2, "どのデータをさくじょしますか?", 0
-	;db 2, 2, "ERASE WHICH DATA?", 0
+    ;db 2, 2, "ERASE WHICH DATA?", 0
 
 .IR_send_which:
     db 2, 2, "どのデータをあげますか?", 0
-	;db 2, 2, "SEND WHICH DATA?", 0
+    ;db 2, 2, "SEND WHICH DATA?", 0
 
 .IR_get_where:
     db 2, 2, "どこにデータをもらいますか?", 0
-	;db 2, 2, "GET DATA WHERE?", 0
+    ;db 2, 2, "GET DATA WHERE?", 0
 
 .upload_where:
     db 2, 2, "どこにアップロードしますか?", 0
-	;db 2, 2, "UPLOAD DATA WHERE?", 0
+    ;db 2, 2, "UPLOAD DATA WHERE?", 0
 
 .delete_what:
     db 2, 2, "どれをさくじょしますか?", 0
-	;db 2, 2, "DELETE WHAT DATA?", 0
+    ;db 2, 2, "DELETE WHAT DATA?", 0
 
 .submit_what:
     db 2, 2, "どれをとうこうしますか?", 0
-	;db 2, 2, "SUBMIT WHAT DATA?", 0
+    ;db 2, 2, "SUBMIT WHAT DATA?", 0
 
 .upload_which:
     db 2, 2, "どのデータをアップしますか?", 0
-	;db 2, 2, "UPLOAD WHICH DATA?", 0
+    ;db 2, 2, "UPLOAD WHICH DATA?", 0
 
 .save_where: ; Which map to save over when downloading on mobile
     db 2, 2, "どこにデータをセーブしますか?", 0
-	;db 2, 2, "SAVE DATA WHERE?", 0
+    ;db 2, 2, "SAVE DATA WHERE?", 0
 
     section_end $561f
 .current_map_download:  ; not found
@@ -685,17 +685,17 @@ MapMenu_Strings:
     section_end $5641
 .requesting:  ; not found
     ;db 3, 14, "リクエストちゅうです", 0
-	db 3, 14, "REQUESTING", 0
+    db 3, 14, "REQUESTING", 0
 
 .map_number:
     ;db 2, 14, "マップNO/", 0
-	db 2, 14, "MAPNO/", 0
+    db 2, 14, "MAPNO/", 0
 
 .main_menu:
     ;db "エディット コピー   あげる", 1
-	;DB "プレイ   デリート  もらう", 0
+    ;DB "プレイ   デリート  もらう", 0
     db "EDIT COPY  SEND", 1
-	db "PLAY ERASE GET ", 0
+    db "PLAY ERASE GET ", 0
 
 .copy_where:
     db 2, 2, "どこにコピーしますか?", 0
@@ -725,15 +725,15 @@ MapMenu_Strings:
 
 .suspend_warning_1:
     ;db 7, 13, "ちゅうい", 0
-	db 7, 11, "WARNING", 0
+    db 7, 11, "WARNING", 0
 
 .suspend_warning_2:
     ;db 6, 14, "NOをえらぶと", 0
-	db 6, 14, "NOをえらぶと", 0
+    db 6, 14, "NOをえらぶと", 0
 
 .suspend_warning_3:
     ;db 4, 15, "セーブデータはきえます。", 0
-	db 4, 15, "セーブデータはきえます。", 0
+    db 4, 15, "セーブデータはきえます。", 0
 
 .suspend_day_count:
     db 4, 3, "にちめ", 0
@@ -752,7 +752,7 @@ MapMenu_Strings:
     section_end $571a
 .play_description:  ; not found
     ;db "エディットしたマップや[LF]ダウンロードしたマップを[LF]あそびます。", 0
-	db "PLAY EDITED OR[LF]DOWNLOADED MAPS。", 0
+    db "PLAY EDITED OR[LF]DOWNLOADED MAPS。", 0
 
     section_end $573a
 .copy_description:  ; not found
@@ -767,7 +767,7 @@ MapMenu_Strings:
     section_end $5759
 .IR_get_description:  ; not found
     ;db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
-	db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
+    db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
 
     section_end $5778
 .IR_send_description:  ; not found

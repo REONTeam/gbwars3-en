@@ -147,7 +147,7 @@ EditorSubmenu:
 ; Map Editor - Submenu - Materials
 .string_materials:
     ;db 2, 33, "しざい", 0
-	db 2, 33, "MTL", 0
+    db 2, 33, "MTL", 0
 
 .string_materials_red:
     ;db 4, 34, "レッドスタ―    0", 0
@@ -172,16 +172,16 @@ EditorSubmenu:
 
 ; Map Editor - Submenu - Save Prompt
 .string_save:
-	;db 2, 33, "よろしいですか?", 0
+    ;db 2, 33, "よろしいですか?", 0
     db 2, 33, "OK?", 0
 
 .string_save_no:
     ;db 9, 34, "いいえ", 0
-	db 9, 34, "NO", 0
+    db 9, 34, "NO", 0
 
 .string_save_yes:
     ;db 9, 35, "はい", 0
-	db 9, 35, "YES", 0
+    db 9, 35, "YES", 0
 
     section_end $4d65
 
