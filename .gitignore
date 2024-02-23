@@ -1,7 +1,7 @@
 *.d
 *.gbc
+*.o
 *.sa1
 *.sa2
 *.sav
-*.o
 *.sym
