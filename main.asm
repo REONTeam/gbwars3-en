@@ -635,8 +635,8 @@ MapMenu_Strings:
     db 2, 2, "EDIT WHICH DATA?", 0
 
 .play_which:
-    ;db 2, 2, "どのデータをプレイしますか?", 0
-    db 2, 2, "PLAY WHICH DATA?", 0
+    db 2, 2, "どのデータをプレイしますか?", 0
+    ;db 2, 2, "PLAY WHICH DATA?", 0
 
 .copy_which:
     db 2, 2, "どのデータをコピーしますか?", 0

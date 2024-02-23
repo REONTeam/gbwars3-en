@@ -265,7 +265,7 @@ EditorSubmenu_Unit_Selection:
 .string_divider_2:
     db 15, 34, "|", 0
 
-section "0f:51f2", romx[$51f2], bank[$0f]
+section "EditorSubmenu_Unit_Delete", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
     push bc
     ld a, [$ca66]
