@@ -18,13 +18,23 @@ section "Day_Coordinates", romx[$5fbb], bank[$15]
     ;db 5, 2
     db 5, 5
 
-section "Mode_Name_Strings", romx[$5fc9], bank[$15]
+section "Suspend_Mode_Strings", romx[$5fc3], bank[$15]
+Suspend_Mode_Strings:
+    dw .beginner
+	dw .campaign
+	dw .standard
+
+.beginner:
     ;db "ビギナーモード", 0
-    db "BEGINNER"
+    db "BEGINNER", 0
+
+.campaign:
     ;db "キャンペーンモード", 0
     db "CAMPAIGN ", 0
+
+.standard:
     ;db "スタンダードモード"
-    db "STANDARD "
+    db "STANDARD ", 0
 
 section "15:602c", romx[$602c], bank[$15]
 db $61

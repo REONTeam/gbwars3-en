@@ -845,8 +845,8 @@ section "15:4a3b", romx[$4a3b], bank[$15] ; Mode Names
     db "BEGINNER   ", 0
     ;db "キャンペーンモード  ", 0
     db "CAMPAIGN   ", 0
-    ;db "スタンダードモード"
-    db "STANDARD "
+    ;db "スタンダードモード", 0
+    db "STANDARD ", 0
 
 section "MainMenu_Desc", romx[$55d2], bank[$15] ; Main Menu - Descriptions
 MainMenu_Desc:
