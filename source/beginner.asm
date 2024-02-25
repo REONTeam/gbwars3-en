@@ -49,9 +49,62 @@ Beginner_Strings:
     db "マップのクリアじょうけんや", 1
     db "せいげんにっすうに", 1
     db "ちゅういしてください。", 0
+    ;db "「DRILL1」", 1
+    ;db 1
+    ;db "CAPTURE THE", 1
+    ;db "ENEMY'S HQ", 1
+    ;db "WITHIN 4 TURNS。", 1
+    ;db 1, 1, 1
+    ;db "INFANTRY CAN BE", 1
+    ;db "DEPLOYED FROM", 1
+    ;db "THE HQ, CITIES,", 1
+    ;db "AND FACTORIES。", 1
+    ;db 1
+    ;db "A DEPLOYED UNIT", 1
+    ;db "CAN BE USED ON", 1
+    ;db "THE NEXT DAY。", 1
+    ;db "TO CAPTURE A", 1
+    ;db "BUILDING, MOVE", 1
+    ;db "AN INFANTRY UNIT", 1
+    ;db "TO IT AND SELECT", 1
+    ;DB "「CAPTURE」。", 1
+    ;db "BUILDINGS ARE", 1
+    ;db "CAPTURED AT 0", 1
+    ;db "DURABILITY。", 1
+    ;db "THIS SCREEN CAN", 1
+    ;db "BE SEEN AGAIN", 1
+    ;db "WITH 「START+B」。", 1
+    ;db "KEEP THE CLEAR", 1
+    ;db "TERMS AND NUMBER", 1
+    ;db "OF DAYS IN MIND。", 0
 
 .beginner02:
-    db "「えんしゅう2」", 1
+    ;db "「えんしゅう2」", 1
+    ;db 1
+    ;db "2にちいないに", 1
+    ;db "てきのぶたいを", 1
+    ;db "ぜんめつさせよ。", 1
+    ;db 1, 1, 1
+    ;db "こうげきするときは", 1
+    ;db "じぶんのユニットを", 1
+    ;db "てきのとなりまでいどうして", 1
+    ;db "「せんとう」をえらびます。", 1
+    ;db 1, 1, 1, 1
+    ;db "ユニットはしゅるいによって", 1
+    ;db "とくちょうがあり,たとえば", 1
+    ;db "コンバットバギーのグレネードは", 1
+    ;db "ひそうこうユニットにつよく,", 1
+    ;db "セントウシャリョウの", 1
+    ;db "ATミサイルBは", 1
+    ;db "そうこうユニットにつよい", 1
+    ;db "などがあります。", 1
+    ;db "こうげきあいてを", 1
+    ;db "けっていするまえに", 1
+    ;db "「START」をおすと", 1
+    ;db "せんとうにかんする", 1
+    ;db "くわしいじょうほうを", 1
+    ;db "みることができます。", 0
+    db "「DRILL2」", 1
     db 1
     db "2にちいないに", 1
     db "てきのぶたいを", 1
