@@ -5,22 +5,22 @@ setcharmap main
 section "Beginner_Briefings", romx[$4ba9], bank[$25]
 Beginner_Strings:
     dw .beginner01
-	dw .beginner02
-	dw .beginner03
-	dw .beginner04
-	dw .beginner05
-	dw .beginner06
-	dw .beginner07
-	dw .beginner08
-	dw .beginner09
-	dw .beginner10
-	dw .beginner11
-	dw .beginner12
-	dw .beginner13
-	dw .beginner14
-	dw .beginner15
-	dw .beginner16
-	dw .standard00
+    dw .beginner02
+    dw .beginner03
+    dw .beginner04
+    dw .beginner05
+    dw .beginner06
+    dw .beginner07
+    dw .beginner08
+    dw .beginner09
+    dw .beginner10
+    dw .beginner11
+    dw .beginner12
+    dw .beginner13
+    dw .beginner14
+    dw .beginner15
+    dw .beginner16
+    dw .standard00
 
 .beginner01:
     db "「えんしゅう1」", 1

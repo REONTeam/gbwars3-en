@@ -21,8 +21,8 @@ section "Day_Coordinates", romx[$5fbb], bank[$15]
 section "Suspend_Mode_Strings", romx[$5fc3], bank[$15]
 Suspend_Mode_Strings:
     dw .beginner
-	dw .campaign
-	dw .standard
+    dw .campaign
+    dw .standard
 
 .beginner:
     ;db "ビギナーモード", 0
