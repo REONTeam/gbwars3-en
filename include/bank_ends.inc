@@ -1,0 +1,12 @@
+;def bank13_end_addr = $6370 ; 7000+ bytes free
+def bank15_end_addr = $7a00 ; 1600+ bytes free
+;def bank18_end_addr = $7ffc ; Only 4 bytes free
+;def bank19_end_addr = $7e90 ; 300+ bytes free
+;def bank22_end_addr = $7f60 ; 100+ bytes free
+;def bank23_end_addr = $7bb0 ; 1000+ bytes free
+;def bank25_end_addr = $7ff1 ; Only 15 bytes free
+;def bank26_end_addr = $7f90 ; 100+ bytes free
+;def bank27_end_addr = $7fe0 ; 30+ bytes free
+;def bank31_end_addr = $7f70 ; 100+ bytes free
+;def bank32_end_addr = $7e00 ; 500+ bytes free
+;def bank33_end_addr = $7f00 ; 200+ bytes free
