@@ -530,3 +530,5 @@ Beginner_Strings:
     db "てきのしゅとをせんりょう", 1
     db "もしくは,てきのぶたいを", 1
     db "ぜんめつさせよ。", 0
+
+    section_end $5c15

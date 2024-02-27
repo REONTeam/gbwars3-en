@@ -33,8 +33,10 @@ Suspend_Mode_Strings:
     db "CAMPAIGN ", 0
 
 .standard:
-    ;db "スタンダードモード"
-    db "STANDARD ", 0
+    db "スタンダードモード"
+    ;db "STANDARD ", 0
+
+    section_end $5fe5
 
 section "15:602c", romx[$602c], bank[$15]
 db $61
