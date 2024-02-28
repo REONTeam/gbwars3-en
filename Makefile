@@ -8,6 +8,7 @@ dir_build := build
 
 objects := \
 	main.o \
+	symbols.o \
 	source/unit.o \
 	source/news.o \
 	source/editor.o \
