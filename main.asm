@@ -402,56 +402,6 @@ db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $0
 section "15:4856", romx[$4856], bank[$15]
 ;db $44, $00, $44, $00, $fe, $00, $44, $00, $4c, $00, $40, $00, $3e, $00, $00, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $02, $00, $04, $00, $38, $00, $00, $00, $08, $00, $bc, $00, $4a, $00, $d2, $00, $b2, $00, $a2, $00, $44, $00, $00, $00, $00, $00, $84, $00, $82, $00, $82, $00, $82, $00, $a2, $00, $40
 db $73, $00, $4a, $00, $4b, $00, $4a, $00, $4a, $00, $73, $00, $00, $00, $00, $00, $b9, $00, $12, $00, $92, $00, $13, $00, $12, $00, $92, $00, $00, $00, $00, $00, $94, $00, $54, $00, $54, $00, $d4, $00, $54, $00, $56, $00, $00, $00, $00, $00, $e0, $00, $80, $00, $e0, $00, $20, $00, $20, $00, $e0, $00, $00
-
-section "15:4a3b", romx[$4a3b], bank[$15] ; Mode Names
-    ;db "ビギナーモード    ", 0
-    db "BEGINNER   ", 0
-    ;db "キャンペーンモード  ", 0
-    db "CAMPAIGN   ", 0
-    ;db "スタンダードモード", 0
-    db "STANDARD ", 0
-
-section "MainMenu_Desc", romx[$55d2], bank[$15] ; Main Menu - Descriptions
-MainMenu_Desc:
-    dw MainMenu_Desc_Continue
-    dw MainMenu_Desc_NewGame
-    dw MainMenu_Desc_Vs
-    dw MainMenu_Desc_Map
-    dw MainMenu_Desc_Network
-
-MainMenu_Desc_Continue:
-    ;db "つづきからゲームをはじめます。", 0
-    db "CONTINUE GAME。", 0
-
-MainMenu_Desc_NewGame:
-    ;db "あたらしくゲームをはじめます。", 0
-    db "START NEW GAME。", 0
-
-MainMenu_Desc_Vs:
-    ;db "ほかのプレイヤーと", 1
-    ;db "たいせんします。", 0
-    db "PLAY AGAINST", 1
-    db "OTHER PLAYERS。", 0
-
-MainMenu_Desc_Map:
-    ;db "マップをつくったり", 1
-    ;db "IRつうしんでやりとりできます。", 0
-    db "CREATE AND SHARE", 1
-    db "MAPS USING IR。", 0
-
-    section_end $5640
-
-section fragment "bank15_end", romx[bank15_end_addr], bank[$15]
-MainMenu_Desc_Network:
-    ;db "ウォーズネットセンターに", 1
-    ;db "アクセスします。", 0
-    db "ACCESS THE WARS", 1
-    db "NET CENTER。", 0
-
-section "15:5ec1", romx[$5ec1], bank[$15]
-    ;db "セーブしました。"
-    db "SAVED。  "
-
 section "15:7905", romx[$7905], bank[$15]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
 db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
