@@ -10,10 +10,10 @@ NameScreen_ConfirmDialog:
     call $04d2
     xor a
     ld [$cc40], a
-    ;ld bc, $0305
-    ;ld de, $0d07
-    ld bc, $0205
-    ld de, $0f07
+    ;lb bc, 3, 5
+    ;lb de, 13, 7
+    lb bc, 2, 5
+    lb de, 15, 7
     farcall $10, $6901
     ldh a, [$83]
     push af
@@ -21,16 +21,16 @@ NameScreen_ConfirmDialog:
     ldh [$83], a
     ldh [$4f], a
     xor a
-    ;ld bc, $0406
-    ;ld de, $0b05
-    ld bc, $0306
-    ld de, $0d05
+    ;lb bc, 4, 6
+    ;lb de, 11, 5
+    lb bc, 3, 6
+    lb de, 13, 5
     farcall $15, $6ad3
     pop af
     ldh [$83], a
     ldh [$4f], a
-    ;ld bc, $0507
-    ld bc, $0407
+    ;lb bc, 5, 7
+    lb bc, 4, 7
     ld hl, NameScreen_ConfirmText
     call $3353
     call $54d8

@@ -36,3 +36,7 @@ macro farcall
     db bank\@
     dw \1
 endm
+
+macro lb
+    ld \1, \2 << 8 | \3
+endm
