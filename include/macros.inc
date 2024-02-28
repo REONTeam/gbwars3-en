@@ -1,21 +1,16 @@
 macro text
 	db \1
-    db "[ED]"
 endm
 
-macro start
-	db \1
-endm
-
-macro cont
+macro line
 	db "[LF]"
     db \1
 endm
 
 macro skip
-	REPT \1
-	db "[LF]"
-	ENDR
+    rept \1
+        db "[LF]"
+    endr
 endm
 
 macro done
