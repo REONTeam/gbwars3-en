@@ -25,14 +25,14 @@ NameScreen_ConfirmDialog:
     ;lb de, 11, 5
     lb bc, 3, 6
     lb de, 13, 5
-    farcall $15, $6ad3
+    farcall Gfx_TilemapFill
     pop af
     ldh [$83], a
     ldh [$4f], a
     ;lb bc, 5, 7
     lb bc, 4, 7
     ld hl, NameScreen_ConfirmText
-    call $3353
+    call TextPut
     call $54d8
     ret
 
