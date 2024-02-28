@@ -23,60 +23,62 @@ Beginner_Strings:
     dw .standard00
 
 .beginner01:
-    db "「えんしゅう1」", 1
-    db 1
-    db "4にちいないに", 1
-    db "てきのシュトを", 1
-    db "せんりょうせよ。", 1
-    db 1, 1, 1
-    db "ホヘイは", 1
-    db "シュト•トシ•コウジョウで", 1
-    db "せいさんします。", 1
-    db "せいさんしたユニットは", 1
-    db "つぎのひからこうどうできます。", 1
-    db 1, 1, 1
-    db "たてものをせんりょうするには,", 1
-    db "せんりょうしたいたてものに", 1
-    db "ホヘイをいどうし", 1
-    db "「せんりょう」をえらびます。", 1
-    db "たてもののたいきゅうどが", 1
-    db "0になると", 1
-    db "じぐんのたてものになります。", 1
-    db 1
-    db "なお,「START+B」で", 1
-    db "このがめんを", 1
-    db "みることができます。", 1
-    db "マップのクリアじょうけんや", 1
-    db "せいげんにっすうに", 1
-    db "ちゅういしてください。", 0
-    ;db "「DRILL1」", 1
-    ;db 1
-    ;db "CAPTURE THE", 1
-    ;db "ENEMY'S HQ", 1
-    ;db "WITHIN 4 TURNS。", 1
-    ;db 1, 1, 1
-    ;db "INFANTRY CAN BE", 1
-    ;db "DEPLOYED FROM", 1
-    ;db "THE HQ, CITIES,", 1
-    ;db "AND FACTORIES。", 1
-    ;db 1
-    ;db "A DEPLOYED UNIT", 1
-    ;db "CAN BE USED ON", 1
-    ;db "THE NEXT DAY。", 1
-    ;db "TO CAPTURE A", 1
-    ;db "BUILDING, MOVE", 1
-    ;db "AN INFANTRY UNIT", 1
-    ;db "TO IT AND SELECT", 1
-    ;DB "「CAPTURE」。", 1
-    ;db "BUILDINGS ARE", 1
-    ;db "CAPTURED AT 0", 1
-    ;db "DURABILITY。", 1
-    ;db "THIS SCREEN CAN", 1
-    ;db "BE SEEN AGAIN", 1
-    ;db "WITH 「START+B」。", 1
-    ;db "KEEP THE CLEAR", 1
-    ;db "TERMS AND NUMBER", 1
-    ;db "OF DAYS IN MIND。", 0
+    start "「えんしゅう1」"
+    skip 1
+    cont "4にちいないに"
+    cont "てきのシュトを"
+    cont "せんりょうせよ。"
+    skip 3
+    cont "ホヘイは"
+    cont "シュト•トシ•コウジョウで"
+    cont "せいさんします。"
+    cont "せいさんしたユニットは"
+    cont "つぎのひからこうどうできます。"
+    skip 3
+    cont "たてものをせんりょうするには,"
+    cont "せんりょうしたいたてものに"
+    cont "ホヘイをいどうし"
+    cont "「せんりょう」をえらびます。"
+    cont "たてもののたいきゅうどが"
+    cont "0になると"
+    cont "じぐんのたてものになります。"
+    skip 1
+    cont "なお,「START+B」で"
+    cont "このがめんを"
+    cont "みることができます。"
+    cont "マップのクリアじょうけんや"
+    cont "せいげんにっすうに"
+    cont "ちゅういしてください。"
+    done
+    ;start "「DRILL1」"
+    ;skip 1
+    ;cont "CAPTURE THE"
+    ;cont "ENEMY'S HQ"
+    ;cont "WITHIN 4 TURNS。"
+    ;skip 3
+    ;cont "INFANTRY CAN BE"
+    ;cont "DEPLOYED FROM"
+    ;cont "THE HQ, CITIES,"
+    ;cont "AND FACTORIES。"
+    ;skip 1
+    ;cont "A DEPLOYED UNIT"
+    ;cont "CAN BE USED ON"
+    ;cont "THE NEXT DAY。"
+    ;cont "TO CAPTURE A"
+    ;cont "BUILDING, MOVE"
+    ;cont "AN INFANTRY UNIT"
+    ;cont "TO IT AND SELECT"
+    ;cont "「CAPTURE」。"
+    ;cont "BUILDINGS ARE"
+    ;cont "CAPTURED AT 0"
+    ;cont "DURABILITY。"
+    ;cont "THIS SCREEN CAN"
+    ;cont "BE SEEN AGAIN"
+    ;cont "WITH 「START+B」。"
+    ;cont "KEEP THE CLEAR"
+    ;cont "TERMS AND NUMBER"
+    ;cont "OF DAYS IN MIND。"
+    ;done
 
 .beginner02:
     ;db "「えんしゅう2」", 1
