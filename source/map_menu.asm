@@ -178,26 +178,21 @@ MapMenu_Suspend:
     xor a
     ldh [$95], a
     ldh [$96], a
-    rst $28
-    db $10, $a8, $68
-    rst $28
-    db $01, $00, $40
+    farcall $10, $68a8
+    farcall $01, $4000
     call $0618
     call $0f02
     ld a, $00
     ldh [$83], a
     ldh [$4f], a
     ld a, $00
-    rst $28
-    db $15, $91, $66
+    farcall $15, $6691
     ld bc, $0101
     ld de, $1205
-    rst $28
-    db $22, $47, $62
+    farcall $22, $6247
     ld bc, $0106
     ld de, $120b
-    rst $28
-    db $22, $47, $62
+    farcall $22, $6247
     ld hl, MapMenu_Strings.suspend_continue_1
     call $336e
     ld hl, MapMenu_Strings.suspend_continue_2

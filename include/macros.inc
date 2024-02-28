@@ -24,3 +24,15 @@ macro section_end
 	endc
 	ds \1 - @
 endm
+
+macro farcall
+    rst $28
+    if _NARG >= 2
+        def bank\@ = \1
+        shift
+    else
+        def bank\@ = bank(\1)
+    endc
+    db bank\@
+    dw \1
+endm

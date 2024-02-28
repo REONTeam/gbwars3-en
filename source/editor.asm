@@ -53,8 +53,7 @@ section "0f:4c3a", romx[$4c3a], bank[$0f]
 EditorSubmenu:
     ld bc, $0020
     ld de, $1405
-    rst $28
-    db $10, $09, $6a
+    farcall $10, $6a09
     ld d, $55
     call $4de2
     ld a, [$c945]
@@ -189,8 +188,7 @@ section "0f:50ec", romx[$50ec], bank[$0f]
 EditorSubmenu_Unit_Selection:
     ld bc, $0020
     ld de, $1406
-    rst $28
-    db $10, $09, $6a
+    farcall $10, $6a09
     ld hl, .string_unit
     call $336e
     ld hl, .string_divider_1
@@ -213,8 +211,7 @@ EditorSubmenu_Unit_Selection:
     ld a, $06
     call $5218
     ld a, $6a
-    rst $28
-    db $0b, $75, $76
+    farcall $0b, $7675
     ld bc, $0d21
     call $0ed4
     ld d, $6a
@@ -223,14 +220,12 @@ EditorSubmenu_Unit_Selection:
     add a
     add a
     add $c0
-    rst $28
-    db $0b, $c9, $76
+    farcall $0b, $76c9
     ld a, [$c991]
     ld b, a
     ld a, [$c992]
     ld c, a
-    rst $28
-    db $0b, $70, $47
+    farcall $0b, $4770
     ld c, a
     ld a, $00
     ldh [$83], a
@@ -238,8 +233,7 @@ EditorSubmenu_Unit_Selection:
     ld a, $07
     call $5218
     ld a, c
-    rst $28
-    db $0b, $77, $76
+    farcall $0b, $7677
     push bc
     ld bc, $1021
     call $0ed4
@@ -250,8 +244,7 @@ EditorSubmenu_Unit_Selection:
     add a
     add $c0
     ld bc, $0003
-    rst $28
-    db $0b, $cf, $76
+    farcall $0b, $76cf
     ret
 
 .string_unit:
@@ -271,8 +264,7 @@ EditorSubmenu_Unit_Delete:
     ld a, [$ca66]
     and a
     jr z, .delete
-    rst $28
-    db $12, $4f, $40
+    farcall $12, $404f
     ld hl, $cd28
     jr z, .from_ram
 .delete:
