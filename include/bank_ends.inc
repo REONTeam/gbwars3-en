@@ -1,4 +1,5 @@
 ;def bank13_end_addr = $6370 ; 7000+ bytes free
+def bank14_end_addr = $7f00
 def bank15_end_addr = $7a00 ; 1600+ bytes free
 ;def bank18_end_addr = $7ffc ; Only 4 bytes free
 ;def bank19_end_addr = $7e90 ; 300+ bytes free
