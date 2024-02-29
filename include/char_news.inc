@@ -1,6 +1,7 @@
 pushc
 newcharmap news
 
+charmap "[ED]",  $00
 charmap "!",  $01
 charmap "(",  $08
 charmap ")",  $09
@@ -217,7 +218,7 @@ charmap "フ", $e4
 charmap "ブ", $e5
 charmap "プ", $e6
 charmap "ヘ", $e7
-charmap "べ", $e8
+charmap "ベ", $e8
 charmap "ぺ", $e9
 charmap "ホ", $ea
 charmap "ボ", $eb
