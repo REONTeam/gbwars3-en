@@ -1,7 +1,3 @@
-macro coord_text
-	db \1, \2, \3
-endm
-
 macro text
 	db \1
 endm
@@ -19,6 +15,17 @@ endm
 
 macro done
     db "[ED]"
+endm
+
+macro coord
+	db \1, \2
+    done
+endm
+
+macro coord_text
+    db \1, \2
+	text \3
+    done
 endm
 
 macro news

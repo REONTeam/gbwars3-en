@@ -440,15 +440,12 @@ section "18:7e30", romx[$7e30], bank[$18]
 db $24, $db, $24, $db, $27, $d8, $00, $ff, $00, $ff, $e7, $18, $94, $6b, $94, $6b, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $19, $e6, $a5, $5a, $a5, $5a, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $26, $d9, $e9, $16, $29, $d6, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $00, $ff, $77, $88, $24, $db, $27, $d8
 
 section "19:55c5", romx[$55c3], bank[$19] ; Network Menu - Descriptions
-    ;coord_text 3, 6, "メッセージをよむ", 0
-    coord_text 3, 6, "MESSAGES", 0 ; READ MESSAGES
-    done
-    ;coord_text 3, 7, "マップデータをダウンロード", 0
-    coord_text 3, 7, "DOWNLOAD MAPS", 0
-    done
-    ;coord_text 3, 8, "センターにアクセス", 0
-    coord_text 3, 8, "ACCESS CENTER", 0
-    done
+    ;coord_text 3, 6, "メッセージをよむ"
+    coord_text 3, 6, "MESSAGES" ; READ MESSAGES
+    ;coord_text 3, 7, "マップデータをダウンロード"
+    coord_text 3, 7, "DOWNLOAD MAPS"
+    ;coord_text 3, 8, "センターにアクセス"
+    coord_text 3, 8, "ACCESS CENTER"
 
 section "19:768f", romx[$768f], bank[$19]
 ;db $1e, $00, $84, $00, $9e, $00, $84, $00, $9c, $00, $a6, $00, $5a, $00, $0a, $00, $7a, $00, $10, $00, $60, $00, $fe, $00, $20, $00, $20, $00, $1c, $00, $00, $00, $10, $00, $20, $00, $20, $00, $70, $00, $48, $00, $8a, $00, $8c, $00, $00, $00, $44, $00, $44, $00, $fe, $00, $44, $00, $4c, $00, $40, $00, $3e, $00, $00, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $02, $00, $04, $00, $38, $00, $0a, $00, $7a, $00, $10, $00, $60, $00, $fe, $00, $20, $00, $20, $00, $1c, $00, $00, $00, $06, $00, $18, $00, $60, $00, $80, $00, $60, $00, $18, $00, $06, $00, $00, $00, $00, $00, $20, $00, $50, $00, $88, $00, $04, $00, $02, $00, $00, $00, $00, $00, $10, $00, $20, $00, $20, $00, $70, $00, $48, $00, $8a, $00, $8c, $00, $00, $00, $78, $00, $04, $00, $00, $00, $00, $00, $80, $00, $80, $00, $7c, $00, $00, $00, $38, $00, $00, $00, $7c, $00, $82, $00, $02, $00, $04, $00, $78, $00, $00, $00, $04, $00, $84, $00, $be, $00, $84, $00, $84, $00, $84, $00, $48, $00, $00, $00, $08, $00, $fe, $00, $38, $00, $48, $00, $38, $00, $08, $00, $70, $00, $0a, $00, $20, $00, $3e, $00, $42, $00, $b2, $00, $0c, $00, $04, $00, $78, $00, $00, $00, $10, $00, $fe, $00, $82, $00, $82, $00, $02, $00, $04, $00, $38, $00, $00, $00, $c0, $00, $22, $00, $02, $00, $04, $00, $04, $00, $18, $00, $e0, $00, $00, $00, $fe, $00, $82, $00, $82, $00, $82, $00, $82, $00, $82, $00, $fe
@@ -469,55 +466,53 @@ section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Win Count
     done
 
 section "25:5e49", romx[$5e49], bank[$25] ; Unit Types
-    ;text "そうこうユニット ", 0
-    text "ARMORED  ", 0
+    ;text "そうこうユニット "
+    text "ARMORED  "
     done
-    ;text "ひそうこうユニット", 0
-    text "UNARMORED", 0
+    ;text "ひそうこうユニット"
+    text "UNARMORED"
     done
-    ;text "そらユニット   ", 0
-    text "AIR      ", 0
+    ;text "そらユニット   "
+    text "AIR      "
     done
-    ;text "うみユニット   ", 0
-    text "NAVAL    ", 0
+    ;text "うみユニット   "
+    text "NAVAL    "
     done
-    ;text "せんすいかん   ", 0
-    text "SUB      ", 0
+    ;text "せんすいかん   "
+    text "SUB      "
     done
 
 section "25:6349", romx[$6349], bank[$25] ; Unit Status
-    ;text "いどうりょく    /", 0
-    text "MOVE      /", 0
+    ;text "いどうりょく    /"
+    text "MOVE      /"
     done
-    ;text "さいだいねんりょう /", 0
-    text "MAX FUEL  /", 0
+    ;text "さいだいねんりょう /"
+    text "MAX FUEL  /"
     done
-    ;text "イニシアティブ", 0
-    text "イニシアティブ", 0
+    ;text "イニシアティブ"
+    text "イニシアティブ"
     done
 
 section "25:636b", romx[$636b], bank[$25]
     ;coord_text 2, 13, "とうさい"
     coord_text 2, 13, "LOAD"
-    done
     ;coord_text 2, 14, "しんか" : Promotion
     coord_text 2, 14, "PRM"
-    done
 
 section "25:6ad2", romx[$6ad2], bank[$25] ; Unit Creation
-    ;text "せいさんしょうひしきん", 0
-    text "BUILD COST ", 0
+    ;text "せいさんしょうひしきん"
+    text "BUILD COST "
     done
     ;text "[LF]", $04, "せいさんしょうひしざい"
     text "[LF]", $04, "BUILD COST "
     done
 
 section "27:65a0", romx[$65a0], bank[$27]
-    ;text "ユニット", 0
-    text "UNIT", 0
+    ;text "ユニット"
+    text "UNIT"
     done
-    ;text "せいさんユニット", 0
-    text "DEPLOYED", 0
+    ;text "せいさんユニット"
+    text "DEPLOYED"
     done
     ;text "ぜんめつユニット"
     text "LOST    "

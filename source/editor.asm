@@ -17,7 +17,7 @@ EditorMenu_Strings:
 ; Map Editor - Menu
 .layout:
     ;coord_text 2, 33, "はいちモ―ド "
-    coord_text 2, 33, "ARRANGE"    done
+    coord_text 2, 33, "ARRANGE"
 
 .size:
     ;coord_text 12, 33, "マップサイズ"
@@ -25,27 +25,27 @@ EditorMenu_Strings:
 
 .funds:
     ;coord_text 2, 34, "しきん"
-    coord_text 2, 34, "FUNDS"    done
+    coord_text 2, 34, "FUNDS"
 
 .materials:
     ;coord_text c, 34, "しざい"
-    coord_text 12, 34, "MATERIA"    done
+    coord_text 12, 34, "MATERIA"
 
 .name:
     ;coord_text 2, 35, "マップのなまえ"
-    coord_text 2, 35, "NAME"    done
+    coord_text 2, 35, "NAME"
 
 .fill:
     ;coord_text 12, 35, "ぬりつぶし"
-    coord_text 12, 35, "FILL"    done
+    coord_text 12, 35, "FILL"
 
 .save:
     ;coord_text 2, 36, "セ―ブする"
-    coord_text 2, 36, "SAVE"    done
+    coord_text 2, 36, "SAVE"
 
 .quit:
     ;coord_text 12, 36, "しゅうりょう"
-    coord_text 12, 36, "END"    done
+    coord_text 12, 36, "END"
 
     section_end $460f
 
@@ -125,62 +125,62 @@ EditorSubmenu:
 
 ; Map Editor - Submenu - Map Size
 .string_size:
-    coord_text 2, 33, "SIZE"    done
+    coord_text 2, 33, "SIZE"
 
 .string_size_horz:
-    coord_text 7, 34, "HOR"    done
+    coord_text 7, 34, "HOR"
 
 .string_size_vert:
-    coord_text 7, 35, "VER"    done
+    coord_text 7, 35, "VER"
 
 ; Map Editor - Submenu - Funds
 .string_funds:
-    coord_text 2, 33, "FUNDS"    done
+    coord_text 2, 33, "FUNDS"
 
 .string_funds_red:
-    coord_text 4, 34, "O.STAR    000"    done
+    coord_text 4, 34, "O.STAR    000"
 
 .string_funds_white:
-    coord_text 4, 35, "W.MOON    000"    done
+    coord_text 4, 35, "W.MOON    000"
 
 ; Map Editor - Submenu - Materials
 .string_materials:
     ;coord_text 2, 33, "しざい"
-    coord_text 2, 33, "MTL"    done
+    coord_text 2, 33, "MTL"
 
 .string_materials_red:
     ;coord_text 4, 34, "レッドスタ―    0"
-    coord_text 4, 34, "O.STAR    0"    done
+    coord_text 4, 34, "O.STAR    0"
 
 .string_materials_white:
     ;coord_text 4, 35, "ホワイトム―ン   0"
-    coord_text 4, 35, "W.MOON    0"    done
+    coord_text 4, 35, "W.MOON    0"
 
 ; Map Editor - Submenu - Arrange Mode
 .string_arrange:
     ;coord_text 2, 33, "はいちモ―ド"
-    coord_text 2, 33, "ARRANGE"    done
+    coord_text 2, 33, "ARRANGE"
 
 .string_arrange_map:
     ;coord_text 6, 34, "マップエディット"
-    coord_text 6, 34, "MAP EDIT"    done
+    coord_text 6, 34, "MAP EDIT"
 
 .string_arrange_unit:
     ;coord_text 6, 35, "ユニットはいち "
-    coord_text 6, 35, "PLACE UNIT"    done
+    coord_text 6, 35, "PLACE UNIT"
 
 ; Map Editor - Submenu - Save Prompt
 .string_save:
     ;coord_text 2, 33, "よろしいですか?"
-    coord_text 2, 33, "OK?"    done
+    coord_text 2, 33, "OK?"
 
 .string_save_no:
     ;coord_text 9, 34, "いいえ"
-    coord_text 9, 34, "NO"    done
+    coord_text 9, 34, "NO"
 
 .string_save_yes:
     ;coord_text 9, 35, "はい"
-    coord_text 9, 35, "YES"    done
+    coord_text 9, 35, "YES"
 
     section_end $4d65
 
@@ -249,14 +249,14 @@ EditorSubmenu_Unit_Selection:
 
 .string_unit:
     ;coord_text 1, 36, "ユニット/"
-    coord_text 1, 36, "UNIT/"    done
+    coord_text 1, 36, "UNIT/"
 
 ; Two vertical dividers between the placeable units and the currently selected hex
 .string_divider_1:
-    coord_text 15, 33, "|"    done
+    coord_text 15, 33, "|"
 
 .string_divider_2:
-    coord_text 15, 34, "|"    done
+    coord_text 15, 34, "|"
 
 section "EditorSubmenu_Unit_Delete", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
