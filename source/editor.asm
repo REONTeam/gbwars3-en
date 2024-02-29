@@ -16,36 +16,36 @@ EditorMenu_Strings:
 
 ; Map Editor - Menu
 .layout:
-    ;db 2, 33, "はいちモ―ド ", 0
-    db 2, 33, "ARRANGE", 0
+    ;coord_text 2, 33, "はいちモ―ド "
+    coord_text 2, 33, "ARRANGE"    done
 
 .size:
-    ;db 12, 33, "マップサイズ", 0
-    db 12, 33, "SIZE", 0
+    ;coord_text 12, 33, "マップサイズ"
+    coord_text 12, 33, "SIZE"    done
 
 .funds:
-    ;db 2, 34, "しきん", 0
-    db 2, 34, "FUNDS", 0
+    ;coord_text 2, 34, "しきん"
+    coord_text 2, 34, "FUNDS"    done
 
 .materials:
-    ;db c, 34, "しざい", 0
-    db 12, 34, "MATERIA", 0
+    ;coord_text c, 34, "しざい"
+    coord_text 12, 34, "MATERIA"    done
 
 .name:
-    ;db 2, 35, "マップのなまえ", 0
-    db 2, 35, "NAME", 0
+    ;coord_text 2, 35, "マップのなまえ"
+    coord_text 2, 35, "NAME"    done
 
 .fill:
-    ;db 12, 35, "ぬりつぶし", 0
-    db 12, 35, "FILL", 0
+    ;coord_text 12, 35, "ぬりつぶし"
+    coord_text 12, 35, "FILL"    done
 
 .save:
-    ;db 2, 36, "セ―ブする", 0
-    db 2, 36, "SAVE", 0
+    ;coord_text 2, 36, "セ―ブする"
+    coord_text 2, 36, "SAVE"    done
 
 .quit:
-    ;db 12, 36, "しゅうりょう", 0
-    db 12, 36, "END", 0
+    ;coord_text 12, 36, "しゅうりょう"
+    coord_text 12, 36, "END"    done
 
     section_end $460f
 
@@ -125,62 +125,62 @@ EditorSubmenu:
 
 ; Map Editor - Submenu - Map Size
 .string_size:
-    db 2, 33, "SIZE", 0
+    coord_text 2, 33, "SIZE"    done
 
 .string_size_horz:
-    db 7, 34, "HOR", 0
+    coord_text 7, 34, "HOR"    done
 
 .string_size_vert:
-    db 7, 35, "VER", 0
+    coord_text 7, 35, "VER"    done
 
 ; Map Editor - Submenu - Funds
 .string_funds:
-    db 2, 33, "FUNDS", 0
+    coord_text 2, 33, "FUNDS"    done
 
 .string_funds_red:
-    db 4, 34, "O.STAR    000", 0
+    coord_text 4, 34, "O.STAR    000"    done
 
 .string_funds_white:
-    db 4, 35, "W.MOON    000", 0
+    coord_text 4, 35, "W.MOON    000"    done
 
 ; Map Editor - Submenu - Materials
 .string_materials:
-    ;db 2, 33, "しざい", 0
-    db 2, 33, "MTL", 0
+    ;coord_text 2, 33, "しざい"
+    coord_text 2, 33, "MTL"    done
 
 .string_materials_red:
-    ;db 4, 34, "レッドスタ―    0", 0
-    db 4, 34, "O.STAR    0", 0
+    ;coord_text 4, 34, "レッドスタ―    0"
+    coord_text 4, 34, "O.STAR    0"    done
 
 .string_materials_white:
-    ;db 4, 35, "ホワイトム―ン   0", 0
-    db 4, 35, "W.MOON    0", 0
+    ;coord_text 4, 35, "ホワイトム―ン   0"
+    coord_text 4, 35, "W.MOON    0"    done
 
 ; Map Editor - Submenu - Arrange Mode
 .string_arrange:
-    ;db 2, 33, "はいちモ―ド", 0
-    db 2, 33, "ARRANGE", 0
+    ;coord_text 2, 33, "はいちモ―ド"
+    coord_text 2, 33, "ARRANGE"    done
 
 .string_arrange_map:
-    ;db 6, 34, "マップエディット", 0
-    db 6, 34, "MAP EDIT", 0
+    ;coord_text 6, 34, "マップエディット"
+    coord_text 6, 34, "MAP EDIT"    done
 
 .string_arrange_unit:
-    ;db 6, 35, "ユニットはいち ", 0
-    db 6, 35, "PLACE UNIT", 0
+    ;coord_text 6, 35, "ユニットはいち "
+    coord_text 6, 35, "PLACE UNIT"    done
 
 ; Map Editor - Submenu - Save Prompt
 .string_save:
-    ;db 2, 33, "よろしいですか?", 0
-    db 2, 33, "OK?", 0
+    ;coord_text 2, 33, "よろしいですか?"
+    coord_text 2, 33, "OK?"    done
 
 .string_save_no:
-    ;db 9, 34, "いいえ", 0
-    db 9, 34, "NO", 0
+    ;coord_text 9, 34, "いいえ"
+    coord_text 9, 34, "NO"    done
 
 .string_save_yes:
-    ;db 9, 35, "はい", 0
-    db 9, 35, "YES", 0
+    ;coord_text 9, 35, "はい"
+    coord_text 9, 35, "YES"    done
 
     section_end $4d65
 
@@ -248,15 +248,15 @@ EditorSubmenu_Unit_Selection:
     ret
 
 .string_unit:
-    ;db 1, 36, "ユニット/", 0
-    db 1, 36, "UNIT/", 0
+    ;coord_text 1, 36, "ユニット/"
+    coord_text 1, 36, "UNIT/"    done
 
 ; Two vertical dividers between the placeable units and the currently selected hex
 .string_divider_1:
-    db 15, 33, "|", 0
+    coord_text 15, 33, "|"    done
 
 .string_divider_2:
-    db 15, 34, "|", 0
+    coord_text 15, 34, "|"    done
 
 section "EditorSubmenu_Unit_Delete", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
@@ -276,7 +276,7 @@ EditorSubmenu_Unit_Delete:
     ret
 
 .string_delete
-    ;db "ユニットサクジョ  ", 0
-    db "DELETE    ", 0
+    ;text "ユニットサクジョ  "
+    text "DELETE    "    done
 
     section_end $5218

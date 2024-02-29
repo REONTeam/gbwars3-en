@@ -25,16 +25,16 @@ Suspend_Mode_Strings:
     dw .standard
 
 .beginner:
-    ;db "ビギナーモード", 0
-    db "BEGINNER", 0
+    ;text "ビギナーモード"
+    text "BEGINNER"
 
 .campaign:
-    ;db "キャンペーンモード", 0
-    db "CAMPAIGN ", 0
+    ;text "キャンペーンモード"
+    text "CAMPAIGN "
 
 .standard:
-    db "スタンダードモード"
-    ;db "STANDARD ", 0
+    text "スタンダードモード"
+    ;text "STANDARD "
 
     section_end $5fe5
 
@@ -44,25 +44,31 @@ db $61
 
 ; Suspend Menu Strings
 section "CO_String", romx[$6058], bank[$15]
-    ;db 2, 2, "しれいかん:", 0
-    db 2, 2, "CO:", 0
+    ;coord_text 2, 2, "しれいかん:"
+    coord_text 2, 2, "CO:"
+    done
 
 section "Mode_String", romx[$6061], bank[$15]
-    ;db 2, 3, "モード:", 0
-    db 2, 3, "MOD:", 0
+    ;coord_text 2, 3, "モード:"
+    coord_text 2, 3, "MOD:"
+    done
 
 section "Map_String", romx[$6068], bank[$15]
-    ;db 2, 4, "マップ:", 0
-    db 2, 4, "MAP:", 0
+    ;coord_text 2, 4, "マップ:"
+    coord_text 2, 4, "MAP:"
+    done
 
 section "Day_String", romx[$606f], bank[$15]
-    ;db 4, 5, "にちめ", 0
-    db 2, 5, "DAY", 0
+    ;coord_text 4, 5, "にちめ"
+    coord_text 2, 5, "DAY"
+    done
 
 section "Continue_String_1", romx[$6075], bank[$15]
-    ;db 3, 9, "とちゅうのデータがあります。", 0
-    db 3, 9, "CONTINUE FROM ", 0
+    ;coord_text 3, 9, "とちゅうのデータがあります。"
+    coord_text 3, 9, "CONTINUE FROM "
+    done
 
 section "Continue_String_2", romx[$6086], bank[$15]
-    ;db 3, 10, "つづきからプレイしますか?", 0
-    db 3, 10, "LAST SESSION?", 0
+    ;coord_text 3, 10, "つづきからプレイしますか?"
+    coord_text 3, 10, "LAST SESSION?"
+    done

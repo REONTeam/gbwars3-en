@@ -256,179 +256,233 @@ section "MapMenu_Strings", romx[$5541], bank[$13]
 MapMenu_Strings:
 
 .edit:
-    ;db 7, 5, "エディット", 0
-    db 7, 5, "EDIT", 0
+    ;coord_text 7, 5, "エディット"
+    coord_text 7, 5, "EDIT"
+    done
 
 .play:
-    db 7, 6, "プレイ", 0
-    ;db 7, 6, "PLAY", 0
+    coord_text 7, 6, "プレイ"
+    ;coord_text 7, 6, "PLAY"
+    done
 
 .copy:
-    db 7, 7, "コピー", 0
-    ;db 7, 7, "COPY", 0
+    coord_text 7, 7, "コピー"
+    ;coord_text 7, 7, "COPY"
+    done
 
 .delete:
-    db 7, 8, "デリート", 0
-    ;db 7, 8, "ERASE", 0
+    coord_text 7, 8, "デリート"
+    ;coord_text 7, 8, "ERASE"
+    done
 
 .map_communication:
-    db 7, 9, "マップつうしん", 0
-    ;db 7, 9, "MAP COMM", 0
+    coord_text 7, 9, "マップつうしん"
+    ;coord_text 7, 9, "MAP COMM"
+    done
 
 .edit_which:
-    ;db 2, 2, "どのデータをエディットしますか?", 0
-    db 2, 2, "EDIT WHICH DATA?", 0
+    ;coord_text 2, 2, "どのデータをエディットしますか?"
+    coord_text 2, 2, "EDIT WHICH DATA?"
+    done
 
 .play_which:
-    db 2, 2, "どのデータをプレイしますか?", 0
-    ;db 2, 2, "PLAY WHICH DATA?", 0
+    coord_text 2, 2, "どのデータをプレイしますか?"
+    ;coord_text 2, 2, "PLAY WHICH DATA?"
+    done
 
 .copy_which:
-    db 2, 2, "どのデータをコピーしますか?", 0
-    ;db 2, 2, "COPY WHICH DATA?", 0
+    coord_text 2, 2, "どのデータをコピーしますか?"
+    ;coord_text 2, 2, "COPY WHICH DATA?"
+    done
 
 .delete_which:
-    db 2, 2, "どのデータをさくじょしますか?", 0
-    ;db 2, 2, "ERASE WHICH DATA?", 0
+    coord_text 2, 2, "どのデータをさくじょしますか?"
+    ;coord_text 2, 2, "ERASE WHICH DATA?"
+    done
 
 .IR_send_which:
-    db 2, 2, "どのデータをあげますか?", 0
-    ;db 2, 2, "SEND WHICH DATA?", 0
+    coord_text 2, 2, "どのデータをあげますか?"
+    ;coord_text 2, 2, "SEND WHICH DATA?"
+    done
 
 .IR_get_where:
-    db 2, 2, "どこにデータをもらいますか?", 0
-    ;db 2, 2, "GET DATA WHERE?", 0
+    coord_text 2, 2, "どこにデータをもらいますか?"
+    ;coord_text 2, 2, "GET DATA WHERE?"
+    done
 
 .upload_where:
-    db 2, 2, "どこにアップロードしますか?", 0
-    ;db 2, 2, "UPLOAD DATA WHERE?", 0
+    coord_text 2, 2, "どこにアップロードしますか?"
+    ;coord_text 2, 2, "UPLOAD DATA WHERE?"
+    done
 
 .delete_what:
-    db 2, 2, "どれをさくじょしますか?", 0
-    ;db 2, 2, "DELETE WHAT DATA?", 0
+    coord_text 2, 2, "どれをさくじょしますか?"
+    ;coord_text 2, 2, "DELETE WHAT DATA?"
+    done
 
 .submit_what:
-    db 2, 2, "どれをとうこうしますか?", 0
-    ;db 2, 2, "SUBMIT WHAT DATA?", 0
+    coord_text 2, 2, "どれをとうこうしますか?"
+    ;coord_text 2, 2, "SUBMIT WHAT DATA?"
+    done
 
 .upload_which:
-    db 2, 2, "どのデータをアップしますか?", 0
-    ;db 2, 2, "UPLOAD WHICH DATA?", 0
+    coord_text 2, 2, "どのデータをアップしますか?"
+    ;coord_text 2, 2, "UPLOAD WHICH DATA?"
+    done
 
 .save_where: ; Which map to save over when downloading on mobile
-    db 2, 2, "どこにデータをセーブしますか?", 0
-    ;db 2, 2, "SAVE DATA WHERE?", 0
+    coord_text 2, 2, "どこにデータをセーブしますか?"
+    ;coord_text 2, 2, "SAVE DATA WHERE?"
+    done
 
     section_end $561f
 .current_map_download:  ; not found
-    ;db 3, 13, "げんざいマップダウンロードの", 0
-    db 3, 13, "げんざいマップダウンロードの", 0
+    ;coord_text 3, 13, "げんざいマップダウンロードの"
+    coord_text 3, 13, "げんざいマップダウンロードの"
+    done
 
     section_end $5630
 .current_map_upload:  ; not found
-    ;db 3, 13, "げんざいマップアップロードの", 0
-    db 3, 13, "げんざいマップアップロードの", 0
+    ;coord_text 3, 13, "げんざいマップアップロードの"
+    coord_text 3, 13, "げんざいマップアップロードの"
+    done
 
     section_end $5641
 .requesting:  ; not found
-    ;db 3, 14, "リクエストちゅうです", 0
-    db 3, 14, "REQUESTING", 0
+    ;coord_text 3, 14, "リクエストちゅうです"
+    coord_text 3, 14, "REQUESTING"
+    done
 
 .map_number:
-    db 2, 14, "マップNO/", 0
-    ;db 2, 14, "MAP NO/", 0 ; Need to find the coordinate for the number after it to shift it as well
+    coord_text 2, 14, "マップNO/"
+    ;coord_text 2, 14, "MAP NO/" ; Need to find the coordinate for the number after it to shift it as well
+    done
 
 .main_menu:
-    ;db "エディット コピー   あげる", 1
-    ;DB "プレイ   デリート  もらう", 0
-    db "EDIT COPY  SEND", 1
-    db "PLAY ERASE GET ", 0
+    ;text "エディット コピー   あげる"
+    ;line "プレイ   デリート  もらう"
+    text "EDIT COPY  SEND"
+    line "PLAY ERASE GET "
+    done
 
 .copy_where:
-    db 2, 2, "どこにコピーしますか?", 0
+    coord_text 2, 2, "どこにコピーしますか?"
+    done
 
     section_end $5685
 .this_data:  ; not found
-    db 3, 13, "このデータを", 0
+    coord_text 3, 13, "このデータを"
+    done
 
 .delete_prompt:
-    db 3, 13, "さくじょしますか?", 0
+    coord_text 3, 13, "さくじょしますか?"
+    done
 
 .copy_prompt_overwrite:
-    db 3, 13, "うわがきしますか?", 0
+    coord_text 3, 13, "うわがきしますか?"
+    done
 
     section_end $56a6
 .ok_prompt:  ; not found
-    db 3, 14, "OK?", 0
+    coord_text 3, 14, "OK?"
+    done
 
 .suspend_continue_1:
-    db 3, 7, "ぜんかいのセーブデータの", 0
+    coord_text 3, 7, "ぜんかいのセーブデータの"
+    done
 
 .suspend_continue_2:
-    db 3, 8, "つづきからプレイしますか?", 0
+    coord_text 3, 8, "つづきからプレイしますか?"
+    done
 
 .suspend_map_label:
-    db 2, 2, "MAP:", 0
+    coord_text 2, 2, "MAP:"
+    done
 
 .suspend_warning_1:
-    ;db 7, 13, "ちゅうい", 0
-    db 7, 11, "WARNING", 0
+    ;coord_text 7, 13, "ちゅうい"
+    coord_text 7, 11, "WARNING"
+    done
 
 .suspend_warning_2:
-    ;db 6, 14, "NOをえらぶと", 0
-    db 6, 14, "NOをえらぶと", 0
+    ;coord_text 6, 14, "NOをえらぶと"
+    coord_text 6, 14, "NOをえらぶと"
+    done
 
 .suspend_warning_3:
-    ;db 4, 15, "セーブデータはきえます。", 0
-    db 4, 15, "セーブデータはきえます。", 0
+    ;coord_text 4, 15, "セーブデータはきえます。"
+    coord_text 4, 15, "セーブデータはきえます。"
+    done
 
 .suspend_day_count:
-    db 4, 3, "にちめ", 0
+    coord_text 4, 3, "にちめ"
+    done
 
 .IR_battle: ; May be used for suspending an IR battle on a custom map?
-    db 2, 4, "IRつうしんたいせん", 0
-    ;db 2, 4, "IR COMM BATTLE", 0
+    coord_text 2, 4, "IRつうしんたいせん"
+    ;coord_text 2, 4, "IR COMM BATTLE"
+    done
 
 .battle:
-    db 2, 4, "たいせん", 0
-    ;db 2, 4, "BATTLE", 0
+    coord_text 2, 4, "たいせん"
+    ;coord_text 2, 4, "BATTLE"
+    done
 
     section_end $570f
 .edit_description:  ; not found
-    ;db "マップをつくります。", 0
-    db "EDIT MAPS。", 0
+    ;text "マップをつくります。"
+    text "EDIT MAPS。"
+    done
 
     section_end $571a
 .play_description:  ; not found
-    ;db "エディットしたマップや[LF]ダウンロードしたマップを[LF]あそびます。", 0
-    db "PLAY EDITED OR[LF]DOWNLOADED MAPS。", 0
+    ;text "エディットしたマップや"
+    ;line "ダウンロードしたマップを"
+    ;line "あそびます。"
+    text "PLAY EDITED OR"
+    line "DOWNLOADED MAPS。"
+    done
 
     section_end $573a
 .copy_description:  ; not found
-    ;db "マップデータをコピーします。", 0
-    db "COPY MAP DATA。", 0
+    ;text "マップデータをコピーします。"
+    text "COPY MAP DATA。"
+    done
 
     section_end $5749
 .erase_description:  ; not found
-    ;db "マップデータをさくじょします。", 0
-    db "ERASE MAP DATA。", 0
+    ;text "マップデータをさくじょします。"
+    text "ERASE MAP DATA。"
+    done
 
     section_end $5759
 .IR_get_description:  ; not found
-    ;db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
-    db "IRつうしんで[LF]マップデータをあげたり[LF]もらったりできます。", 0
+    ;text "IRつうしんで"
+	;line "マップデータをあげたり"
+	;line "もらったりできます。"
+    text "IRつうしんで"
+    line "マップデータをあげたり"
+    line "もらったりできます。"
+    done
 
     section_end $5778
 .IR_send_description:  ; not found
-    db "IRつうしんをつかって[LF]じぶんがつくったマップデータを[LF]あいてにあげます。", 0
+    text "IRつうしんをつかって"
+	line "じぶんがつくったマップデータを"
+	line "あいてにあげます。"
+    done
 
     section_end $579e
 .IR_unknown:  ; not found
-    db "IRつうしんをつかって[LF]マップデータを[LF]あいてからもらいます。", 0
+    text "IRつうしんをつかって"
+	line "マップデータを"
+	line "あいてからもらいます。"
+    done
 
 .no_map_data:
-    ;db "マップデータがありません。", 0
-    db "NO MAP DATA。", 0
+    ;text "マップデータがありません。"
+    text "NO MAP DATA。"
+    done
 
     section_end $57cc
 
