@@ -6,7 +6,6 @@ section "News_Menu_Service", romx[$77c2], bank[$22]
 News_Menu_Message_Service:
     ;coord_text 2, 1, "メッセージサービ"
     coord_text 2, 1, "MESSAGES"
-    done
 
 section "News_Menu_Retrieve", romx[$79b5], bank[$22]
 News_Menu_Message_Retrieve:

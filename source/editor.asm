@@ -21,7 +21,7 @@ EditorMenu_Strings:
 
 .size:
     ;coord_text 12, 33, "マップサイズ"
-    coord_text 12, 33, "SIZE"    done
+    coord_text 12, 33, "SIZE"
 
 .funds:
     ;coord_text 2, 34, "しきん"
