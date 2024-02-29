@@ -1,3 +1,7 @@
+macro coord_text
+	db \1, \2, \3
+endm
+
 macro text
 	db \1
 endm
@@ -15,6 +19,10 @@ endm
 
 macro done
     db "[ED]"
+endm
+
+macro news
+    db \1, "[ED][ED]"
 endm
 
 macro section_end
