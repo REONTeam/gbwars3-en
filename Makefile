@@ -17,7 +17,8 @@ objects := \
 	source/beginner.o \
 	source/map_menu.o \
 	source/main_menu.o \
-	source/name_screen.o
+	source/name_screen.o \
+	source/unit_status.o
 
 .PHONY: all
 all: $(name).gbc

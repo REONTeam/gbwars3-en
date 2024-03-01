@@ -465,48 +465,6 @@ section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Win Count
     text "WINS       /"
     done
 
-section "25:5e49", romx[$5e49], bank[$25] ; Unit Types
-    ;text "そうこうユニット "
-    text "ARMORED  "
-    done
-    ;text "ひそうこうユニット"
-    text "UNARMORED"
-    done
-    ;text "そらユニット   "
-    text "AIR      "
-    done
-    ;text "うみユニット   "
-    text "NAVAL    "
-    done
-    ;text "せんすいかん   "
-    text "SUB      "
-    done
-
-section "25:6349", romx[$6349], bank[$25] ; Unit Status
-    ;text "いどうりょく    /"
-    text "MOVE      /"
-    done
-    ;text "さいだいねんりょう /"
-    text "MAX FUEL  /"
-    done
-    ;text "イニシアティブ"
-    text "イニシアティブ"
-    done
-
-section "25:636b", romx[$636b], bank[$25]
-    ;coord_text 2, 13, "とうさい"
-    coord_text 2, 13, "LOAD"
-    ;coord_text 2, 14, "しんか" : Promotion
-    coord_text 2, 14, "PRM"
-
-section "25:6ad2", romx[$6ad2], bank[$25] ; Unit Creation
-    ;text "せいさんしょうひしきん"
-    text "BUILD COST "
-    done
-    ;text "[LF]", $04, "せいさんしょうひしざい"
-    text "[LF]", $04, "BUILD COST "
-    done
-
 section "27:65a0", romx[$65a0], bank[$27]
     ;text "ユニット"
     text "UNIT"
