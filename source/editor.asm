@@ -1,8 +1,13 @@
 include "include/macros.inc"
+include "include/char_main.inc"
 include "include/char_unit.inc"
 
-setcharmap unit
+setcharmap main
+section "Editor_Default_Name", romx[$416d], bank[$0f]
+    ;text "マップ"
+    text "MAP"
 
+setcharmap unit
 section "0f:45bd", romx[$45bd], bank[$0f]
 EditorMenu_Strings:
     dw .layout
