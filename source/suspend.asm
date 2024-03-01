@@ -44,14 +44,18 @@ Suspend_Mode_Strings:
 
     section_end $5fe5
 
+section "15:602c", romx[$602c], bank[$15] ; Pointer for "Mode_String", shifted one byte earlier into freed up space from "CO_String"
+;db $6160
+db $6060
+
 ; Suspend Menu Strings
 section "CO_String", romx[$6058], bank[$15] ; Pointer at [$6026]
     ;coord_text 2, 2, "しれいかん:"
     coord_text 2, 2, "CO:"
 
-section "Mode_String", romx[$6061], bank[$15] ; Pointer at [$602c]
+section "Mode_String", romx[$6060], bank[$15] ; Pointer at [$602c] (section formerly started at $6061)
     ;coord_text 2, 3, "モード:"
-    coord_text 2, 3, "MOD:" ; MODE
+    coord_text 2, 3, "MODE:" ; MODE
 
 section "Map_String", romx[$6068], bank[$15] ; Pointer at [$6032]
     ;coord_text 2, 4, "マップ:"
