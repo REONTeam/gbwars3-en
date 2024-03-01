@@ -11,8 +11,11 @@ section "CO_Coordinates", romx[$5f97], bank[$15]
     ;coord 2, 8
     coord 2, 5
 
-section "Map_Coordinates", romx[$5fa4], bank[$15]
+section "Map_Number_Coordinates", romx[$5fa4], bank[$15]
     coord 4, 6
+
+section "Map_Name_Coordinates", romx[$5faf], bank[$15]
+    coord 4, 9
 
 section "Day_Coordinates", romx[$5fbb], bank[$15]
     ;coord 5, 2
@@ -27,42 +30,41 @@ Suspend_Mode_Strings:
 .beginner:
     ;text "ビギナーモード"
     text "BEGINNER"
+    done
 
 .campaign:
     ;text "キャンペーンモード"
-    text "CAMPAIGN "
+    text "CAMPAIGN"
+    done
 
 .standard:
-    text "スタンダードモード"
-    ;text "STANDARD "
+    ;text "スタンダードモード"
+    text "STANDARD"
+    done
 
     section_end $5fe5
 
-section "15:602c", romx[$602c], bank[$15]
-db $61
-;db $60
-
 ; Suspend Menu Strings
-section "CO_String", romx[$6058], bank[$15]
+section "CO_String", romx[$6058], bank[$15] ; Pointer at [$6026]
     ;coord_text 2, 2, "しれいかん:"
     coord_text 2, 2, "CO:"
 
-section "Mode_String", romx[$6061], bank[$15]
+section "Mode_String", romx[$6061], bank[$15] ; Pointer at [$602c]
     ;coord_text 2, 3, "モード:"
-    coord_text 2, 3, "MOD:"
+    coord_text 2, 3, "MOD:" ; MODE
 
-section "Map_String", romx[$6068], bank[$15]
+section "Map_String", romx[$6068], bank[$15] ; Pointer at [$6032]
     ;coord_text 2, 4, "マップ:"
     coord_text 2, 4, "MAP:"
 
-section "Day_String", romx[$606f], bank[$15]
+section "Day_String", romx[$606f], bank[$15] ; Pointer at [$6038]
     ;coord_text 4, 5, "にちめ"
     coord_text 2, 5, "DAY"
 
-section "Continue_String_1", romx[$6075], bank[$15]
+section "Continue_String_1", romx[$6075], bank[$15] ; Pointer at [$603e]
     ;coord_text 3, 9, "とちゅうのデータがあります。"
     coord_text 3, 9, "CONTINUE FROM "
 
-section "Continue_String_2", romx[$6086], bank[$15]
+section "Continue_String_2", romx[$6086], bank[$15] ; Pointer at [$6044]
     ;coord_text 3, 10, "つづきからプレイしますか?"
     coord_text 3, 10, "LAST SESSION?"
