@@ -35,7 +35,6 @@ News_Mercenary_1: ; Badge Reward for calling 10 total Mercenaries
     news "================"
     news 0
 
-;section "News_Mercenary_2", romx[$67F0], bank[$31]
 News_Mercenary_2: ; Badge Reward for calling 20 total Mercenaries
     news "ようへい20かいきねんバッジ"
     news " "
@@ -57,7 +56,6 @@ News_Mercenary_2: ; Badge Reward for calling 20 total Mercenaries
     news "================"
     news 0
 
-;section "News_Mercenary_3", romx[$68c9], bank[$31]
 News_Mercenary_3: ; Badge Reward for calling 50 total Mercenaries
     news "ようへい50かいきねんバッジ"
     news " "
@@ -79,7 +77,6 @@ News_Mercenary_3: ; Badge Reward for calling 50 total Mercenaries
     news "================"
     news 0
 
-;section "News_Mercenary_4", romx[$6993], bank[$31]
 News_Mercenary_4: ; Badge Reward for calling 77 total Mercenaries
     news "ようへい77かいきねんバッジ"
     news " "
@@ -101,7 +98,6 @@ News_Mercenary_4: ; Badge Reward for calling 77 total Mercenaries
     news "================"
     news 0
 
-;section "News_Mercenary_5", romx[$6a60], bank[$31]
 News_Mercenary_5: ; Badge Reward for calling 100 total Mercenaries
     news "ようへい100かいきねんバッジ"
     news " "
@@ -123,8 +119,7 @@ News_Mercenary_5: ; Badge Reward for calling 100 total Mercenaries
     news "================"
     news 0
 
-;section "News_Mercenary_6", romx[$6b36], bank[$31]
-News_Mercenary_6: ; Either a general reward for calling higher numbers, or the reward for calling your first Mercenary
+News_Mercenary_6: ; Badge Reward for calling one or more mercenaries
     news "ようへいバッジ"
     news " "
     news "ようへいユニットのよびだし"
@@ -145,7 +140,6 @@ News_Mercenary_6: ; Either a general reward for calling higher numbers, or the r
     news "================"
     news 0
 
-;section "News_Map_1", romx[$6c0c], bank[$31]
 News_Map_1: ; Badge Reward for downloading maps
     news "マップバッジ"
     news " "
@@ -167,7 +161,6 @@ News_Map_1: ; Badge Reward for downloading maps
     news "================"
     news 0
 
-;section "News_Map_2", romx[$6cdf], bank[$31]
 News_Map_2: ; Badge Reward for downloading maps
     news "マップラッキーバッジ"
     news " "
@@ -189,7 +182,6 @@ News_Map_2: ; Badge Reward for downloading maps
     news "================"
     news 0
 
-;section "News_Map_3", romx[$6da8], bank[$31]
 News_Map_3: ; Badge Reward for downloading maps
     news "マップスぺシャルラッキーバッジ"
     news " "
@@ -210,6 +202,8 @@ News_Map_3: ; Badge Reward for downloading maps
     news "WARS NET CENTER"
     news "================"
     news 0, 0
+
+    section_end $6e7b
 
 section "News_Welcome", romx[$7203], bank[$31]
 News_Welcome:
@@ -248,3 +242,5 @@ News_Welcome:
     news "CENTER for more"
     news "fun! "
     news 0
+
+    section_end $72e1
