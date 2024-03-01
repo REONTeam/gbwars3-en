@@ -3,14 +3,19 @@ include "include/bank_ends.inc"
 include "include/char_main.inc"
 
 section "15:4a3b", romx[$4a3b], bank[$15] ; Mode Names
-    text "BEGINNER   "      ; ビギナーモード
+    text "BEGINNER   "      ; "ビギナーモード    "
     done
     
-    text "CAMPAIGN   "      ; キャンペーンモード
+    text "CAMPAIGN   "      ; "キャンペーンモード  "
     done
     
-    text "STANDARD "        ; スタンダードモード
+    text "STANDARD "        ; "スタンダードモード  "
     done
+
+    text "CONFIG     "      ; "コンフィグレーション "
+    done
+
+    section_end $4a6b
 
 section "MainMenu_Desc", romx[$55d2], bank[$15] ; Main Menu - Descriptions
 MainMenu_Desc:

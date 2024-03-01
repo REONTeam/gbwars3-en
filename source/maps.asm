@@ -4,7 +4,7 @@ include "include/char_main.inc"
 
 section "29:4020", romx[$4020], bank[$29]
     ;db "デモ02[ED][ED]"
-    db "DEMO02"
+    db "DEMO02  "
 section "29:4212", romx[$4212], bank[$29]
     ;db "ボールジマ[ED]  "
     db "BALLISLE"
