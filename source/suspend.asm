@@ -55,7 +55,7 @@ section "CO_String", romx[$6058], bank[$15] ; Pointer at [$6026]
 
 section "Mode_String", romx[$6060], bank[$15] ; Pointer at [$602c] (section formerly started at $6061)
     ;coord_text 2, 3, "モード:"
-    coord_text 2, 3, "MODE:" ; MODE
+    coord_text 2, 3, "MODE:"
 
 section "Map_String", romx[$6068], bank[$15] ; Pointer at [$6032]
     ;coord_text 2, 4, "マップ:"
@@ -67,8 +67,8 @@ section "Day_String", romx[$606f], bank[$15] ; Pointer at [$6038]
 
 section "Continue_String_1", romx[$6075], bank[$15] ; Pointer at [$603e]
     ;coord_text 3, 9, "とちゅうのデータがあります。"
-    coord_text 3, 9, "CONTINUE FROM "
+    coord_text 3, 9, "CONTINUE FROM " ; OLD DATA EXISTS.
 
 section "Continue_String_2", romx[$6086], bank[$15] ; Pointer at [$6044]
     ;coord_text 3, 10, "つづきからプレイしますか?"
-    coord_text 3, 10, "LAST SESSION?"
+    coord_text 3, 10, "LAST SESSION?" ; CONTINUE PLAYING?
