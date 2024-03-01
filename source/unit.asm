@@ -106,7 +106,7 @@ UnitData:
     .transport_helicopter:          db "T COPTER  ",  10,   70,    7, 1, 3,    3,  19, 0,  25, 0,   3, 7,  0,  0,    2,   10,   1, 3, 3,  3, 20, 20, 18, 20,     0,   22, 3 ; ユソウヘリ
     .transport_helicopter_s:        db "T COPTER-S",  10,   65,    6, 2, 4,    3,  35, 0,  48, 0,  32, 1,  3,  9,    2,   10,   1, 3, 3,  3, 23, 23, 20, 23,     0,   22, 2 ; ユソウヘリS
     .aegis_warship:                 db "WARSHIP   ",  10,   99,    6, 0, 8,    0, 220, 0, 180, 0,  27, 6, 21,  9,    3,   12,   0, 0, 0,  0, 75, 75, 75, 65,    52,   20, 2 ; イ―ジスカン
-    .mercenary_missile_frigate:     db "ヨウヘイMフリゲ―ト", 10,   99,    7, 0, 9,    0,   4, 1, 200, 0,  19, 4, 23,  9,    3,   12,   0, 0, 0,  0, 80, 80, 80, 70,    60,   24, 2  ; ヨウヘイMフリゲ―ト
+    .mercenary_missile_frigate:     db "M FRIGATE ",  10,   99,    7, 0, 9,    0,   4, 1, 200, 0,  19, 4, 23,  9,    3,   12,   0, 0, 0,  0, 80, 80, 80, 70,    60,   24, 2 ; ヨウヘイMフリゲ―ト
     .large_carrier:                 db "L CARRIER ",  10,   99,    5, 4, 7,    0,  94, 1, 220, 0,  23, 9,  7,  9,    3,   12,   3, 0, 0,  0, 70, 70, 65, 60,    48,   22, 2 ; オオガタクウボ
     .small_carrier:                 db "CARRIER   ",  10,   80,    6, 3, 6,    0,  24, 1, 150, 0,  22, 9,  5,  9,    3,   12,   3, 0, 0,  0, 65, 65, 58, 55,    42,   21, 2 ; コガタクウボ
     .transport_ship:                db "LANDER    ",  10,   70,    4, 3, 3,    0,  80, 0, 130, 0,   6, 9,  0,  0,    3,   11,   4, 0, 0,  0, 40, 40, 36, 35,    25,   17, 2 ; ユソウカン
@@ -173,20 +173,20 @@ WeaponData:
     .anti_tank_missile_b:   db "AT MSL-B",  1, 1, 36,  0,   0,   0,   0,   11 ; ATミサイルB
     .anti_tank_missile_a:   db "AT MSL-A",  1, 2, 32,  0,   0,   0,   0,   13 ; ATミサイルA
     .bombs:                 db "BOMBS   ",  1, 1, 26, 28,   0,  40,   0,   18 ; バクダン
-    .anti_city_missile:     db "AC MSL",    3, 7,  0,  0,   0,   0,   0,  100 ; タイトシミサイル
-    .anti_city_bomb:        db "AC BOMB",   0, 0,  0,  0,   0,   0,   0,  100 ; タイトシバクダン
-    .surface_air_missile_b: db "SA MSL-B",  1, 1,  0,  0,  60,   0,   0,   40 ; チタイクウM-B
-    .surface_air_missile_a: db "SA MSL-A",  2, 3,  0,  0,  55,   0,   0,   42 ; チタイクウM-A
-    .surface_air_missile_s: db "SA MSL-S",  4, 6,  0,  0,  52,   0,   0,   44 ; チタイクウM-S
+    .anti_city_missile:     db "AC MSL  ",  3, 7,  0,  0,   0,   0,   0,  100 ; タイトシミサイル (Review)
+    .anti_city_bomb:        db "AC BOMB ",  0, 0,  0,  0,   0,   0,   0,  100 ; タイトシバクダン (Review)
+    .surface_air_missile_b: db "SA MSL-B",  1, 1,  0,  0,  60,   0,   0,   40 ; チタイクウM-B (Review)
+    .surface_air_missile_a: db "SA MSL-A",  2, 3,  0,  0,  55,   0,   0,   42 ; チタイクウM-A (Review)
+    .surface_air_missile_s: db "SA MSL-S",  4, 6,  0,  0,  52,   0,   0,   44 ; チタイクウM-S (Review)
     .anti_air_missile_b:    db "AA MSL-B",  1, 1,  0,  0,  50,   0,   0,   40 ; タイクウM-B
     .anti_air_missile_a:    db "AA MSL-A",  3, 5,  0,  0,  47,   0,   0,   45 ; タイクウM-A
     .anti_air_missile_s:    db "AA MSL-S",  4, 7,  0,  0,  45,   0,   0,   50 ; タイクウM-S
-    .anti_ship_missile:     db "AS MSL-S",  4, 7,  0,  0,   0,  99,   0,  100 ; タイカンミサイル
-    .proximity_torpedo:     db "TORP-S",    1, 1,  0,  0,   0,  65,  85,   30 ; キンセツギョライ
-    .torpedo:               db "TORPEDO",   2, 4,  0,  0,   0,  50,  70,   35 ; ギョライ
+    .anti_ship_missile:     db "AS MSL-S",  4, 7,  0,  0,   0,  99,   0,  100 ; タイカンミサイル (Review)
+    .proximity_torpedo:     db "TORP    ",  1, 1,  0,  0,   0,  65,  85,   30 ; キンセツギョライ (Review)
+    .torpedo:               db "TORPEDO ",  2, 4,  0,  0,   0,  50,  70,   35 ; ギョライ (Review)
     .supplies:              db "SUPPLIES",  0, 0,  0,  0,   0,   0,   0,   50 ; ホキュウブッシ
     .material:              db "MATERIAL",  0, 0,  0,  0,   0,   0,   0,    5 ; シザイ
-    .rocket:                db "ROCKET-S",  1, 1, 18, 25,   0,  16,   0,   20 ; ロケットダン
+    .rocket:                db "ROCKET  ",  1, 1, 18, 25,   0,  16,   0,   20 ; ロケットダン (Review)
 
     section_end $54a8
 
