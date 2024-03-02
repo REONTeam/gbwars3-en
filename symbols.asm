@@ -19,6 +19,10 @@ endm
 ; b = x coord, c = y coord, hl = text location
     sym $00, $3353, TextPut
 
+; Places text at a coordinate embedded in the data, using the coord_text macro
+; hl = data location
+    sym $00, $336e, CoordTextPut
+
 ; Farcall
 ; Operates on the three bytes following the "rst $28": bank, addr lo, addr hi
     sym $00, $3b06, Farcall

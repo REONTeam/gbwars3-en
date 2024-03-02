@@ -44,31 +44,45 @@ Suspend_Mode_Strings:
 
     section_end $5fe5
 
-section "15:602c", romx[$602c], bank[$15] ; Pointer for "Mode_String", shifted one byte earlier into freed up space from "CO_String"
-    ;dw $6061
-    dw $6060
+section "SuspendMenu_code6025", romx[$6025], bank[$15]
+    ld hl, SuspendMenu_Strings.CO
+    call CoordTextPut
+    ld hl, SuspendMenu_Strings.Mode
+    call CoordTextPut
+    ld hl, SuspendMenu_Strings.Map
+    call CoordTextPut
+    ld hl, SuspendMenu_Strings.Day
+    call CoordTextPut
+    ld hl, SuspendMenu_Strings.Continue_1
+    call CoordTextPut
+    ld hl, SuspendMenu_Strings.Continue_2
+    call CoordTextPut
 
-; Suspend Menu Strings
-section "CO_String", romx[$6058], bank[$15] ; Pointer at [$6026]
+section "SuspendMenu_Strings", romx[$6058], bank[$15]
+SuspendMenu_Strings:
+
+.CO:
     ;coord_text 2, 2, "しれいかん:"
     coord_text 2, 2, "CO:"
 
-section "Mode_String", romx[$6060], bank[$15] ; Pointer at [$602c] (section formerly started at $6061)
+.Mode:
     ;coord_text 2, 3, "モード:"
     coord_text 2, 3, "MODE:"
 
-section "Map_String", romx[$6068], bank[$15] ; Pointer at [$6032]
+.Map:
     ;coord_text 2, 4, "マップ:"
     coord_text 2, 4, "MAP:"
 
-section "Day_String", romx[$606f], bank[$15] ; Pointer at [$6038]
+.Day:
     ;coord_text 4, 5, "にちめ"
     coord_text 2, 5, "DAY"
 
-section "Continue_String_1", romx[$6075], bank[$15] ; Pointer at [$603e]
+.Continue_1:
     ;coord_text 3, 9, "とちゅうのデータがあります。"
     coord_text 3, 9, "CONTINUE FROM " ; OLD DATA EXISTS.
 
-section "Continue_String_2", romx[$6086], bank[$15] ; Pointer at [$6044]
+.Continue_2:
     ;coord_text 3, 10, "つづきからプレイしますか?"
     coord_text 3, 10, "LAST SESSION?" ; CONTINUE PLAYING?
+
+    section_end $6096
