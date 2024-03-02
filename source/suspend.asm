@@ -45,8 +45,8 @@ Suspend_Mode_Strings:
     section_end $5fe5
 
 section "15:602c", romx[$602c], bank[$15] ; Pointer for "Mode_String", shifted one byte earlier into freed up space from "CO_String"
-;db $6160
-db $6060
+    ;dw $6061
+    dw $6060
 
 ; Suspend Menu Strings
 section "CO_String", romx[$6058], bank[$15] ; Pointer at [$6026]
