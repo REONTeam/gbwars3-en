@@ -56,27 +56,27 @@ Description_Strings:
     dw .supply_tanker
     dw .submarine
     dw .submarine_s
-	dw .HQ
-	dw .city
-	dw .base
-	dw .airport
-	dw .port
-	dw .com_tower
-	dw .temporary_airport
-	dw .city_ruins
-	dw .base_ruins
-	dw .airport_ruins
-	dw .port_ruins
-	dw .plain
-	dw .mountain
-	dw .wood
-	dw .wasteland
-	dw .desert
-	dw .road
-	dw .river
-	dw .bridge
-	dw .shoal
-	dw .sea
+    dw .HQ
+    dw .city
+    dw .base
+    dw .airport
+    dw .port
+    dw .com_tower
+    dw .temporary_airport
+    dw .city_ruins
+    dw .base_ruins
+    dw .airport_ruins
+    dw .port_ruins
+    dw .plain
+    dw .mountain
+    dw .wood
+    dw .wasteland
+    dw .desert
+    dw .road
+    dw .river
+    dw .bridge
+    dw .shoal
+    dw .sea
 
 .infantry:
     text "たてものをせんりょうする"
