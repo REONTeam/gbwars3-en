@@ -18,7 +18,9 @@ objects := \
 	source/map_menu.o \
 	source/main_menu.o \
 	source/name_screen.o \
-	source/unit_status.o
+	source/unit_status.o \
+	source/descriptions.o \
+	source/mobile.o
 
 .PHONY: all
 all: $(name).gbc
