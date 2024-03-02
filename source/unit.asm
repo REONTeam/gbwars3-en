@@ -13,7 +13,7 @@ UnitData:
     dw .construction_truck
     dw .supply_truck
     dw .supply_truck_s
-    dw .transport_truck_s
+    dw .transport_truck
     dw .transport_truck_s
     dw .combat_buggy
     dw .combat_buggy_s
