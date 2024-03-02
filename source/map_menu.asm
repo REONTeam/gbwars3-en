@@ -1,20 +1,20 @@
 include "include/macros.inc"
 include "include/char_main.inc"
 
-section "Map_Menu_code4213", romx[$4213], bank[$13]
-    ld hl, Map_Menu_Strings.edit
+section "MapMenu_code4213", romx[$4213], bank[$13]
+    ld hl, MapMenu_Strings.edit
     call $336e
-    ld hl, Map_Menu_Strings.play
+    ld hl, MapMenu_Strings.play
     call $336e
-    ld hl, Map_Menu_Strings.copy
+    ld hl, MapMenu_Strings.copy
     call $336e
-    ld hl, Map_Menu_Strings.delete
+    ld hl, MapMenu_Strings.delete
     call $336e
-    ld hl, Map_Menu_Strings.map_communication
+    ld hl, MapMenu_Strings.map_communication
     call $336e
 
-section "Map_Menu_Menu_Alternate_code43e3", romx[$43e3], bank[$13]
-Map_Menu_Menu_Alternate_code43e3:
+section "MapMenu_Menu_Alternate_code43e3", romx[$43e3], bank[$13]
+MapMenu_Menu_Alternate_code43e3:
     ld [$dc4d], a
     cp $00
     jr z, .edit
@@ -40,102 +40,102 @@ Map_Menu_Menu_Alternate_code43e3:
     jr z, .upload_2
 
 .edit:
-    ld hl, Map_Menu_Strings.edit_which
+    ld hl, MapMenu_Strings.edit_which
     jr .select_map
 .play:
-    ld hl, Map_Menu_Strings.play_which
+    ld hl, MapMenu_Strings.play_which
     jr .select_map
 .copy:
-    ld hl, Map_Menu_Strings.copy_which
+    ld hl, MapMenu_Strings.copy_which
     jr .select_map
 .delete_1:
-    ld hl, Map_Menu_Strings.delete_which
+    ld hl, MapMenu_Strings.delete_which
     jr .select_map
 .send:
-    ld hl, Map_Menu_Strings.IR_send_which
+    ld hl, MapMenu_Strings.IR_send_which
     jr .select_map
 .get:
-    ld hl, Map_Menu_Strings.IR_get_where
+    ld hl, MapMenu_Strings.IR_get_where
     jr .select_map
 .upload_1:
-    ld hl, Map_Menu_Strings.upload_where
+    ld hl, MapMenu_Strings.upload_where
     jr .select_map
 .delete_2:
-    ld hl, Map_Menu_Strings.delete_what
+    ld hl, MapMenu_Strings.delete_what
     jr .select_map
 .submit:
-    ld hl, Map_Menu_Strings.submit_what
+    ld hl, MapMenu_Strings.submit_what
     jr .select_map
 .upload_2:
-    ld hl, Map_Menu_Strings.upload_which
+    ld hl, MapMenu_Strings.upload_which
     jr .select_map
 .save:
-    ld hl, Map_Menu_Strings.save_where
+    ld hl, MapMenu_Strings.save_where
     jr .select_map
 .select_map:
     call $336e
 
-section "Map_Menu_Display_Data_code4638", romx[$4638], bank[$13]
-Map_Menu_Display_Data_code4638:
+section "MapMenu_Display_Data_code4638", romx[$4638], bank[$13]
+MapMenu_Display_Data_code4638:
     cp $00
     jr z, .no_map
     ld hl, $ca6a
     lb bc, 2, 13 ; Description Coordinates
     call $3353
-    ld hl, Map_Menu_Strings.map_number
+    ld hl, MapMenu_Strings.map_number
     call $336e
     ld hl, $dc44
     lb bc, 8, 14 ; Download Map Number Coordinates
     call $3353
     jr ._465f
 .no_map:
-    ld hl, Map_Menu_Strings.no_map_data
+    ld hl, MapMenu_Strings.no_map_data
     lb bc, 2, 13 ; No Map Data Coordinates
     call $3353
 ._465f:
     call $059b
     ret
 
-section "Map_Menu_code46af", romx[$46af], bank[$13]
-    ld hl, Map_Menu_Strings.map_number
+section "MapMenu_code46af", romx[$46af], bank[$13]
+    ld hl, MapMenu_Strings.map_number
     call $336e
 
-section "Map_Menu_code46ff", romx[$46ff], bank[$13]
-    ld hl, Map_Menu_Strings.no_map_data
+section "MapMenu_code46ff", romx[$46ff], bank[$13]
+    ld hl, MapMenu_Strings.no_map_data
     lb bc, 2, 13 ; No Map Data Coordinates
     call $3353
 
-section "Map_Menu_User_Map", romx[$4709], bank[$13]
+section "MapMenu_User_Map", romx[$4709], bank[$13]
     text "ユーザーマップ"
     ;text "USER MAP"
     done
 
-section "Map_Menu_My_Map", romx[$4711], bank[$13]
+section "MapMenu_My_Map", romx[$4711], bank[$13]
     text "マイマップ"
     ;text "MY MAP"
     done
 
-section "Map_Menu_Cannot_Upload", romx[$47b4], bank[$13]
+section "MapMenu_Cannot_Upload", romx[$47b4], bank[$13]
     ;text "MAP CANNOT BE"
     ;line "UPLOADED。"
     text "このマップはアップロード"
     line "できません。"
     done
 
-section "Map_Menu_Cannot_Send", romx[$47c8], bank[$13]
+section "MapMenu_Cannot_Send", romx[$47c8], bank[$13]
     ;text "MAP CANNOT BE"
     ;line "SENT WITH IR。"
     text "このマップはIRつうしんで"
     line "あげることはできません。"
     done
 
-section "Map_Menu_code4a75", romx[$4a75], bank[$13]
-    ld hl, Map_Menu_Strings.main_menu
+section "MapMenu_code4a75", romx[$4a75], bank[$13]
+    ld hl, MapMenu_Strings.main_menu
     lb bc, 3, 2 ; Menu Coordinates
     call $2b38
 
-section "Map_Menu_Cursor_code4ac3", romx[$4ac3], bank[$13] 
-Map_Menu_Cursor_code4ac3:
+section "MapMenu_Cursor_code4ac3", romx[$4ac3], bank[$13]
+MapMenu_Cursor_code4ac3:
     ld a, [$dc36]
     ld b, $03
     rst $28
@@ -155,7 +155,7 @@ Map_Menu_Cursor_code4ac3:
     dec de
     ld e, a
     ld a, b
-    ld b, $08 ; Cursor's vertical increment 
+    ld b, $08 ; Cursor's vertical increment
     call $2995
     ld a, l
     add $24 ; Cursor's base vertical offset for screen
@@ -177,8 +177,8 @@ jr_013_4afb:
     call $2eae
     ret
 
-section "Map_Menu_Menu", romx[$4b49], bank[$13]
-Map_Menu_Menu:
+section "MapMenu_Menu", romx[$4b49], bank[$13]
+MapMenu_Menu:
     ld a, [$dc36]
     cp $00
     jr z, .edit
@@ -194,51 +194,51 @@ Map_Menu_Menu:
     jr z, .get
 
 .edit:
-    ld hl, Map_Menu_Strings.edit_which
+    ld hl, MapMenu_Strings.edit_which
     jr .select_map
 .copy:
-    ld hl, Map_Menu_Strings.copy_which
+    ld hl, MapMenu_Strings.copy_which
     jr .select_map
 .send:
-    ld hl, Map_Menu_Strings.IR_send_which
+    ld hl, MapMenu_Strings.IR_send_which
     jr .select_map
 .play:
-    ld hl, Map_Menu_Strings.play_which
+    ld hl, MapMenu_Strings.play_which
     jr .select_map
 .delete:
-    ld hl, Map_Menu_Strings.delete_which
+    ld hl, MapMenu_Strings.delete_which
     jr .select_map
 .get:
-    ld hl, Map_Menu_Strings.IR_get_where
+    ld hl, MapMenu_Strings.IR_get_where
     jr .select_map
 .select_map:
     call $336e
     ret
 
-section "Map_Menu_code4d4f", romx[$4d4f], bank[$13]
-    ld hl, Map_Menu_Strings.copy_where
+section "MapMenu_code4d4f", romx[$4d4f], bank[$13]
+    ld hl, MapMenu_Strings.copy_where
     call $336e
 
-section "Map_Menu_code51f3", romx[$51f3], bank[$13]
-    ld hl, Map_Menu_Strings.copy_where
+section "MapMenu_code51f3", romx[$51f3], bank[$13]
+    ld hl, MapMenu_Strings.copy_where
     call $336e
 
-section "Map_Menu_Confirm_Prompt_code532b", romx[$532b], bank[$13]
-Map_Menu_Confirm_Prompt_code532b:
+section "MapMenu_Confirm_Prompt_code532b", romx[$532b], bank[$13]
+MapMenu_Confirm_Prompt_code532b:
     cp $00
     jr nz, .copy
-    ld hl, Map_Menu_Strings.delete_prompt
+    ld hl, MapMenu_Strings.delete_prompt
     call $336e
     jr .end
 .copy:
-    ld hl, Map_Menu_Strings.copy_prompt_overwrite
+    ld hl, MapMenu_Strings.copy_prompt_overwrite
     call $336e
 .end:
     lb bc, 7, 16 ; Unknown Coordinates
     call $53d7
 
-section "Map_Menu_Suspend", romx[$5400], bank[$13]
-Map_Menu_Suspend:
+section "MapMenu_Suspend", romx[$5400], bank[$13]
+MapMenu_Suspend:
     call $04f3
     call $34ce
     call $2d7c
@@ -260,15 +260,15 @@ Map_Menu_Suspend:
     lb bc, 1, 6
     ld de, $120b
     farcall $22, $6247
-    ld hl, Map_Menu_Strings.suspend_continue_1
+    ld hl, MapMenu_Strings.suspend_continue_1
     call $336e
-    ld hl, Map_Menu_Strings.suspend_continue_2
+    ld hl, MapMenu_Strings.suspend_continue_2
     call $336e
     lb bc, 7, 11
     call $53ae
     xor a
     ld [$dc4f], a
-    ld hl, Map_Menu_Strings.suspend_map_label
+    ld hl, MapMenu_Strings.suspend_map_label
     call $336e
     ld a, [$c633]
     srl a
@@ -276,7 +276,7 @@ Map_Menu_Suspend:
     lb bc, 5, 3 ; Day Count Coordinates (2,3)
     ld d, $02
     call $31f5
-    ld hl, Map_Menu_Strings.suspend_day_count
+    ld hl, MapMenu_Strings.suspend_day_count
     call $336e
     ld a, [$ca1f]
     inc a
@@ -290,11 +290,11 @@ Map_Menu_Suspend:
     ld hl, $dc3b
     lb bc, 9, 2
     call $3353
-    ld hl, Map_Menu_Strings.suspend_warning_1
+    ld hl, MapMenu_Strings.suspend_warning_1
     call $336e
-    ld hl, Map_Menu_Strings.suspend_warning_2
+    ld hl, MapMenu_Strings.suspend_warning_2
     call $336e
-    ld hl, Map_Menu_Strings.suspend_warning_3
+    ld hl, MapMenu_Strings.suspend_warning_3
     call $336e
     ld a, [$c62f]
     cp $03
@@ -310,17 +310,17 @@ Map_Menu_Suspend:
     jr z, ._54b9
 
 ._54b2:
-    ld hl, Map_Menu_Strings.IR_battle
+    ld hl, MapMenu_Strings.IR_battle
     call $336e
     ret
 
 ._54b9:
-    ld hl, Map_Menu_Strings.battle
+    ld hl, MapMenu_Strings.battle
     call $336e
     ret
 
-section "Map_Menu_Strings", romx[$5541], bank[$13]
-Map_Menu_Strings:
+section "MapMenu_Strings", romx[$5541], bank[$13]
+MapMenu_Strings:
 
 .edit:
     ;coord_text 7, 5, "エディット"
@@ -525,4 +525,3 @@ Map_Menu_Strings:
     done
 
     section_end $57cc
-
