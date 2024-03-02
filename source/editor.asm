@@ -282,6 +282,7 @@ EditorSubmenu_Unit_Delete:
 
 .string_delete
     ;text "ユニットサクジョ  "
-    text "DELETE    "    done
+    text "DELETE    "
+    done
 
     section_end $5218

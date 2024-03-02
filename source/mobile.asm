@@ -30,103 +30,128 @@ Mobile_Header_Strings:
     dw .wars_net_disconnected
     dw .timeout
     dw $00ff ; seemingly unused byte
-.wars_net_dialing:
+
+.wars_net_dialing:
     text "ウォーズネットへ   "
     line "ダイヤルちゅう    "
     done
-    .wars_net_connecting:
+
+.wars_net_connecting:
     text "ウォーズネットへ   "
     line "せつぞくちゅう    "
     done
-    .map_downloading:
+
+.map_downloading:
     text "マップデータの    "
     line "ダウンロードちゅう  "
     done
-    .map_uploading:
+
+.map_uploading:
     text "マップデータの    "
     line "アップロードちゅう  "
     done
-    .map_deleting:
+
+.map_deleting:
     text "マップデータの    "
     line "さくじょちゅう    "
     done
-    .map_submitted:
+
+.map_submitted:
     text "マップデータの    "
     line "とうこうちゅう    "
     done
-    .map_downloaded:
+
+.map_downloaded:
     text "マップダウンロード  "
     line "しゅうりょう     "
     done
-    .user_registration:
+
+.user_registration:
     text "ユーザーとうろく   "
     line "うけつけちゅう    "
     done
-    .user_registration_changes:
+
+.user_registration_changes:
     text "ユーザーとうろく   "
     line "へんこううけつけちゅう"
     done
-    .map_download_accepting:
+
+.map_download_accepting:
     text "マップダウンロード  "
     line "うけつけちゅう    "
     done
-    .map_upload_accepting:
+
+.map_upload_accepting:
     text "マップアップロード  "
     line "うけつけちゅう    "
     done
-    .map_delete_request:
+
+.map_delete_request:
     text "マップデリート    "
     line "うけつけちゅう    "
     done
-    .map_contributions:
+
+.map_contributions:
     text "マップとうこう    "
     line "うけつけちゅう    "
     done
-    .service_unavailable:
+
+.service_unavailable:
     text "サービスていし    "
     line "うけつけちゅう    "
     done
-    .service_restored:
+
+.service_restored:
     text "サービスさいかい   "
     line "うけつけちゅう    "
     done
-    .connection_lost:
+
+.connection_lost:
     text "つうしんしっぱい   "
     line "           "
     done
-    .interrupted_1: ; Map
+
+.interrupted_1: ; Map
     text "ちゅうし       "
     line "           "
     done
-    .interrupted_2: ; Wars Net
+
+.interrupted_2: ; Wars Net
     text "ちゅうし       "
     line "           "
     done
-    .mercenary_called:
+
+.mercenary_called:
     text "ようへいよびだし   "
     line "しゅうりょう     "
     done
-    .interrupted_3: ; Mercenary
+
+.interrupted_3: ; Mercenary
     text "ちゅうし       "
     line "           "
     done
-    .wars_net_unavailable:
+
+.wars_net_unavailable:
     text "ウォーズネットサービス"
     line "ていし        "
     done
-    .wars_net_restored:
+
+.wars_net_restored:
     text "ウォーズネットサービス"
     line "さいかい       "
     done
-    .wars_net_connection_lost:
+
+.wars_net_connection_lost:
     text "ウォーズネット    "
     line "せつぞくしゅうりょう "
     done
-    .wars_net_disconnected:
+
+.wars_net_disconnected:
     text "ウォーズネット    "
     line "せつだんちゅう    "
     done
-    .timeout:
+
+.timeout:
     text "タイムアウト     "
     line "           "
     done

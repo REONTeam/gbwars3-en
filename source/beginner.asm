@@ -105,7 +105,8 @@ Beginner_Strings:
     ;line "「START」をおすと"
     ;line "せんとうにかんする"
     ;line "くわしいじょうほうを"
-    ;line "みることができます。"    ;done
+    ;line "みることができます。"
+    ;done
     text "「DRILL2」"
     skip 1
     line "2にちいないに"
@@ -130,7 +131,8 @@ Beginner_Strings:
     line "「START」をおすと"
     line "せんとうにかんする"
     line "くわしいじょうほうを"
-    line "みることができます。"    done
+    line "みることができます。"
+    done
 
 .beginner03:
     text "「えんしゅう3」"
@@ -164,7 +166,8 @@ Beginner_Strings:
     line "ひょうじされます。"
     line "これを"
     line "「ユニットじょうほうがめん」と"
-    line "いいます。"    done
+    line "いいます。"
+    done
 
 .beginner04:
     text "「えんしゅう4」"
@@ -194,7 +197,8 @@ Beginner_Strings:
     line "みることができます。"
     line "ユニットのダメージや"
     line "のこりねんりょうを"
-    line "しらべるのにべんりです。"    done
+    line "しらべるのにべんりです。"
+    done
 
 .beginner05:
     text "「えんしゅう5」"
@@ -215,7 +219,8 @@ Beginner_Strings:
     line "ほかのユニットを"
     line "とうさいできます。"
     line "ホヘイをとうさいできる"
-    line "ユニットをしらべてみましょう。"    done
+    line "ユニットをしらべてみましょう。"
+    done
 
 .beginner06:
     text "「えんしゅう6」"
@@ -241,7 +246,8 @@ Beginner_Strings:
     line "5しゅるいです。"
     line "ユニットじょうほうがめんの"
     line "ユニットのなまえのしたに"
-    line "ぞくせいがひょうじされています。"    done
+    line "ぞくせいがひょうじされています。"
+    done
 
 .beginner07:
     text "「えんしゅう7」"
@@ -273,7 +279,8 @@ Beginner_Strings:
     line "「じょうきょう」で"
     line "りょうぐんのしきん•しざいや"
     line "たてもののかずを"
-    line "しらべることができます。"    done
+    line "しらべることができます。"
+    done
 
 .beginner08:
     text "「えんしゅう8」"
@@ -295,7 +302,8 @@ Beginner_Strings:
     line "「SELECT」をおすと"
     line "すべてのユニットの"
     line "じょうほうがめんを"
-    line "えらぶことができます。"    done
+    line "えらぶことができます。"
+    done
 
 .beginner09:
     text "「えんしゅう9」"
@@ -323,7 +331,8 @@ Beginner_Strings:
     line "いちじてきにけします。"
     line "ユニットのしたのちけいにも"
     line "ちゅういしながら"
-    line "せんとうをすすめましょう。"    done
+    line "せんとうをすすめましょう。"
+    done
 
 .beginner10:
     text "「えんしゅう10」"
@@ -357,7 +366,8 @@ Beginner_Strings:
     line "カンイクウコウは,"
     line "だんやく•ねんりょうの"
     line "ほきゅうはできますが"
-    line "ユニットのほじゅうはできません。"    done
+    line "ユニットのほじゅうはできません。"
+    done
 
 .beginner11:
     text "「えんしゅう11」"
@@ -390,7 +400,8 @@ Beginner_Strings:
     line "なお,「START+みぎ」か"
     line "「START+ひだり」で"
     line "みこうどうユニットだけに"
-    line "カーソルがいどうします。"    done
+    line "カーソルがいどうします。"
+    done
 
 .beginner12:
     text "「えんしゅう12」"
@@ -412,7 +423,8 @@ Beginner_Strings:
     skip 3
     line "こうげきについては"
     line "「えんしゅう2」を"
-    line "さんこうにしてください。"    done
+    line "さんこうにしてください。"
+    done
 
 .beginner13:
     text "「えんしゅう13」"
@@ -432,7 +444,8 @@ Beginner_Strings:
     line "かんぜんに"
     line "ほういしたことになり"
     line "きょうりょくな"
-    line "こうげきができます。"    done
+    line "こうげきができます。"
+    done
 
 .beginner14:
     text "「えんしゅう14」"
@@ -458,7 +471,8 @@ Beginner_Strings:
     skip 1
     line "「START+SELECT」でも"
     line "カーソルがさしているちけいの"
-    line "じょうほうをひょうじできます。"    done
+    line "じょうほうをひょうじできます。"
+    done
 
 .beginner15:
     text "「えんしゅう15」"
@@ -495,7 +509,8 @@ Beginner_Strings:
     line "ユニットじょうほうがめんで"
     line "「イニシアティブ」をえらぶと"
     line "くわしいじょうほうを"
-    line "みることができます。"    done
+    line "みることができます。"
+    done
 
 .beginner16:
     text "「えんしゅう16」"
@@ -524,12 +539,14 @@ Beginner_Strings:
     line "「えんしゅう13」を,"
     line "イニシアティブにかんしては"
     line "「えんしゅう15」を"
-    line "さんこうにしてください。"    done
+    line "さんこうにしてください。"
+    done
 
 .standard00:
     text "99にちいないに"
     line "てきのしゅとをせんりょう"
     line "もしくは,てきのぶたいを"
-    line "ぜんめつさせよ。"    done
+    line "ぜんめつさせよ。"
+    done
 
     section_end $5c15
