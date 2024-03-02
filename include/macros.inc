@@ -1,9 +1,9 @@
 macro text
-	db \1
+    db \1
 endm
 
 macro line
-	db "[LF]"
+    db "[LF]"
     db \1
 endm
 
@@ -18,12 +18,12 @@ macro done
 endm
 
 macro coord
-	db \1, \2
+    db \1, \2
 endm
 
 macro coord_text
     coord \1, \2
-	text \3
+    text \3
     done
 endm
 
@@ -34,11 +34,11 @@ macro news
 endm
 
 macro section_end
-	if @ > \1
-		def slack = @ - \1
-		fail "Section grew too big! slack = {slack}"
-	endc
-	ds \1 - @
+    if @ > \1
+        def slack = @ - \1
+        fail "Section grew too big! slack = {slack}"
+    endc
+    ds \1 - @
 endm
 
 macro farcall
