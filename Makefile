@@ -4,8 +4,6 @@ RGBASMFLAGS := -p 0xff
 RGBLINKFLAGS := -p 0xff
 RGBFIXFLAGS := -O -v -p 0xff
 
-dir_build := build
-
 objects := \
 	main.o \
 	symbols.o \
