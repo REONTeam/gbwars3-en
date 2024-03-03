@@ -23,17 +23,17 @@ objects := \
 
 .PHONY: all
 all: $(name).gbc
+	@test -f $(name).gbc.orig || cp $(name).gbc $(name).gbc.orig
+	@diff $(name).gbc.orig $(name).gbc
 
 .PHONY: clean
 clean:
 	rm -f $(objects) $(objects:.o=.d)
-	rm -f $(name).gbc $(name).sym
+	rm -f $(name).gbc $(name).gbc.orig $(name).sym
 
 $(name).gbc: $(objects) | baserom.gbc
 	rgblink -O baserom.gbc -n $(@:.gbc=.sym) $(RGBLINKFLAGS) -o $@ $^
 	rgbfix $(RGBFIXFLAGS) $@
-	@test -f $@.orig || cp $@ $@.orig
-	@diff $@.orig $@
 
 %.o: %.asm
 	rgbasm -MP -M $*.d $(RGBASMFLAGS) -o $@ $<
