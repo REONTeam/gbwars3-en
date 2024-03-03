@@ -8,25 +8,25 @@ NetworkMenu_ServiceSettings:
     call CoordTextPut
     lb bc, 2, 7
     ld hl, NetworkMenu_ServiceSettingsText
-    call $2b38
+    call TextPrint
     ret
 
 NetworkMenu_ServiceStop:
     lb bc, 2, 2
     ld hl, NetworkMenu_ServiceStoppedText
-    call $2b38
+    call TextPrint
     lb bc, 2, 7
     ld hl, NetworkMenu_ServiceStopPromptText
-    call $2b38
+    call TextPrint
     ret
 
 NetworkMenu_ServiceResume:
     lb bc, 2, 2
     ld hl, NetworkMenu_ServiceResumedText
-    call $2b38
+    call TextPrint
     lb bc, 2, 7
     ld hl, NetworkMenu_ServiceResumePromptText
-    call $2b38
+    call TextPrint
     ret
 
 NetworkMenu_ServiceSettingsChangedText:

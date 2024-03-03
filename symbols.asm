@@ -30,11 +30,18 @@ endm
 ; a = data, hl = address
     sym $00, $0f2d, Vram_PutWaitBlank
 
+; Places text at a specific coordinate in the tilemap inmediately
+; This function interprets newlines in the main charmap
+; b = x coord, c = y coord, hl = text location
+    sym $00, $2b38, TextPrint
+
 ; Places text at a specific coordinate in the tilemap
+; Uses the VBlank FIFO to delay blitting until vblank
 ; b = x coord, c = y coord, hl = text location
     sym $00, $3353, TextPut
 
 ; Places text at a coordinate embedded in the data, using the coord_text macro
+; Uses the VBlank FIFO to delay blitting until vblank
 ; hl = data location
     sym $00, $336e, CoordTextPut
 
