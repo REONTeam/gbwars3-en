@@ -3,60 +3,62 @@ include "include/char_main.inc"
 
 setcharmap main
 section "NetworkMenu_Messages", romx[$524c], bank[$19]
-NetworkMenu_code524c:
-    ld hl, service_settings_changed
+NetworkMenu_ServiceSettings:
+    ld hl, NetworkMenu_ServiceSettingsChangedText
     call CoordTextPut
     lb bc, 2, 7
-    ld hl, service_settings
+    ld hl, NetworkMenu_ServiceSettingsText
     call $2b38
     ret
 
-NetworkMenu_code525c:
+NetworkMenu_ServiceStop:
     lb bc, 2, 2
-    ld hl, service_stopped
+    ld hl, NetworkMenu_ServiceStoppedText
     call $2b38
     lb bc, 2, 7
-    ld hl, service_stop_prompt
+    ld hl, NetworkMenu_ServiceStopPromptText
     call $2b38
     ret
 
-NetworkMenu_code526f:
+NetworkMenu_ServiceResume:
     lb bc, 2, 2
-    ld hl, service_resumed
+    ld hl, NetworkMenu_ServiceResumedText
     call $2b38
     lb bc, 2, 7
-    ld hl, service_resume_prompt
+    ld hl, NetworkMenu_ServiceResumePromptText
     call $2b38
     ret
 
-service_settings_changed::
+NetworkMenu_ServiceSettingsChangedText:
     coord_text 2, 2, "せつぞくせっていへんこう"
 
-service_settings::
+NetworkMenu_ServiceSettingsText:
     text "ウォーズネットセンターに"
     line "せつぞくするためのせっていを"
     line "へんこうします。"
     done
 
-service_stopped::
+NetworkMenu_ServiceStoppedText:
     text "ウォーズネットサービスの"
     line "ていし"
     done
 
-service_stop_prompt::
+NetworkMenu_ServiceStopPromptText:
     text "ウォーズネットサービスを"
     line "ていししますか?"
     done
 
-service_resumed::
+NetworkMenu_ServiceResumedText:
     text "ウォーズネットサービスの"
     line "さいかい"
     done
 
-service_resume_prompt::
+NetworkMenu_ServiceResumePromptText:
     text "ウォーズネットサービスを"
     line "さいかいしますか?"
     done
+
+    section_end $5306
 
 section "NetworkMenu_Main", romx[$55c3], bank[$19]
     ;coord_text 3, 6, "メッセージをよむ"
