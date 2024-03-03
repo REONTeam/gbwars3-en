@@ -159,7 +159,7 @@ charmap "ゃ",   $ac
 charmap "ゅ",   $ad
 charmap "ょ",   $ae
 charmap "っ",   $af
-charmap "★",   $b0
+charmap "★",    $b0
 charmap "ア",   $b1
 charmap "イ",   $b2
 charmap "ウ",   $b3
