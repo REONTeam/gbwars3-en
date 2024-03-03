@@ -2,37 +2,13 @@ include "include/macros.inc"
 include "include/char_main.inc"
 
 setcharmap main
-section "Medal_Header_String", romx[$5f8d], bank[$14]
+section "Medal_Header_String", romx[$5b42], bank[$14]
     ;text "くんしょう"
     text "MEDAL"
     done
 
-section "Medal_Strings", romx[$5b42], bank[$14]
+section "Medal_Strings", romx[$5f8d], bank[$14]
 Medal_Strings:
-    dw .graduation_name
-    dw .master_name
-    dw .campaign_clear_name
-    dw .campaign_special_name
-    dw .s_clear_name
-    dw .a_clear_name
-    dw .b_clear_name
-    dw .c_clear_name
-    dw .d_clear_name
-    dw .b_unarmored_name
-    dw .a_unarmored_name
-    dw .b_armored_name
-    dw .a_armored_name
-    dw .b_air_name
-    dw .a_air_name
-    dw .b_sea_name
-    dw .a_sea_name
-    dw .b_capture_name
-    dw .a_capture_name
-    dw .b_engineer_name
-    dw .a_engineer_name
-    dw .unit_name
-    dw .reaper_name
-    dw .engineer_special_name
     dw .graduation_description
     dw .master_description
     dw .campaign_clear_description
@@ -57,6 +33,30 @@ Medal_Strings:
     dw .unit_description
     dw .reaper_description
     dw .engineer_special_description
+    dw .graduation_name
+    dw .master_name
+    dw .campaign_clear_name
+    dw .campaign_special_name
+    dw .s_clear_name
+    dw .a_clear_name
+    dw .b_clear_name
+    dw .c_clear_name
+    dw .d_clear_name
+    dw .b_unarmored_name
+    dw .a_unarmored_name
+    dw .b_armored_name
+    dw .a_armored_name
+    dw .b_air_name
+    dw .a_air_name
+    dw .b_sea_name
+    dw .a_sea_name
+    dw .b_capture_name
+    dw .a_capture_name
+    dw .b_engineer_name
+    dw .a_engineer_name
+    dw .unit_name
+    dw .reaper_name
+    dw .engineer_special_name
 
 .graduation_name:
     text "「ソツギョウキショウ」"
