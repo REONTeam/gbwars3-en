@@ -1,5 +1,6 @@
 *.d
 *.gbc
+*.gbc.orig
 *.o
 *.sa1
 *.sa2

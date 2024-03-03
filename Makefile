@@ -34,6 +34,8 @@ clean:
 $(name).gbc: $(objects) | baserom.gbc
 	rgblink -O baserom.gbc -n $(@:.gbc=.sym) $(RGBLINKFLAGS) -o $@ $^
 	rgbfix $(RGBFIXFLAGS) $@
+	@test -f $@.orig || cp $@ $@.orig
+	@diff $@.orig $@
 
 %.o: %.asm
 	rgbasm -MP -M $*.d $(RGBASMFLAGS) -o $@ $<
