@@ -30,8 +30,7 @@ NetworkMenu_code526f:
     ret
 
 service_settings_changed::
-    text 2, 2, "せつぞくせっていへんこう"
-    done
+    coord_text 2, 2, "せつぞくせっていへんこう"
 
 service_settings::
     text "ウォーズネットセンターに"
