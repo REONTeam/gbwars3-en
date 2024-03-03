@@ -1,6 +1,7 @@
 *.d
 *.gbc
 *.gbc.orig
+*.map
 *.o
 *.sa1
 *.sa2

@@ -29,10 +29,10 @@ all: $(name).gbc
 .PHONY: clean
 clean:
 	rm -f $(objects) $(objects:.o=.d)
-	rm -f $(name).gbc $(name).gbc.orig $(name).sym
+	rm -f $(name).gbc $(name).gbc.orig $(name).map $(name).sym
 
 $(name).gbc: $(objects) | baserom.gbc
-	rgblink -O baserom.gbc -n $(@:.gbc=.sym) $(RGBLINKFLAGS) -o $@ $^
+	rgblink -O baserom.gbc -m $(@:.gbc=.map) -n $(@:.gbc=.sym) $(RGBLINKFLAGS) -o $@ $^
 	rgbfix $(RGBFIXFLAGS) $@
 
 %.o: %.asm
