@@ -2,6 +2,77 @@ include "include/macros.inc"
 include "include/char_main.inc"
 
 setcharmap main
+section "NetworkMenu_Messages", romx[$524c], bank[$19]
+NetworkMenu_code524c:
+    ld hl, service_settings_changed
+    call CoordTextPut
+    lb bc, 2, 7
+    ld hl, service_settings
+    call $2b38
+    ret
+
+NetworkMenu_code525c:
+    lb bc, 2, 2
+    ld hl, service_stopped
+    call $2b38
+    lb bc, 2, 7
+    ld hl, service_stop_prompt
+    call $2b38
+    ret
+
+NetworkMenu_code526f:
+    lb bc, 2, 2
+    ld hl, service_resumed
+    call $2b38
+    lb bc, 2, 7
+    ld hl, service_resume_prompt
+    call $2b38
+    ret
+
+service_settings_changed::
+    text 2, 2, "せつぞくせっていへんこう"
+    done
+
+service_settings::
+    text "ウォーズネットセンターに"
+    line "せつぞくするためのせっていを"
+    line "へんこうします。"
+    done
+
+service_stopped::
+    text "ウォーズネットサービスの"
+    line "ていし"
+    done
+
+service_stop_prompt::
+    text "ウォーズネットサービスを"
+    line "ていししますか?"
+    done
+
+service_resumed::
+    text "ウォーズネットサービスの"
+    line "さいかい"
+    done
+
+service_resume_prompt::
+    text "ウォーズネットサービスを"
+    line "さいかいしますか?"
+    done
+
+section "NetworkMenu_Main", romx[$55c3], bank[$19]
+    ;coord_text 3, 6, "メッセージをよむ"
+    coord_text 3, 6, "MESSAGES" ; READ MESSAGES
+    ;coord_text 3, 7, "マップデータをダウンロード"
+    coord_text 3, 7, "DOWNLOAD MAPS"
+    ;coord_text 3, 8, "センターにアクセス"
+    coord_text 3, 8, "ACCESS CENTER"
+
+section "NetworkMenu_Registration", romx[$567a], bank[$19]
+    text "ユーザーとうろくが"
+    line "かんりょうしていないので"
+    line "このサービスはりようできません。"
+    done
+
 section "Mobile_Header_Strings", romx[$43cd], bank[$32]
 Mobile_Header_Strings:
     dw .wars_net_dialing

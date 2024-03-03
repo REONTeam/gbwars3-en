@@ -20,7 +20,8 @@ objects := \
 	source/name_screen.o \
 	source/unit_status.o \
 	source/descriptions.o \
-	source/mobile.o
+	source/mobile.o \
+	source/medal.o
 
 .PHONY: all
 all: $(name).gbc
