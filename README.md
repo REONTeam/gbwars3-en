@@ -12,3 +12,5 @@
 	- Visually all menus already have enough space.
 	- Names would need to be shifted back one byte at the start of each map's data.
 	- Pointers would need to be found and updated to account for this.
+- Unit Status's subscreens have headers that point to the same strings as the main screen, need to identify those and update them.
+- The coordinates for the Initiative value on the unit status screen need to be found and shifted 3 tiles to the right.

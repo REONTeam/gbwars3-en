@@ -30,7 +30,7 @@ UnitCreation_code5a20:
     ld hl, UnitCreation_Movement
     lb bc, 1, 37
     call TextPut
-    ld hl, UnitCreation_Fuel
+    ld hl, UnitCreation_Gas
     lb bc, 1, 38
     call TextPut
     ld hl, UnitCreation_Separator
@@ -49,19 +49,19 @@ UnitCreation_Call:
     text "CALL WHICH UNIT?"
     done
 
-UnitCreation_Gold:
+UnitCreation_Gold:      ; $b1 is the Gold Icon
     db $b1, "-   00"
     done
 
-UnitCreation_Material:
+UnitCreation_Material:  ; $b2 is the Material Icon
     db $b2, "-"
     done
 
-UnitCreation_Movement:
+UnitCreation_Movement:  ; $af is the Gold Icon
     db $af, "  :"
     done
 
-UnitCreation_Fuel:
+UnitCreation_Gas:      ; $b0 is the Gas Icon
     db $b0, "  :"
     done
 
@@ -97,25 +97,87 @@ section "UnitStatus_Header", romx[$60d8], bank[$25]
     line "INFORMATION。 "
     done
 
-section "UnitStatus_Strings", romx[$6349], bank[$25]
+section "UnitStatus_Menu", romx[$62d6], bank[$25]
+UnitStatus_Menu:
+    lb bc, 4, 7
+    ld hl, UnitStatus_String_Movement
+    call TextPut
+    lb bc, 2, 12 ; Initiative Coordinates
+    ld hl, UnitStatus_String_Initiative
+    call TextPut
+    lb bc, 13, 12 ; Initiative '/' Coordinates (10, 12)
+    ld hl, $64fe
+    call TextPut
+    ld hl, UnitStatus_String_Load
+    call CoordTextPut
+    lb bc, 7, 13
+    ld hl, $64fe
+    call TextPut
+    ld hl, UnitStatus_String_Promotion
+    call CoordTextPut
+    ld a, $08
+    lb bc, 5, 14
+    ld de, $0101
+    ld h, $ec
+    farcall $15, $67fd
+    lb bc, 7, 14
+    ld hl, $64fe
+    call TextPut
+    lb bc, 2, 15
+    ld hl, UnitStatus_String_Defense
+    call TextPut
+    ld hl, UnitStatus_String_Resupply_Repair
+    call CoordTextPut
+    ld a, $08
+    lb bc, 2, 7
+    ld de, $0101
+    ld h, $f1
+    farcall $15, $67fd
+    ld a, $08
+    lb bc, 2, 8
+    ld de, $0101
+    ld h, $f2
+    farcall $15, $67fd
+    ret
+
+UnitStatus_String_Movement:
     ;text "いどうりょく    /"
     text "MOVE      /"
     done
+
+UnitStatus_String_Gas:
     ;text "さいだいねんりょう /"
     text "MAX GAS   /"
     done
-    text "イニシアティブ"
-    ;text "INITIATIVE"
+
+    section_end $6361
+
+section fragment "bank25_end", romx[bank25_end_addr], bank[$25]
+
+UnitStatus_String_Initiative:
+    ;text "イニシアティブ"
+    text "INITIATIVE"
     done
+
+    section_end $8000
+
+section "UnitStatus_Menu_Continued", romx[$6361], bank[$25]
+UnitStatus_String_Load:
     ;coord_text 2, 13, "とうさい"
     coord_text 2, 13, "LOAD"
+
+UnitStatus_String_Promotion:
     ;coord_text 2, 14, "しんか" ; Promotion
     coord_text 2, 14, "PRM"
+
+UnitStatus_String_Defense:
     ;text "ぼうぎょりょく"
     text "DEFENSE"
     done
-    coord_text 2, 16, "ほきゅう•ほじゅう"
-    ;coord_text 2, 16, "RESUPPLY•REPAIR"
+
+UnitStatus_String_Resupply_Repair:
+    ;coord_text 2, 16, "ほきゅう•ほじゅう"
+    coord_text 2, 16, "RESUPPLY•REPAIR"
 
 section "UnitStatus_None", romx[$66fe], bank[$25]
     text "なし"
