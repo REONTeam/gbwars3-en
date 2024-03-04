@@ -161,7 +161,7 @@ charmap ".",     $a5
 charmap "/",     $a6
 charmap "-",     $a7
 charmap "[DAY]", $a8
-charmap "|",     $a9
+charmap ":",     $a9
 charmap "_",     $aa
 charmap "[G]",   $b1
 charmap "[M]",   $b2

@@ -258,10 +258,10 @@ EditorSubmenu_Unit_Selection:
 
 ; Two vertical dividers between the placeable units and the currently selected hex
 .string_divider_1:
-    coord_text 15, 33, "|"
+    coord_text 15, 33, ":"
 
 .string_divider_2:
-    coord_text 15, 34, "|"
+    coord_text 15, 34, ":"
 
 section "EditorSubmenu_Unit_Delete", romx[$51f2], bank[$0f]
 EditorSubmenu_Unit_Delete:
