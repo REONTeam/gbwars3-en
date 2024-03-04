@@ -21,6 +21,9 @@ objects := \
 	source/mobile.o \
 	source/medals.o
 
+graphics := \
+	gfx/action_menu.2bpp
+
 .PHONY: all
 all: $(name).gbc
 	@test -f $(name).gbc.orig || cp $(name).gbc $(name).gbc.orig
@@ -29,7 +32,8 @@ all: $(name).gbc
 .PHONY: clean
 clean:
 	rm -f $(objects) $(objects:.o=.d)
-	rm -f $(name).gbc $(name).gbc.orig $(name).map $(name).sym
+	rm -f $(graphics)
+	rm -f $(name).gbc $(name).map $(name).sym
 
 $(name).gbc: $(objects) | baserom.gbc
 	rgblink -O baserom.gbc -m $(@:.gbc=.map) -n $(@:.gbc=.sym) $(RGBLINKFLAGS) -o $@ $^
@@ -37,6 +41,11 @@ $(name).gbc: $(objects) | baserom.gbc
 
 %.o: %.asm
 	rgbasm -MP -M $*.d $(RGBASMFLAGS) -o $@ $<
+
+$(objects): | $(graphics)
+
+%.2bpp: %.png
+	rgbgfx $(RGBGFXFLAGS) -o $@ $<
 
 baserom.gbc:
 	@echo "Missing baserom.gbc!" >&2; false

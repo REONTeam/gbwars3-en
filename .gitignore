@@ -1,3 +1,4 @@
+*.2bpp
 *.d
 *.gbc
 *.gbc.orig
@@ -7,3 +8,5 @@
 *.sa2
 *.sav
 *.sym
+
+!*.orig.2bpp
