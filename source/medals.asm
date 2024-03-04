@@ -4,15 +4,60 @@ include "include/char_main.inc"
 setcharmap main
 section "Medal_Header_String", romx[$5b42], bank[$14]
     ;text "くんしょう"
-    text "MEDAL"
+    text "MEDAL" ; Seemingly unused
     done
+
+section "Medal_code5f4a", romx[$5f4a], bank[$14]
+Medal_code5f4a:
+    lb bc, 2, 36
+    ld a, [$cc7a]
+    call $5f7a
+    ld a, [$cc7a]
+    add a
+    ld hl, Medal_Strings
+    call $29bc
+    ld a, [hl+]
+    ld c, a
+    ld a, [hl]
+    ld b, a
+    ld h, b
+    ld l, c
+    lb bc, 2, 37
+    call $2b38
+    jr Medal_code5f74
+
+Medal_code5f6b:
+    ld hl, Medal_String_None
+    lb bc, 2, 36
+    call $2b38
+
+Medal_code5f74:
+    pop af
+    ldh [$83], a
+    ldh [$4f], a
+    ret
+
+Medal_code5f7a:
+    push bc
+    add a
+    ld hl, $5fbd
+    call $29bc
+    ld a, [hl+]
+    ld c, a
+    ld a, [hl]
+    ld b, a
+    ld h, b
+    ld l, c
+    pop bc
+    call $2b38
+    ret
 
 section "Medal_Strings", romx[$5f8d], bank[$14]
 Medal_Strings:
     dw .graduation_description
     dw .master_description
-    dw .campaign_clear_description
-    dw .campaign_special_description
+    dw .honorary_description
+    dw .special_description
     dw .s_clear_description
     dw .a_clear_description
     dw .b_clear_description
@@ -35,8 +80,8 @@ Medal_Strings:
     dw .engineer_special_description
     dw .graduation_name
     dw .master_name
-    dw .campaign_clear_name
-    dw .campaign_special_name
+    dw .honorary_name
+    dw .special_name
     dw .s_clear_name
     dw .a_clear_name
     dw .b_clear_name
@@ -60,38 +105,47 @@ Medal_Strings:
 
 .graduation_name:
     text "「ソツギョウキショウ」"
+    ;text "「GRADUATE MEDAL」"
     done
 
 .master_name:
-    text "「マスターウォーズ キショウ」"
+    ;text "「マスターウォーズ キショウ」"
+    text "「MASTER MEDAL」"
     done
 
-.campaign_clear_name:
+.honorary_name:
     text "「メイヨ センショウショウ」"
+    ;text "「HONORARY MEDAL」"
     done
 
-.campaign_special_name:
-    text "「トクベツ シュクンショウ」"
+.special_name:
+    ;text "「トクベツ シュクンショウ」"
+    text "「SPECIAL MEDAL」"
     done
 
 .s_clear_name:
     text "「Sエンド シュクンショウ」"
+    ;text "「S CLEAR MEDAL」"
     done
 
 .a_clear_name:
     text "「Aエンド カントウショウ」"
+    ;text "「A CLEAR AWARD」"
     done
 
 .b_clear_name:
     text "「Bエンド カントウショウ」"
+    ;text "「B CLEAR AWARD」"
     done
 
 .c_clear_name:
     text "「Cエンド カントウショウ」"
+    ;text "「C CLEAR AWARD」"
     done
 
 .d_clear_name:
     text "「Dエンド ドリョクショウ」"
+    ;text "「D CLEAR PRIZE」"
     done
 
 .b_unarmored_name:
@@ -104,50 +158,62 @@ Medal_Strings:
 
 .b_armored_name:
     text "「センシャ クンショウB」"
+    ;text "「TANK MEDAL B」"
     done
 
 .a_armored_name:
     text "「センシャ クンショウA」"
+    ;text "「TANK MEDAL A」"
     done
 
 .b_air_name:
-    text "「クウセン クンショウB」"
+    ;text "「クウセン クンショウB」"
+    text "「AIR MEDAL B」"
     done
 
 .a_air_name:
-    text "「クウセン クンショウA」"
+    ;text "「クウセン クンショウA」"
+    text "「AIR MEDAL A」"
     done
 
 .b_sea_name:
-    text "「カイセン クンショウB」"
+    ;text "「カイセン クンショウB」"
+    text "「SEA MEDAL B」"
     done
 
 .a_sea_name:
-    text "「カイセン クンショウA」"
+    ;text "「カイセン クンショウA」"
+    text "「SEA MEDAL A」"
     done
 
 .b_capture_name:
-    text "「センリョウ クンショウB」"
+    ;text "「センリョウ クンショウB」"
+    text "「CAPT MEDAL B」"
     done
 
 .a_capture_name:
-    text "「センリョウ クンショウA」"
+    ;text "「センリョウ クンショウA」"
+    text "「CAPT MEDAL A」"
     done
 
 .b_engineer_name:
     text "「コウヘイ クンショウB」"
+    ;text "「BUILD MEDAL B」"
     done
 
 .a_engineer_name:
     text "「コウヘイ クンショウA」"
+    ;text "「BUILD MEDAL A」"
     done
 
 .unit_name:
     text "「オールユニット クンショウ」"
+    ;text "「ALL UNIT MEDAL」"
     done
 
 .reaper_name:
     text "「シニガミ キショウ」"
+    ;text "「REAPER MEDAL」"
     done
 
 .engineer_special_name:
@@ -155,111 +221,113 @@ Medal_Strings:
     done
 
 .graduation_description:
-    text "キクンノ ソツギョウヲ"
+    text "キクンノ ソツギョウ★"
     line "ココニタタエル"
     done
 
 .master_description:
-    text "スベテノクリアヲ タタエル"
+    text "スベテノクリア★ タタエル"
     done
 
-.campaign_clear_description:
-    text "ヨリイッソウノ ドリョクヲ"
-    line "キタイスル"
+.honorary_description:
+    ;text "ヨリイッソウノ ドリョク★"
+    ;line "キタイスル"
+    text "PERSEVERE AND"
+    line "WIN★" ; IMPROVE (?)
     done
 
-.campaign_special_description:
-    text "サイタンクリアノ エイヨヲ"
+.special_description:
+    text "サイタンクリアノ エイヨ★"
     line "タタエル"
     done
 
 .s_clear_description:
-    text "Sエンディングノ エイヨヲ"
+    text "Sエンディングノ エイヨ★"
     line "タタエル"
     done
 
 .a_clear_description:
-    text "Aエンディングノ カントウヲ"
+    text "Aエンディングノ カントウ★"
     line "タタエル"
     done
 
 .b_clear_description:
-    text "Bエンディングノ カントウヲ"
+    text "Bエンディングノ カントウ★"
     line "タタエル"
     done
 
 .c_clear_description:
-    text "Cエンディングノ カントウヲ"
+    text "Cエンディングノ カントウ★"
     line "タタエル"
     done
 
 .d_clear_description:
-    text "Dエンディングノ ドリョクヲ"
+    text "Dエンディングノ ドリョク★"
     line "タタエル"
     done
 
 .b_unarmored_description:
-    text "ヒソウコウブタイ 250ゲキハヲ"
+    text "ヒソウコウブタイ 250ゲキハ★"
     line "タタエル"
     done
 
 .a_unarmored_description:
-    text "ヒソウコウブタイ 500ゲキハヲ"
+    text "ヒソウコウブタイ 500ゲキハ★"
     line "タタエル"
     done
 
 .b_armored_description:
-    text "ソウコウブタイ 150ゲキハヲ"
+    text "ソウコウブタイ 150ゲキハ★"
     line "タタエル"
     done
 
 .a_armored_description:
-    text "ソウコウブタイ 300ゲキハヲ"
+    text "ソウコウブタイ 300ゲキハ★"
     line "タタエル"
     done
 
 .b_air_description:
-    text "ヒコウブタイ 100ゲキハヲ"
+    text "ヒコウブタイ 100ゲキハ★"
     line "タタエル"
     done
 
 .a_air_description:
-    text "ヒコウブタイ 200ゲキハヲ"
+    text "ヒコウブタイ 200ゲキハ★"
     line "タタエル"
     done
 
 .b_sea_description:
-    text "カンセンブタイ 100ゲキハヲ"
+    text "カンセンブタイ 100ゲキハ★"
     line "タタエル"
     done
 
 .a_sea_description:
-    text "カンセンブタイ 200ゲキハヲ"
+    text "カンセンブタイ 200ゲキハ★"
     line "タタエル"
     done
 
 .b_capture_description:
-    text "センリョウ200カショヲ"
+    text "センリョウ200カショ★"
     line "タタエル"
     done
 
 .a_capture_description:
-    text "センリョウ400カショヲ"
+    text "センリョウ400カショ★"
     line "タタエル"
     done
 
 .b_engineer_description:
-    text "ケンセツ 100カショヲ"
+    text "ケンセツ 100カショ★"
     line "タタエル"
     done
 
 .a_engineer_description:
-    text "ケンセツ 200カショヲ"
+    text "ケンセツ 200カショ★"
     line "タタエル"
     done
 
 .unit_description:
-    text "スベテノユニット ニュウシュヲ"
+    text "スベテノユニット ニュウシュ★"
     line "タタエル"
     done
 
@@ -270,13 +338,15 @@ Medal_Strings:
 
 .engineer_special_description:
     text "コウサクシャ ミシヨウノ"
-    line "ユウキヲタタエル"
+    line "ユウキ★タタエル"
     done
 
-.no_medal_description:
+Medal_String_None:
     text "  ????"
     line "      "
     done
+
+    section_end $6330
 
 section "Medal_Reward_Strings", romx[$64c1], bank[$15]
     ; Player Name...

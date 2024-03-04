@@ -19,7 +19,7 @@ objects := \
 	source/unit_status.o \
 	source/descriptions.o \
 	source/mobile.o \
-	source/medal.o
+	source/medals.o
 
 .PHONY: all
 all: $(name).gbc
