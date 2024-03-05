@@ -10,15 +10,15 @@ UnitCreation_code5a0d:
     call $7a9d
     ld a, [$c9ca]
     and a
-    jr nz, $5a1d
+    jr nz, ._5a1d
 
     ld hl, UnitCreation_Create
-    jr $5a20
+    jr ._5a20
 
-UnitCreation_code5a1d:
+._5a1d:
     ld hl, UnitCreation_Call
 
-UnitCreation_code5a20:
+._5a20:
     lb bc, 1, 32
     call TextPut
     ld hl, UnitCreation_Gold
@@ -49,7 +49,7 @@ UnitCreation_Call:
     text "CALL WHICH UNIT?"
     done
 
-UnitCreation_Gold:      ; $b1 is the Gold Icon
+UnitCreation_Gold:  ; $b1 is the Gold Icon
     db $b1, "-   00"
     done
 
@@ -61,7 +61,7 @@ UnitCreation_Movement:  ; $af is the Gold Icon
     db $af, "  :"
     done
 
-UnitCreation_Gas:      ; $b0 is the Gas Icon
+UnitCreation_Gas:  ; $b0 is the Gas Icon
     db $b0, "  :"
     done
 
