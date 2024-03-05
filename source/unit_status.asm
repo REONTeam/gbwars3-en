@@ -179,16 +179,68 @@ UnitStatus_String_Resupply_Repair:
     ;coord_text 2, 16, "ほきゅう•ほじゅう"
     coord_text 2, 16, "RESUPPLY•REPAIR"
 
-section "UnitStatus_None", romx[$66fe], bank[$25]
+section "UnitStatus_String_None", romx[$66fe], bank[$25]
     text "なし"
     ;text "NONE"
     done
-    ;text "ふかのう " ; Need to find pointer for this string so it can be shifted forward two bytes
-    text "N/A  "
+
+    ; Code referencing the below text is at $6602, need to add it to move it's pointer forward a bit.
+    ; A pointer within it ($6702) also references it without it's first character for when a unit can be loaded.
+    ; Needs to pointed to a completely new string for YES.
+    ;text "ふかのう "
+    text "NO   "
     done
 
-section "UnitStatus_Costs", romx[$6ad0], bank[$25]
+section "UnitStatus_String_Costs", romx[$6ad0], bank[$25]
     ;coord_text 1, 3, "せいさんしょうひしきん"
     coord_text 1, 3, "GOLD COST  "
     ;coord_text 1, 4, "せいさんしょうひしざい"
     coord_text 1, 4, "MTL COST   "
+
+section "UnitStatus_Submenu_Move", romx[$6f34], bank[$25]
+    text "いどうロス" ; Move Loss
+    done
+
+section "UnitStatus_Submenu_Terrain_Def", romx[$7139], bank[$25]
+    text "ぼうぎょこうか/" ; Def(ensive) (Terrain) Cover
+    done
+
+section "UnitStatus_Submenu_Upkeep", romx[$731d], bank[$25]
+    text "たいくうしょうひねんりょう /" ; Flight Gas Cost
+    done
+
+    text "さいだいねんりょう   /" ; Max Gas
+    done
+
+section "UnitStatus_Submenu_Weapon", romx[$74f0], bank[$25]
+    text "ほきゅうかかく" ; Resupply Cost
+    done
+
+    coord_text 1, 2, "しゃてい" ; Range
+    coord_text 1, 4, "こうげきりょく" ; Offensive Power
+
+section "UnitStatus_Submenu_Initiative", romx[$758c], bank[$25]
+    text "しょうひイニシアティブ /" ; Initiative Cost
+    done
+
+section "UnitStatus_Submenu_Load", romx[$7783], bank[$25]
+    text "ユニットまで とうさいかのう" ; Up to # can be loaded. (Starts with a number that needs moving)
+    done
+
+    text "とうさいかのうユニット" ; Loadable Units
+    done
+
+section "UnitStatus_Submenu_Promotion", romx[$7875], bank[$25]
+    ;text "しんか"
+    text "PRM" ; Change to "Promotion" when more room is available.
+    done
+
+section "UnitStatus_Submenu_ResupplyRepair", romx[$7f4d], bank[$25]
+    text "ほきゅうかのう       "
+    done
+
+    text "ほじゅうかのう       "
+    done
+
+    text "              " ; Used for every empty line in the submenu.
+    done
