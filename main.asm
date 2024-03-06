@@ -4,9 +4,9 @@ include "include/char_main.inc"
 include "include/char_unit.inc"
 include "include/char_news.inc"
 
-section "01:4c1a", romx[$4c1a], bank[$01]
-;db $fe, $01, $02, $fd, $fe, $01, $02, $fd, $04, $fb, $18, $e7, $60, $9f
-db $10, $ef, $10, $ef, $7c, $83, $38, $c7, $38, $c7, $44, $bb, $00, $ff
+section "Image_Charmap", romx[$4118], bank[$01]
+incbin "gfx/charmap.2bpp"
+
 section "01:5152", romx[$5152], bank[$01]
 ;db $7e, $81, $42, $bd, $42, $bd, $7e, $81, $42, $bd, $42, $bd, $7e, $81
 db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
