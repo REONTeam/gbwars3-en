@@ -34,3 +34,6 @@ conv action_menu.orig.2bpp -w 32
 
 dump 0x11 0x5e10 0x18a0 > system_messages.orig.2bpp
 conv system_messages.orig.2bpp -w 64
+
+dump 0x14 0x5708 0x260 > img_14_5708.orig.2bpp
+conv img_14_5708.orig.2bpp -w 304
