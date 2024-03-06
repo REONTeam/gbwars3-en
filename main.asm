@@ -7,9 +7,9 @@ include "include/char_news.inc"
 section "Image_Charmap", romx[$4118], bank[$01]
 incbin "gfx/charmap.2bpp"
 
-section "01:5152", romx[$5152], bank[$01]
-;db $7e, $81, $42, $bd, $42, $bd, $7e, $81, $42, $bd, $42, $bd, $7e, $81
-db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
+section "Image_Symbols", romx[$5120], bank[$01]
+incbin "gfx/symbols.2bpp"
+
 section "10:50b7", romx[$50b7], bank[$10]
 ;db $06
 db $04

@@ -23,6 +23,7 @@ objects := \
 
 graphics := \
 	gfx/charmap.2bpp \
+	gfx/symbols.2bpp \
 	gfx/action_menu.2bpp \
 	gfx/system_messages.2bpp
 
