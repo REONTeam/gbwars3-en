@@ -26,6 +26,9 @@ conv charmap.orig.2bpp -w 128
 dump 0x01 0x5120 0x140 > symbols.orig.2bpp
 conv symbols.orig.2bpp -w 40
 
+dump 0x10 0x51e8 0x1680 > title_screen.orig.2bpp
+conv title_screen.orig.2bpp -w 160
+
 dump 0x11 0x4e88 0x0f80 > action_menu.orig.2bpp
 conv action_menu.orig.2bpp -w 32
 
