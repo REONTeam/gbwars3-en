@@ -25,6 +25,8 @@ graphics := \
 	gfx/action_menu.2bpp \
 	gfx/system_messages.2bpp
 
+gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
+
 .PHONY: all
 all: $(name).gbc
 	@test -f $(name).gbc.orig || cp $(name).gbc $(name).gbc.orig
@@ -50,7 +52,5 @@ $(objects): | $(graphics)
 
 baserom.gbc:
 	@echo "Missing baserom.gbc!" >&2; false
-
-gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 
 -include $(objects:.o=.d)
