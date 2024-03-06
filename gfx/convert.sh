@@ -37,3 +37,9 @@ conv system_messages.orig.2bpp -w 64
 
 dump 0x14 0x5708 0x260 > img_14_5708.orig.2bpp
 conv img_14_5708.orig.2bpp -w 304
+
+dump 0x14 0x6341 0xc0 > img_14_6341.orig.2bpp
+conv img_14_6341.orig.2bpp -w 16
+
+dump 0x14 0x6401 0x160 > img_14_6401.orig.2bpp
+conv img_14_6401.orig.2bpp -w 176

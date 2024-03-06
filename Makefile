@@ -27,7 +27,9 @@ graphics := \
 	gfx/title_screen.2bpp \
 	gfx/action_menu.2bpp \
 	gfx/system_messages.2bpp \
-	gfx/img_14_5708.2bpp
+	gfx/img_14_5708.2bpp \
+	gfx/img_14_6341.2bpp \
+	gfx/img_14_6401.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 
