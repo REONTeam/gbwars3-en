@@ -22,6 +22,24 @@ endm
 ; hl = result
     sym $00, $0ed4, Vram_TilemapCoord
 
+; Copies b palettes from hl into wPals, starting with palette a
+; a = palette start, b = palette count, hl = palette source
+    sym $00, $06bc, Vram_SetPals
+
+; Same as Vram_SetPals but with a bank argument
+; a = palette start, b = palette count, c = source bank, hl = palette source
+    sym $00, $06d9, Vram_SetFarPals
+
+; not sure
+    sym $00, $06f2, Vram_ApplyPals
+
+; Called during screen blanking, uploads palettes depending on paramters in wram
+    sym $00, $071b, Vram_UpdatePalsVBlank
+
+; Copies b palettes from wPals into palette RAM, starting with palette a
+; a = palette start, b = palette count
+    sym $00, $0789, Vram_UploadPals
+
 ; Writes data into VRAM, while keeping in mind whether the LCD is on or not
 ; a = data, hl = address
     sym $00, $0f1c, Vram_Put
@@ -62,6 +80,9 @@ endm
     sym $00, $3b06, Farcall
     sym $00, $3b46, Farcall_Jump
 
+; bc = count, de = source, hl = destination
+    sym $00, $3b50, Memcpy
+
 ; Draws a single tile with attributes at $dc6d and increments the address
 ; a = tile, b = attributes, hl = address
     sym $10, $6acf, NameInput_PlaceTile
@@ -75,6 +96,14 @@ endm
 
 ; 256 fifo buffer
     sym $00, $c300, wVBlankFIFO
+
+; Current screen palettes
+    sym $00, $c4e0, wPals
+
+; Palette upload parameters
+    sym $00, $c560, wPalsVBlankParam1
+    sym $00, $c561, wPalsVBlankParam2
+    sym $00, $c562, wPalsVBlankParam3
 
 ; Head and tail pointers for the VBlank FIFO
     sym $00, $ffc8, hVBlankFIFO_Head
