@@ -10,18 +10,14 @@ incbin "gfx/charmap.2bpp"
 section "Image_Symbols", romx[$5120], bank[$01]
 incbin "gfx/symbols.2bpp"
 
-section "10:50b7", romx[$50b7], bank[$10]
-;db $06
-db $04
-section "10:50e3", romx[$50e3], bank[$10]
-;db $06, $06
-db $04, $04
-section "10:50f7", romx[$50f7], bank[$10]
-;db $06
-db $04
+section "Attrmap_Title_Screen", romx[$5080], bank[$10]
+incbin "gfx/title_screen.attrmap"
 
 section "Image_Title_Screen", romx[$51e8], bank[$10]
 incbin "gfx/title_screen.2bpp"
+
+section "Pals_Title_Screen", romx[$6868], bank[$10]
+incbin "gfx/title_screen.orig.pal"
 
 section "Image_Action_Menu", romx[$4e88], bank[$11]
 incbin "gfx/action_menu.2bpp"
