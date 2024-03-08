@@ -41,7 +41,7 @@ UnitCreation_code5a0d:
 
 UnitCreation_Create:
     ;text "どのユニットをせいさんしますか"
-    text "BUILD WHICH UNIT?"
+    text "DEPLOY WHICH UNIT?"
     done
 
 UnitCreation_Call:
