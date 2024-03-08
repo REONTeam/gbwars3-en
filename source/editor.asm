@@ -8,6 +8,11 @@ section "Editor_Default_Name", romx[$416d], bank[$0f]
     text "MAP"
 
 setcharmap unit
+section "Editor_Warnings", romx[$4464], bank[$0f]
+    coord_text 2, 33, "たてものをせっちできる" ; Building Limit first line
+    coord_text 2, 33, "ぶたいをはいちできる" ; Unit limit first line
+    coord_text 2, 34, "さいだいすうをこえています。" ; Second line for both limit warnings
+
 section "0f:45bd", romx[$45bd], bank[$0f]
 EditorMenu_Strings:
     dw .layout
@@ -34,7 +39,7 @@ EditorMenu_Strings:
 
 .materials:
     ;coord_text c, 34, "しざい"
-    coord_text 12, 34, "MATERIA"
+    coord_text 12, 34, "MTL"
 
 .name:
     ;coord_text 2, 35, "マップのなまえ"
@@ -75,47 +80,47 @@ EditorSubmenu:
 
 .arrange: ; Map Editor - Arrange Mode
     ld hl, .string_arrange
-    call $336e
+    call CoordTextPut
     ld hl, .string_arrange_map
-    call $336e
+    call CoordTextPut
     ld hl, .string_arrange_unit
-    call $336e
+    call CoordTextPut
     ret
 
 .size: ; Map Editor - Size
     ld hl, .string_size
-    call $336e
+    call CoordTextPut
     ld hl, .string_size_horz
-    call $336e
+    call CoordTextPut
     ld hl, .string_size_vert
-    call $336e
+    call CoordTextPut
     jr .end
 
 .funds: ; Map Editor - Funds
     ld hl, .string_funds
-    call $336e
+    call CoordTextPut
     ld hl, .string_funds_red
-    call $336e
+    call CoordTextPut
     ld hl, .string_funds_white
-    call $336e
+    call CoordTextPut
     jr .end
 
 .materials: ; Map Editor - Materials
     ld hl, .string_materials
-    call $336e
+    call CoordTextPut
     ld hl, .string_materials_red
-    call $336e
+    call CoordTextPut
     ld hl, .string_materials_white
-    call $336e
+    call CoordTextPut
     jr .end
 
 .save: ; Map Editor - Save
     ld hl, .string_save
-    call $336e
+    call CoordTextPut
     ld hl, .string_save_no
-    call $336e
+    call CoordTextPut
     ld hl, .string_save_yes
-    call $336e
+    call CoordTextPut
     ret
 
 .end:
@@ -195,11 +200,11 @@ EditorSubmenu_Unit_Selection:
     ld de, $1406
     farcall $10, $6a09
     ld hl, .string_unit
-    call $336e
+    call CoordTextPut
     ld hl, .string_divider_1
-    call $336e
+    call CoordTextPut
     ld hl, .string_divider_2
-    call $336e
+    call CoordTextPut
     ld c, $00
 
 .loop:
