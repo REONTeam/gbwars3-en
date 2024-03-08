@@ -35,10 +35,12 @@ graphics := \
 	gfx/map_menu.2bpp \
 	gfx/name_screen.2bpp \
 	gfx/file_select_numbers.2bpp \
-	gfx/file_select_general.2bpp
+	gfx/file_select_general.2bpp \
+	gfx/file_select_modes.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
+gfx/file_select_modes.2bpp: RGBGFXFLAGS := --trim-end 12
 
 .PHONY: all
 all: $(name).gbc
