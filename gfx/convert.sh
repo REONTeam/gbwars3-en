@@ -52,11 +52,11 @@ conv action_menu.orig.2bpp -w 32
 dump 0x11 0x5e10 0x18a0 > system_messages.orig.2bpp
 conv system_messages.orig.2bpp -w 64
 
-dump 0x14 0x5708 0x260 > img_14_5708.orig.2bpp
-conv img_14_5708.orig.2bpp -w 304
+dump 0x14 0x5708 0x260 > name_screen.orig.2bpp
+conv name_screen.orig.2bpp -w 304
 
-dump 0x14 0x6341 0xc0 > img_14_6341.orig.2bpp
-conv img_14_6341.orig.2bpp -w 16
+dump 0x14 0x6341 0xc0 > file_select_numbers.orig.2bpp
+conv file_select_numbers.orig.2bpp -w 16
 
-dump 0x14 0x6401 0x160 > img_14_6401.orig.2bpp
-conv img_14_6401.orig.2bpp -w 176
+dump 0x14 0x6401 0x160 > file_select_general.orig.2bpp
+conv file_select_general.orig.2bpp -w 176
