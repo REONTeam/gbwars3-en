@@ -31,7 +31,7 @@ section "13:582f", romx[$582f], bank[$13]
 db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
 
 section "14:5708", romx[$5708], bank[$14]
-incbin "gfx/img_14_5708.2bpp"
+incbin "gfx/name_screen.2bpp"
 
 section "File_Select_Numbers", romx[$6341], bank[$14]
 incbin "gfx/file_select_numbers.2bpp" ; Unused?

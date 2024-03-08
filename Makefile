@@ -31,7 +31,7 @@ graphics := \
 	gfx/title_screen.2bpp \
 	gfx/action_menu.2bpp \
 	gfx/system_messages.2bpp \
-	gfx/img_14_5708.2bpp \
+	gfx/name_screen.2bpp \
 	gfx/file_select_numbers.2bpp \
 	gfx/file_select_general.2bpp
 
