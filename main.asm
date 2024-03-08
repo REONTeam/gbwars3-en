@@ -30,13 +30,13 @@ section "13:582f", romx[$582f], bank[$13]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
 db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
 
-section "14:5708", romx[$5708], bank[$14]
+section "Image_Name_Screen", romx[$5708], bank[$14]
 incbin "gfx/name_screen.2bpp"
 
-section "File_Select_Numbers", romx[$6341], bank[$14]
+section "Image_File_Select_Numbers", romx[$6341], bank[$14]
 incbin "gfx/file_select_numbers.2bpp" ; Unused?
 
-section "File_Select_General", romx[$6401], bank[$14]
+section "Image_File_Select_General", romx[$6401], bank[$14]
 incbin "gfx/file_select_general.2bpp"
 
 section "14:67d4", romx[$67d4], bank[$14]
