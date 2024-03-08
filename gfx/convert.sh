@@ -84,3 +84,6 @@ conv vs_menu_type.orig.2bpp -w 64
 
 dump 0x18 0x7ab8 0x3c0 > unit_status.orig.2bpp
 conv unit_status.orig.2bpp -w 96
+
+dump 0x19 0x720c 0x6e0 > mobile_menu.orig.2bpp
+conv mobile_menu.orig.2bpp -w 80

@@ -41,7 +41,8 @@ graphics := \
 	gfx/file_select_ranks.2bpp \
 	gfx/config.2bpp \
 	gfx/vs_menu_type.2bpp \
-	gfx/unit_status.2bpp
+	gfx/unit_status.2bpp \
+	gfx/mobile_menu.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
