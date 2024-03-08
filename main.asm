@@ -33,8 +33,8 @@ db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $0
 section "14:5708", romx[$5708], bank[$14]
 incbin "gfx/img_14_5708.2bpp"
 
-section "14:6341", romx[$6341], bank[$14]
-incbin "gfx/img_14_6341.2bpp"
+section "File_Select_Numbers", romx[$6341], bank[$14]
+incbin "gfx/file_select_numbers.2bpp" ; Unused?
 
 section "14:6401", romx[$6401], bank[$14]
 incbin "gfx/img_14_6401.2bpp"
