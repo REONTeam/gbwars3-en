@@ -1,6 +1,7 @@
 def bank0b_end_addr = $7d90 ; Used by unit_status.asm (600+ bytes free)
 def bank0c_end_addrA = $7d68 ; Used by terrain.asm (10 bytes)
 def bank0c_end_addrB = $7d72 ; Used by battle_info.asm (600+ bytes free)
+def bank0f_end_addr = $5340 ; 11000+ bytes free
 ;def bank13_end_addr = $6370 ; 7000+ bytes free
 def bank14_end_addr = $7f00 ; Used by name_screen.asm (200+ bytes free)
 def bank15_end_addr = $7a00 ; Used by main_menu.asm (1600+ bytes free)
