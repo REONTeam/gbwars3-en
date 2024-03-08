@@ -10,3 +10,4 @@
 *.sym
 
 !*.orig.2bpp
+tools/bpp2png.exe
