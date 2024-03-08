@@ -52,6 +52,9 @@ conv action_menu.orig.2bpp -w 32
 dump 0x11 0x5e10 0x18a0 > system_messages.orig.2bpp
 conv system_messages.orig.2bpp -w 64
 
+dump 0x13 0x57cc 0x90 > map_menu.orig.2bpp
+conv map_menu.orig.2bpp -w 72
+
 dump 0x14 0x5708 0x260 > name_screen.orig.2bpp
 conv name_screen.orig.2bpp -w 304
 

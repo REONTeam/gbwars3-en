@@ -25,10 +25,8 @@ incbin "gfx/action_menu.2bpp"
 section "Image_System_Messages", romx[$5e10], bank[$11]
 incbin "gfx/system_messages.2bpp"
 
-setcharmap main
-section "13:582f", romx[$582f], bank[$13]
-;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
-db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
+section "Image_Map_Menu", romx[$57cc], bank[$13]
+incbin "gfx/map_menu.2bpp"
 
 section "Image_Name_Screen", romx[$5708], bank[$14]
 incbin "gfx/name_screen.2bpp"
@@ -39,6 +37,7 @@ incbin "gfx/file_select_numbers.2bpp" ; Unused?
 section "Image_File_Select_General", romx[$6401], bank[$14]
 incbin "gfx/file_select_general.2bpp"
 
+setcharmap main
 section "14:67d4", romx[$67d4], bank[$14]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
 db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
