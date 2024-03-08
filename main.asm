@@ -72,6 +72,9 @@ section "Mobile_Mail_Header", romx[$792c], bank[$19]
     ;coord_text 2, 1, "メッセージサービス"
     coord_text 2, 1, "MESSAGES "
 
+section "Image_Charmap_News", romx[$64d4], bank[$22]
+incbin "gfx/charmap_news.2bpp"
+
 setcharmap main
 section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Map - Win Count
     ;text "しょうりかいすう   /"

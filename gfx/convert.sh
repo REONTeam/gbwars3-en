@@ -87,3 +87,6 @@ conv unit_status.orig.2bpp -w 96
 
 dump 0x19 0x720c 0x6e0 > mobile_menu.orig.2bpp
 conv mobile_menu.orig.2bpp -w 80
+
+dump 0x22 0x64d4 0x1000 > charmap_news.orig.2bpp
+conv charmap_news.orig.2bpp -w 128
