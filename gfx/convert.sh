@@ -78,3 +78,6 @@ conv file_select_ranks.orig.2bpp -w 48
 
 dump 0x15 0x4513 0x380 > config.orig.2bpp
 conv config.orig.2bpp -w 112
+
+dump 0x15 0x76f2 0x250 > vs_menu_type.orig.2bpp
+conv vs_menu_type.orig.2bpp -w 64

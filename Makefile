@@ -39,12 +39,14 @@ graphics := \
 	gfx/file_select_modes.2bpp \
 	gfx/file_select_medals.2bpp \
 	gfx/file_select_ranks.2bpp \
-	gfx/config.2bpp
+	gfx/config.2bpp \
+	gfx/vs_menu_type.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
 gfx/file_select_modes.2bpp: RGBGFXFLAGS := --trim-end 12
 gfx/file_select_medals.2bpp: RGBGFXFLAGS := --trim-end 8
+gfx/vs_menu_type.2bpp: RGBGFXFLAGS := --trim-end 3
 
 .PHONY: all
 all: $(name).gbc

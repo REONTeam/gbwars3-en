@@ -53,9 +53,8 @@ setcharmap main
 section "Image_Configuration", romx[$4513], bank[$15]
 incbin "gfx/config.2bpp"
 
-section "15:7905", romx[$7905], bank[$15]
-;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
-db $71, $00, $4a, $00, $72, $00, $4b, $00, $4a, $00, $72, $00, $00, $00, $00, $00, $9d, $00, $51, $00, $51, $00, $d1, $00, $51, $00, $5d, $00, $00, $00, $00, $00, $20, $00, $20, $00, $20, $00, $c0, $00, $20, $00, $20, $00, $00
+section "Image_VS_Menu_Type", romx[$76f2], bank[$15]
+incbin "gfx/vs_menu_type.2bpp"
 
 section "18:5e5b", romx[$5e5b], bank[$18] ; VS Mode - Type Selection Header
     ;text "たいせん ほうほう"
