@@ -9,7 +9,7 @@ objects := \
 	symbols.o \
 	source/unit.o \
 	source/news.o \
-	source/editor.o \
+	source/map_editor.o \
 	source/maps.o \
 	source/suspend.o \
 	source/beginner.o \
