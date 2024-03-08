@@ -39,7 +39,7 @@ conv charmap.orig.2bpp -w 128
 dump 0x01 0x5120 0x140 > symbols.orig.2bpp
 conv symbols.orig.2bpp -w 40
 
-dump 0x01 0x5898 0xe00 > units.orig.2bpp
+dump 0x01 0x5898 0xda0 > units.orig.2bpp
 conv units.orig.2bpp -w 128
 
 #gen_tmap 0x168 > title_screen.orig.tilemap
@@ -66,3 +66,6 @@ conv file_select_numbers.orig.2bpp -w 16
 
 dump 0x14 0x6401 0x160 > file_select_general.orig.2bpp
 conv file_select_general.orig.2bpp -w 176
+
+#dump 0x14 0x65b1 0x540 > file_select_modes.orig.2bpp
+#conv file_select_modes.orig.2bpp -w 128

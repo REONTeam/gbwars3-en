@@ -38,6 +38,7 @@ graphics := \
 	gfx/file_select_general.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
+gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
 
 .PHONY: all
 all: $(name).gbc
