@@ -69,3 +69,7 @@ conv file_select_general.orig.2bpp -w 176
 
 dump 0x14 0x65b1 0x540 > file_select_modes.orig.2bpp
 conv file_select_modes.orig.2bpp -w 128
+
+dump 0x14 0x6b41 0x1c0 > file_select_medals.orig.2bpp
+conv file_select_medals.orig.2bpp -w 96
+
