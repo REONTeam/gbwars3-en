@@ -22,7 +22,8 @@ objects := \
 	source/medals.o \
 	source/config.o \
 	source/ranks.o \
-	source/battle_info.o
+	source/battle_info.o \
+	source/terrain.o
 
 graphics := \
 	gfx/charmap.2bpp \
