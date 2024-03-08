@@ -3,15 +3,15 @@ include "include/char_main.inc"
 
 section "MapMenu_code4213", romx[$4213], bank[$13]
     ld hl, MapMenu_Strings.edit
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.play
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.copy
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.delete
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.map_communication
-    call $336e
+    call CoordTextPut
 
 section "MapMenu_Menu_Alternate_code43e3", romx[$43e3], bank[$13]
 MapMenu_Menu_Alternate_code43e3:
@@ -73,7 +73,7 @@ MapMenu_Menu_Alternate_code43e3:
     ld hl, MapMenu_Strings.save_where
     jr .select_map
 .select_map:
-    call $336e
+    call CoordTextPut
 
 section "MapMenu_Display_Data_code4638", romx[$4638], bank[$13]
 MapMenu_Display_Data_code4638:
@@ -81,29 +81,29 @@ MapMenu_Display_Data_code4638:
     jr z, .no_map
     ld hl, $ca6a
     lb bc, 2, 13 ; Description Coordinates
-    call $3353
+    call TextPut
     ld hl, MapMenu_Strings.map_number
-    call $336e
+    call CoordTextPut
     ld hl, $dc44
     lb bc, 8, 14 ; Download Map Number Coordinates
-    call $3353
+    call TextPut
     jr ._465f
 .no_map:
     ld hl, MapMenu_Strings.no_map_data
     lb bc, 2, 13 ; No Map Data Coordinates
-    call $3353
+    call TextPut
 ._465f:
     call $059b
     ret
 
 section "MapMenu_code46af", romx[$46af], bank[$13]
     ld hl, MapMenu_Strings.map_number
-    call $336e
+    call CoordTextPut
 
 section "MapMenu_code46ff", romx[$46ff], bank[$13]
     ld hl, MapMenu_Strings.no_map_data
     lb bc, 2, 13 ; No Map Data Coordinates
-    call $3353
+    call TextPut
 
 section "MapMenu_User_Map", romx[$4709], bank[$13]
     text "ユーザーマップ"
@@ -132,7 +132,7 @@ section "MapMenu_Cannot_Send", romx[$47c8], bank[$13]
 section "MapMenu_code4a75", romx[$4a75], bank[$13]
     ld hl, MapMenu_Strings.main_menu
     lb bc, 3, 2 ; Menu Coordinates
-    call $2b38
+    call TextPrint
 
 section "MapMenu_Cursor_code4ac3", romx[$4ac3], bank[$13]
 MapMenu_Cursor_code4ac3:
@@ -212,27 +212,27 @@ MapMenu_Menu:
     ld hl, MapMenu_Strings.IR_get_where
     jr .select_map
 .select_map:
-    call $336e
+    call CoordTextPut
     ret
 
 section "MapMenu_code4d4f", romx[$4d4f], bank[$13]
     ld hl, MapMenu_Strings.copy_where
-    call $336e
+    call CoordTextPut
 
 section "MapMenu_code51f3", romx[$51f3], bank[$13]
     ld hl, MapMenu_Strings.copy_where
-    call $336e
+    call CoordTextPut
 
 section "MapMenu_Confirm_Prompt_code532b", romx[$532b], bank[$13]
 MapMenu_Confirm_Prompt_code532b:
     cp $00
     jr nz, .copy
     ld hl, MapMenu_Strings.delete_prompt
-    call $336e
+    call CoordTextPut
     jr .end
 .copy:
     ld hl, MapMenu_Strings.copy_prompt_overwrite
-    call $336e
+    call CoordTextPut
 .end:
     lb bc, 7, 16 ; Unknown Coordinates
     call $53d7
@@ -261,15 +261,15 @@ MapMenu_Suspend:
     ld de, $120b
     farcall $22, $6247
     ld hl, MapMenu_Strings.suspend_continue_1
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.suspend_continue_2
-    call $336e
+    call CoordTextPut
     lb bc, 7, 11
     call $53ae
     xor a
     ld [$dc4f], a
     ld hl, MapMenu_Strings.suspend_map_label
-    call $336e
+    call CoordTextPut
     ld a, [$c633]
     srl a
     inc a
@@ -277,7 +277,7 @@ MapMenu_Suspend:
     ld d, $02
     call $31f5
     ld hl, MapMenu_Strings.suspend_day_count
-    call $336e
+    call CoordTextPut
     ld a, [$ca1f]
     inc a
     lb bc, 6, 2
@@ -289,13 +289,13 @@ MapMenu_Suspend:
     call $3b50
     ld hl, $dc3b
     lb bc, 9, 2
-    call $3353
+    call TextPut
     ld hl, MapMenu_Strings.suspend_warning_1
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.suspend_warning_2
-    call $336e
+    call CoordTextPut
     ld hl, MapMenu_Strings.suspend_warning_3
-    call $336e
+    call CoordTextPut
     ld a, [$c62f]
     cp $03
     jr nz, ._54a7
@@ -311,12 +311,12 @@ MapMenu_Suspend:
 
 ._54b2:
     ld hl, MapMenu_Strings.IR_battle
-    call $336e
+    call CoordTextPut
     ret
 
 ._54b9:
     ld hl, MapMenu_Strings.battle
-    call $336e
+    call CoordTextPut
     ret
 
 section "MapMenu_Strings", romx[$5541], bank[$13]
