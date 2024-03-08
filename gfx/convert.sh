@@ -90,3 +90,6 @@ conv mobile_menu.orig.2bpp -w 80
 
 dump 0x22 0x64d4 0x1000 > charmap_news.orig.2bpp
 conv charmap_news.orig.2bpp -w 128
+
+dump 0x27 0x65e3 0x210 > results.orig.2bpp
+conv results.orig.2bpp -w 96

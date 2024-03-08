@@ -92,9 +92,8 @@ section "27:65a0", romx[$65a0], bank[$27] ; Battle - Status Menu
     text "LOST    "
     done
 
-section "27:6765", romx[$6765], bank[$27]
-;db $7e, $81, $42, $bd, $42, $bd, $7e, $81, $42, $bd, $42, $bd, $7e, $81
-db $78, $87, $44, $bb, $42, $bd, $42, $bd, $42, $bd, $44, $bb, $78, $87
+section "Image_Results", romx[$65e3], bank[$27]
+incbin "gfx/results.2bpp"
 
 section "27:6c30", romx[$6c30], bank[$27] ; File Select - Save Prompt
     ;text "どこにセーブしますか"
