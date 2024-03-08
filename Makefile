@@ -20,7 +20,8 @@ objects := \
 	source/descriptions.o \
 	source/mobile.o \
 	source/medals.o \
-	source/config.o
+	source/config.o \
+	source/ranks.o
 
 graphics := \
 	gfx/charmap.2bpp \
