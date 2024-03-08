@@ -38,7 +38,8 @@ graphics := \
 	gfx/file_select_general.2bpp \
 	gfx/file_select_modes.2bpp \
 	gfx/file_select_medals.2bpp \
-	gfx/file_select_ranks.2bpp
+	gfx/file_select_ranks.2bpp \
+	gfx/config.2bpp
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
