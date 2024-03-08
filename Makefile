@@ -19,7 +19,8 @@ objects := \
 	source/unit_status.o \
 	source/descriptions.o \
 	source/mobile.o \
-	source/medals.o
+	source/medals.o \
+	source/config.o
 
 graphics := \
 	gfx/charmap.2bpp \
