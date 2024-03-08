@@ -73,3 +73,5 @@ conv file_select_modes.orig.2bpp -w 128
 dump 0x14 0x6b41 0x1c0 > file_select_medals.orig.2bpp
 conv file_select_medals.orig.2bpp -w 96
 
+dump 0x14 0x73e1 0x3c0 > file_select_ranks.orig.2bpp
+conv file_select_ranks.orig.2bpp -w 48

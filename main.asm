@@ -46,6 +46,9 @@ incbin "gfx/file_select_modes.2bpp"
 section "Image_File_Select_Medals", romx[$6b41], bank[$14]
 incbin "gfx/file_select_medals.2bpp"
 
+section "Image_File_Select_Ranks", romx[$73e1], bank[$14]
+incbin "gfx/file_select_ranks.2bpp"
+
 setcharmap main
 section "15:46e6", romx[$46e6], bank[$15]
 ;db $20, $00, $fc, $00, $20, $00, $f8, $00, $42, $00, $42, $00, $3c, $00, $0a, $00, $40, $00, $4e, $00, $30, $00, $40, $00, $80, $00, $80, $00, $7e, $00, $00, $00, $7c, $00, $08, $00, $3c, $00, $c2, $00, $32, $00, $4a, $00, $3c
