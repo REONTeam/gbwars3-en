@@ -81,3 +81,6 @@ conv config.orig.2bpp -w 112
 
 dump 0x15 0x76f2 0x250 > vs_menu_type.orig.2bpp
 conv vs_menu_type.orig.2bpp -w 64
+
+dump 0x18 0x7ab8 0x3c0 > unit_status.orig.2bpp
+conv unit_status.orig.2bpp -w 96
