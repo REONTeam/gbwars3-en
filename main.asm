@@ -10,6 +10,9 @@ incbin "gfx/charmap.2bpp"
 section "Image_Symbols", romx[$5120], bank[$01]
 incbin "gfx/symbols.2bpp"
 
+section "Image_Units", romx[$5898], bank[$01]
+incbin "gfx/units.2bpp"
+
 section "Attrmap_Title_Screen", romx[$5080], bank[$10]
 incbin "gfx/title_screen.attrmap"
 

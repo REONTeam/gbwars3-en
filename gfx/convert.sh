@@ -39,6 +39,9 @@ conv charmap.orig.2bpp -w 128
 dump 0x01 0x5120 0x140 > symbols.orig.2bpp
 conv symbols.orig.2bpp -w 40
 
+dump 0x01 0x5898 0xe00 > units.orig.2bpp
+conv units.orig.2bpp -w 128
+
 #gen_tmap 0x168 > title_screen.orig.tilemap
 dump 0x10 0x5080 0x168 > title_screen.orig.attrmap
 dump 0x10 0x51e8 0x1680 > title_screen.orig.2bpp
