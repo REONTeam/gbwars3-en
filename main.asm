@@ -67,10 +67,12 @@ incbin "gfx/unit_status.2bpp"
 section "Image_Mobile_Menu", romx[$720c], bank[$19]
 incbin "gfx/mobile_menu.2bpp"
 
-section "19:792e", romx[$792e], bank[$19]
-;db $f0, $d2, $ca, $0d, $c7, $c4, $0d, $e2, $c8
-db $1d, $15, $23, $23, $11, $17, $15, $23, $5f
+setcharmap news
+section "Mobile_Mail_Header", romx[$792c], bank[$19]
+    coord_text 2, 1, "メッセージサービス"
+    coord_text 2, 1, "メッセージサービス"
 
+setcharmap main
 section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Map - Win Count
     ;text "しょうりかいすう   /"
     text "WINS       /"
