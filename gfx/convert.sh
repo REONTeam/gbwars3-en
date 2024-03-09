@@ -64,8 +64,8 @@ conv name_screen.orig.2bpp -w 304
 dump 0x14 0x6341 0xc0 > file_select_numbers.orig.2bpp
 conv file_select_numbers.orig.2bpp -w 16
 
-dump 0x14 0x6401 0x160 > file_select_general.orig.2bpp
-conv file_select_general.orig.2bpp -w 176
+dump 0x14 0x6401 0x160 > file_select_general1.orig.2bpp
+conv file_select_general1.orig.2bpp -w 176
 
 dump 0x14 0x65b1 0x540 > file_select_modes.orig.2bpp
 conv file_select_modes.orig.2bpp -w 128
@@ -93,3 +93,6 @@ conv charmap_news.orig.2bpp -w 128
 
 dump 0x27 0x65e3 0x210 > results.orig.2bpp
 conv results.orig.2bpp -w 96
+
+dump 0x27 0x7577 0x3e0 > file_select_general2.orig.2bpp
+conv file_select_general2.orig.2bpp -w 176
