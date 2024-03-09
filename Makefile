@@ -29,6 +29,7 @@ graphics := \
 	gfx/charmap.2bpp \
 	gfx/symbols.2bpp \
 	gfx/units.2bpp \
+	gfx/days_menu.2bpp \
 	gfx/title_screen.2bpp \
 	gfx/action_menu.2bpp \
 	gfx/system_messages.2bpp \
@@ -49,6 +50,7 @@ graphics := \
 
 gfx/system_messages.2bpp: RGBGFXFLAGS := --trim-end 6
 gfx/units.2bpp: RGBGFXFLAGS := --trim-end 5
+gfx/days_menu.2bpp: RGBGFXFLAGS := --trim-end 12
 gfx/file_select_modes.2bpp: RGBGFXFLAGS := --trim-end 12
 gfx/file_select_medals.2bpp: RGBGFXFLAGS := --trim-end 8
 gfx/vs_menu_type.2bpp: RGBGFXFLAGS := --trim-end 3

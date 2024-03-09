@@ -13,6 +13,9 @@ incbin "gfx/symbols.2bpp"
 section "Image_Units", romx[$5898], bank[$01]
 incbin "gfx/units.2bpp"
 
+section "Image_Days_Menu", romx[$76f1], bank[$0c]
+incbin "gfx/days_menu.2bpp"
+
 section "Attrmap_Title_Screen", romx[$5080], bank[$10]
 incbin "gfx/title_screen.attrmap"
 
@@ -110,7 +113,7 @@ section "27:6c30", romx[$6c2e], bank[$27] ; File Select - Save/Mode Prompts
 
 section "27:6caa", romx[$6ca8], bank[$27]
     ;coord_text 6, 4, "セーブしました"
-    coord_text 6, 4, "SAVED. "
+    coord_text 6, 4, "SAVED。 "
 
 section "Image_File_Select_General2", romx[$7577], bank[$27]
 incbin "gfx/file_select_general2.2bpp"

@@ -42,6 +42,9 @@ conv symbols.orig.2bpp -w 40
 dump 0x01 0x5898 0xda0 > units.orig.2bpp
 conv units.orig.2bpp -w 128
 
+dump 0x0c 0x76f1 0x440 > days_menu.orig.2bpp
+conv days_menu.orig.2bpp -w 128
+
 #gen_tmap 0x168 > title_screen.orig.tilemap
 dump 0x10 0x5080 0x168 > title_screen.orig.attrmap
 dump 0x10 0x51e8 0x1680 > title_screen.orig.2bpp
