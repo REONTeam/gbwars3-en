@@ -13,7 +13,14 @@ section "Editor_Warnings", romx[$4464], bank[$0f]
     coord_text 2, 33, "ぶたいをはいちできる" ; Unit limit first line
     coord_text 2, 34, "さいだいすうをこえています。" ; Second line for both limit warnings
 
-section "0f:45bd", romx[$45bd], bank[$0f]
+section "EditorMenu_Coordinates", romx[$459a], bank[$0f]
+Map_Editor_Menu_Cursor_Coordinates:
+    db $01, $21, $0a, $21 ; db $01, $21, $0b, $21
+    db $01, $22, $0a, $22 ; db $01, $22, $0b, $22
+    db $01, $23, $0a, $23 ; db $01, $23, $0b, $23
+    db $01, $24, $0a, $24 ; db $01, $24, $0b, $24
+
+section "EditorMenu_Strings", romx[$45bd], bank[$0f]
 EditorMenu_Strings:
     dw .layout
     dw .size
@@ -31,7 +38,7 @@ EditorMenu_Strings:
 
 .size:
     ;coord_text 12, 33, "マップサイズ"
-    coord_text 12, 33, "SIZE"
+    coord_text 11, 33, "MAPSIZE" ; MAP SIZE
 
 .funds:
     ;coord_text 2, 34, "しきん"
@@ -39,7 +46,7 @@ EditorMenu_Strings:
 
 .materials:
     ;coord_text c, 34, "しざい"
-    coord_text 12, 34, "MTL"
+    coord_text 11, 34, "MATERIAL"
 
 .name:
     ;coord_text 2, 35, "マップのなまえ"
@@ -47,7 +54,7 @@ EditorMenu_Strings:
 
 .fill:
     ;coord_text 12, 35, "ぬりつぶし"
-    coord_text 12, 35, "FILL"
+    coord_text 11, 35, "FILL"
 
 .save:
     ;coord_text 2, 36, "セ―ブする"
@@ -55,11 +62,32 @@ EditorMenu_Strings:
 
 .quit:
     ;coord_text 12, 36, "しゅうりょう"
-    coord_text 12, 36, "END"
+    coord_text 11, 36, "END"
 
     section_end $460f
 
-section "0f:4c3a", romx[$4c3a], bank[$0f]
+section "EditorSubmenu_Message_HQ", romx[$4837], bank[$0f]
+    coord_text 2, 33, "シュトのかずがただしくないので"
+    coord_text 2, 34, "セ―ブできません。"
+    coord_text 2, 35, "1こずつはいちしてください。"
+
+section "EditorSubmenu_Save", romx[$4954], bank[$0f]
+    coord_text 2, 33, "しゅうりょうしますか?"
+    coord_text 4, 34, "セ―ブしてしゅうりょう"
+    coord_text 4, 35, "セ―ブしないでしゅうりょう"
+    coord_text 4, 36, "もどる"
+
+section "EditorSubmenu_Message_Limit", romx[$49ed], bank[$0f]
+    coord_text 2, 33, "ぶたいやたてものは"
+    coord_text 2, 34, "ぬりつぶしできません。"
+
+section "EditorSubmenu_Message_Fill", romx[$4b08], bank[$0f]
+    coord_text 2, 33, "ぬりつぶすはんいの"
+    coord_text 2, 34, "さいしょのHEXを"
+    coord_text 2, 34, "さいごのHEXを"
+    coord_text 2, 35, "けっていしてください。"
+
+section "EditorSubmenu", romx[$4c3a], bank[$0f]
 EditorSubmenu:
     ld bc, $0020
     ld de, $1405
@@ -156,7 +184,7 @@ EditorSubmenu:
 ; Map Editor - Submenu - Materials
 .string_materials:
     ;coord_text 2, 33, "しざい"
-    coord_text 2, 33, "MTL"
+    coord_text 2, 33, "MTL" ; MATERIAL
 
 .string_materials_red:
     ;coord_text 4, 34, "レッドスタ―    0"
@@ -194,7 +222,11 @@ EditorSubmenu:
 
     section_end $4d65
 
-section "0f:50ec", romx[$50ec], bank[$0f]
+section "EditorSubmenu_Map_Label", romx[$4eea], bank[$0f]
+    ;coord_text 2, 36, "チケイ/"
+    coord_text 2, 36, "MAP/"
+
+section "EditorSubmenu_Unit_Selection", romx[$50ec], bank[$0f]
 EditorSubmenu_Unit_Selection:
     ld bc, $0020
     ld de, $1406

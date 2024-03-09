@@ -14,3 +14,5 @@
 	- Pointers would need to be found and updated to account for this.
 - Unit Status's subscreens have headers that point to the same strings as the main screen, need to identify those and update them.
 - The coordinates for the Initiative value on the unit status screen need to be found and shifted 3 tiles to the right.
+- The Editor submenus require a bit of coordinate adjusting, various things need extra space.
+    - Specifically, MAP, should be changed to TERRAIN, in the terrain placement submenu, but that means shifting the terrain name after it.
