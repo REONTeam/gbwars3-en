@@ -59,7 +59,11 @@ section "Image_VS_Menu_Type", romx[$76f2], bank[$15]
 incbin "gfx/vs_menu_type.2bpp"
 
 setcharmap main
-section "18:5e5b", romx[$5e5b], bank[$18] ; VS Menu - Type Selection Header
+section "Unk_End_Game_Message", romx[$658a], bank[$15] ; Near Rank up messages?
+    text "ゲームを しゅうりょうしますか?"
+    done
+
+section "VS_Menu_Type", romx[$5e5b], bank[$18]
     ;text "たいせん ほうほう"
     text " VS STYLE"
     done
@@ -79,12 +83,12 @@ section "Image_Charmap_News", romx[$64d4], bank[$22]
 incbin "gfx/charmap_news.2bpp"
 
 setcharmap main
-section "25:48a0", romx[$48a0], bank[$25] ; Campaign Mode - Map - Win Count
+section "Campaign_Menu_Wins", romx[$48a0], bank[$25]
     ;text "しょうりかいすう   /"
     text "WINS       /"
     done
 
-section "27:65a0", romx[$65a0], bank[$27] ; Battle - Status Menu
+section "Battle_Status", romx[$65a0], bank[$27]
     ;text "ユニット"
     text "UNIT"
     done
@@ -98,7 +102,7 @@ section "27:65a0", romx[$65a0], bank[$27] ; Battle - Status Menu
 section "Image_Results", romx[$65e3], bank[$27]
 incbin "gfx/results.2bpp"
 
-section "27:6c30", romx[$6c2e], bank[$27] ; File Select - Save/Mode Prompts
+section "File_Menu_Strings", romx[$6c2e], bank[$27]
     ;coord_text 1, 3, "どこにセーブしますか?      "
     coord_text 1, 3, "SAVE WHERE?      "
 
@@ -111,7 +115,7 @@ section "27:6c30", romx[$6c2e], bank[$27] ; File Select - Save/Mode Prompts
     ;coord_text 1, 3, "スタンダードモードをあそびますか?"
     coord_text 1, 3, "PLAY STANDARD?"
 
-section "27:6caa", romx[$6ca8], bank[$27]
+section "Unk_Save_Confirmation", romx[$6ca8], bank[$27]
     ;coord_text 6, 4, "セーブしました"
     coord_text 6, 4, "SAVED。 "
 

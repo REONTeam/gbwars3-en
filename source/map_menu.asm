@@ -102,7 +102,7 @@ section "MapMenu_code46af", romx[$46af], bank[$13]
 
 section "MapMenu_code46ff", romx[$46ff], bank[$13]
     ld hl, MapMenu_Strings.no_map_data
-    lb bc, 2, 13 ; No Map Data Coordinates
+    lb bc, 2, 13 ; "No Map Data" String Coordinates
     call TextPut
 
 section "MapMenu_User_Map", romx[$4709], bank[$13]
@@ -162,13 +162,13 @@ MapMenu_Cursor_code4ac3:
     ld [$dc39], a
     ld a, [$dc3a]
     cp $01
-    jr nz, jr_013_4afb
+    jr nz, ._4afb
 
     ld a, [$dc39]
     sub $28
     ld [$dc39], a
 
-jr_013_4afb:
+._4afb:
     ld a, [$dc38]
     ld b, a
     ld a, [$dc39]

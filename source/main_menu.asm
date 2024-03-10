@@ -51,6 +51,8 @@ MainMenu_Desc_Network:
     line "NET CENTER。"      ; アクセスします。
     done
 
-section "15:5ec1", romx[$5ec1], bank[$15]
-    text "SAVED。  "         ; セーブしました。
-    done
+section "Unk_Save_Prompt_Main", romx[$5db7], bank[$15]
+    coord_text 6, 7, "セーブしますか?" ; セーブしますか?
+
+section "Unk_Save_Confirmation_Main", romx[$5ebf], bank[$15]
+    coord_text 6, 8, "SAVED。  "         ; セーブしました。

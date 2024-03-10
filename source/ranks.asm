@@ -77,7 +77,7 @@ section "Rank_Award_String", romx[$6295], bank[$15]
     skip 1
     line "こんごのかつやくに"
     line "きたいする。"
-
+    
 section "Rank_Save_Prompt", romx[$662e], bank[$15]
     text "セーブしますか?"
     done
