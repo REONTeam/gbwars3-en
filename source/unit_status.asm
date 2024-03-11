@@ -73,6 +73,50 @@ UnitCreation_Separator:
     done
 
 setcharmap main
+section "UnitList_Badges", romx[$6c70], bank[$18]
+    ;text "こ"
+    text "B"
+    done
+
+section "UnitList_Delete_Prompt", romx[$70cd], bank[$18]
+    text 6, 7, "しょぶんしますか?"
+
+section "UnitList_Promoted", romx[$7343], bank[$18]
+    ; Unit String...
+    text "が"
+    done
+    ; ...Promotion String...
+    text "に しんかした!"
+    done
+
+section "UnitList_Filter", romx[$7a74], bank[$18]
+    ; Filter types for the unit list submenu
+    coord_text 4,  5, "ユニットのしゅるい"
+    coord_text 4,  6, "レベル"
+    coord_text 4,  7, "ねんりょう"
+    coord_text 4,  8, "ユニットすう"
+    coord_text 4,  9, "みはいちユニット"
+    coord_text 4, 10, "みこうどうユニット"
+
+    ; Unit Ranks displayed in the Unit list submenu.
+    text "D"
+    done
+
+    text "C"
+    done
+
+    text "B"
+    done
+
+    text "A"
+    done
+
+    text "S"
+    done
+
+section "UnitList_Count", romx[$7f5c], bank[$18]
+    coord_text 16, 1, "/50"
+
 section "UnitStatus_Types", romx[$5e49], bank[$25]
     ;text "そうこうユニット "
     text "ARMORED  "
