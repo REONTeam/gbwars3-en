@@ -74,6 +74,28 @@ section "NetworkMenu_Registration", romx[$567a], bank[$19]
     line "このサービスはりようできません。"
     done
 
+section "Unused_Mobile_Menu", romx[$6aa6], bank[$27]
+    text "ユーザーとうろく"
+    done
+
+    text "マップアップロード"
+    done
+
+    text "マップとうこう"
+    done
+
+    text "マップダウンロード"
+    done
+
+    text "マップデリート"
+    done
+
+    text "ようへいよびだし"
+    done
+
+    text "センターにアクセス"
+    done
+
 section "Mobile_Header_Strings", romx[$43cd], bank[$32]
 Mobile_Header_Strings:
     dw .wars_net_dialing
