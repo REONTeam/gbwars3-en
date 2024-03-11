@@ -1,3 +1,4 @@
+include "include/macros.inc"
 include "include/char_main.inc"
 
 ; Map data
