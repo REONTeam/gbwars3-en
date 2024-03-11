@@ -525,3 +525,19 @@ MapMenu_Strings:
     done
 
     section_end $57cc
+
+section "Unk_IR_Get_Send", romx[$632f], bank[$18]
+    coord_text 6, 5, "マップをあげる" ; Unused?
+
+    coord_text 6, 8, "マップをもらう" ; Unused?
+
+    ; Duplicate of descriptions found with the rest of the map menu text.
+    text "IRつうしんをつかって"
+    line "じぶんがつくったマップデータを"
+    line "あいてにあげます。"
+    done
+
+    text "IRつうしんをつかって"
+    line "マップデータを"
+    line "あいてからもらいます。"
+    done
