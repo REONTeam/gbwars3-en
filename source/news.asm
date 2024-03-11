@@ -4,7 +4,7 @@ include "include/char_news.inc"
 setcharmap news
 section "News_Menu_Service", romx[$77c2], bank[$22]
 News_Menu_Message_Service:
-    ;coord_text 2, 1, "メッセージサービ"
+    ;coord_text 2, 1, "メッセージサービス"
     coord_text 2, 1, "MESSAGES"
 
 section "News_Menu_Retrieve", romx[$79b5], bank[$22]
