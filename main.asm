@@ -63,11 +63,6 @@ section "Unk_End_Game_Message", romx[$658a], bank[$15] ; Near Rank up messages?
     text "ゲームを しゅうりょうしますか?"
     done
 
-section "VS_Menu_Type", romx[$5e5b], bank[$18]
-    ;text "たいせん ほうほう"
-    text " VS STYLE"
-    done
-
 section "Image_Unit_Status", romx[$7ab8], bank[$18]
 incbin "gfx/unit_status.2bpp"
 

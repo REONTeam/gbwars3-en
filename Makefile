@@ -23,7 +23,8 @@ objects := \
 	source/config.o \
 	source/ranks.o \
 	source/battle_info.o \
-	source/terrain.o
+	source/terrain.o \
+	source/versus.o
 
 graphics := \
 	gfx/charmap.2bpp \
