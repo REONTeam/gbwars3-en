@@ -1,0 +1,2 @@
+side0 metatile $92: tile $AC attr $0D, tile $AD attr $0D, tile $BC attr $0D, tile $BD attr $0D
+side1 metatile $93: tile $AD attr $2B, tile $AC attr $2B, tile $BD attr $2B, tile $BC attr $2B

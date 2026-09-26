@@ -1,0 +1,2 @@
+side0 metatile $58: tile $42 attr $0D, tile $43 attr $0D, tile $52 attr $0D, tile $53 attr $0D
+side1 metatile $59: tile $43 attr $2B, tile $42 attr $2B, tile $53 attr $2B, tile $52 attr $2B

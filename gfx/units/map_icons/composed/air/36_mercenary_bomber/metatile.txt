@@ -1,0 +1,2 @@
+side0 metatile $7C: tile $86 attr $0D, tile $87 attr $0D, tile $96 attr $0D, tile $97 attr $0D
+side1 metatile $7D: tile $87 attr $2B, tile $86 attr $2B, tile $97 attr $2B, tile $96 attr $2B

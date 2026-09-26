@@ -1,0 +1,10 @@
+special_index,descriptor_index,tile_offset,tile_count,2bpp,png,role,unit_type,unit_name
+0,52,1,3,52_special_0.2bpp,52_special_0.png,descriptor,39,battle_helicopter
+0,,4,3,special_0_interstitial_frame.2bpp,special_0_interstitial_frame.png,paired_interstitial,39,battle_helicopter
+1,53,7,3,53_special_1.2bpp,53_special_1.png,descriptor,40,battle_helicopter_s
+1,,10,3,special_1_interstitial_frame.2bpp,special_1_interstitial_frame.png,paired_interstitial,40,battle_helicopter_s
+2,54,13,3,54_special_2.2bpp,54_special_2.png,descriptor,41,anti_sub_helicopter
+2,,16,3,special_2_interstitial_frame.2bpp,special_2_interstitial_frame.png,paired_interstitial,41,anti_sub_helicopter
+3,55,19,3,55_special_3.2bpp,55_special_3.png,descriptor,42,transport_helicopter
+3,,22,3,special_3_interstitial_frame.2bpp,special_3_interstitial_frame.png,paired_interstitial,42,transport_helicopter
+4,56,25,3,56_special_4.2bpp,56_special_4.png,descriptor,43,transport_helicopter_s
