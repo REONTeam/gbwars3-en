@@ -127,9 +127,9 @@ The Map Menu/Versus frontend has no remaining `...Provider_BankXX_YYYY` aliases.
 
 The old `data/remaining/` staging folder has been eliminated entirely. Subsequent refinement also retired the temporary generic `.dat`, `.sound`, and `.gfx` layers: executable driver duplicates are assembled from source, proven graphics are format-specific assets, and unresolved structural bytes are owned directly by RGBDS source. See `docs/architecture/remaining_asset_migration.md`.
 
-## English/custom features retained
+## English/custom features
 
-The disassembly preserves the existing custom English project, including the extended Campaign briefing system and custom map-name work. Campaign briefing relocation coverage is complete: all Campaign pre-map/result entries resolve through Bank `$34`; untranslated entries remain editable Japanese plaintext rather than opaque message blobs.
+The disassembly includes a custom English project, including an extended Campaign briefing system and custom map-name work. Campaign briefing relocation coverage is complete: all Campaign pre-map/result entries resolve through Bank `$34`; untranslated entries remain editable Japanese plaintext rather than opaque message blobs.
 
 The main charmap explicitly maps the English full stop (`.`) to the game's `$2E` punctuation glyph, eliminating the previous unmapped-character build warnings while preserving the canonical ROM hash.
 
