@@ -161,7 +161,7 @@ The repository no longer uses generic `.dat`, `.sound`, `.gfx`, or `.bin` assets
 
 This project calls the disassembly complete because:
 
-1. every ROM byte is explicitly owned by project source/data/padding;
+1. every ROM byte is explicitly included in source/data/padding;
 2. the main link does not use `rgblink -O baserom.gbc`;
 3. known reset/interrupt/direct/farcall-reachable code has been promoted from inherited space into mnemonic source;
 4. the source-complete build reproduces the canonical custom-English hash after validating the required retail ROM;
