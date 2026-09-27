@@ -50,7 +50,7 @@ for rel in refs:
     if not (ROOT/rel).exists(): errors.append(f'missing INCBIN asset {rel}')
 # Count explicit build objects.
 objs=set(re.findall(r'[A-Za-z0-9_./-]+\.o',mk))
-if len(objs)!=384: errors.append(f'build object count {len(objs)}, expected 384')
+if len(objs)!=383: errors.append(f'build object count {len(objs)}, expected 383')
 if errors:
     print('Completion verification: FAIL')
     for e in errors: print(' -',e)

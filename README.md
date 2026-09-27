@@ -13,7 +13,7 @@ The canonical custom-English build is:
 - Cartridge: MBC5 + RAM + battery
 - SRAM geometry: 128 KiB
 
-`make check-completion` verifies full ROM ownership, the output hash, zero free ROM bytes, symbolic farcalls, and source hygiene.
+`make check-baseline` is the optional strict regression target that verifies the current canonical custom-English output hash in addition to the project's structural baseline checks. Normal development builds do not require that output hash to remain unchanged.
 
 ## Requirements
 
@@ -80,22 +80,36 @@ make RGBASM=/path/to/rgbasm RGBLINK=/path/to/rgblink RGBFIX=/path/to/rgbfix
 
 ## Verification
 
-For a release-quality verification, use:
+Normal mod development does **not** require the output ROM to match the current canonical custom-English hash. The only mandatory identity check in an ordinary build is the supplied Japanese retail `baserom.gbc`.
+
+Build normally with:
 
 ```sh
-make check-toolchain
-make check-release
+make
 ```
 
-`check-release` is the primary aggregate release gate. It runs the RGBDS syntax audit, the 100% ownership/completion verifier, the post-completion refinement verifier, and the static release checks. `check-toolchain` is kept separate so you can confirm exactly which RGBDS and legacy-graphics tools the current environment will use.
-
-The component checks can also be run individually when diagnosing a failure:
+For development-safe checks that remain valid after intentional ROM changes, use:
 
 ```sh
-make check-rgbds-1-syntax
-make check-completion
-make check-refinement
-make check-music-source
+make check
+```
+
+`make check-release` is an alias of this development-safe gate. It verifies the retail ROM prerequisite, rebuilds the project, checks RGBDS syntax, and confirms the expected toolchain. It does **not** compare `GBWARS3.gbc` against the current baseline hash.
+
+To verify that an **unmodified checkout** still reproduces the current known-good custom-English baseline exactly, run:
+
+```sh
+make check-baseline
+```
+
+`check-baseline` runs the strict historical regression suite, including the canonical output SHA-256 and byte/structure checks. It is optional and is expected to fail after deliberate game modifications that change ROM bytes.
+
+Individual research/regression verifiers under `tools/verify_*.py` are also optional development aids. Some intentionally compare source ranges or the complete output against the established baseline and therefore may fail after legitimate modifications.
+
+You can validate only the required retail ROM separately with:
+
+```sh
+make check-baserom
 ```
 
 The normal link produces `GBWARS3.gbc`, `GBWARS3.map`, and `GBWARS3.sym`. Generated ROMs, object/dependency files, downloaded/compiled tool binaries, and map/symbol files are build products and are not part of release source archives.
@@ -164,7 +178,7 @@ This project calls the disassembly complete because:
 1. every ROM byte is explicitly owned by project source/data/padding;
 2. the main link does not use `rgblink -O baserom.gbc`;
 3. known reset/interrupt/direct/farcall-reachable code has been promoted from inherited space into mnemonic source;
-4. the source-complete build reproduces the canonical custom-English hash after validating the required retail ROM;
+4. an unmodified checkout can reproduce the documented canonical custom-English hash via the optional `make check-baseline` regression target;
 5. remaining binary assets are explicit resources, not hidden base-ROM inheritance.
 
 This does **not** mean every byte has a final gameplay-semantic name. Further work is refinement: identifying neutral data formats, improving names, and converting binary resources into higher-level editable forms when evidence supports it.

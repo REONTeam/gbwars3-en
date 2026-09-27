@@ -486,8 +486,6 @@ gfx/file_select/file_select_general2.2bpp: RGBGFXFLAGS := --trim-end 4
 
 .PHONY: all check-battle-scene-helpers
 all: $(name).gbc
-	@test -f $(name).gbc.orig || cp $(name).gbc $(name).gbc.orig
-	@diff $(name).gbc.orig $(name).gbc
 
 
 
@@ -1662,12 +1660,22 @@ check-remaining-asset-migration:
 check-music-source: $(name).gbc
 	$(PYTHON) tools/verify_music_source.py
 
-.PHONY: check-refinement check-release
+.PHONY: check-refinement check check-release check-baseline
 check-refinement: $(name).gbc
 	$(PYTHON) tools/verify_refinement.py
 	$(MAKE) check-remaining-asset-migration
 
-check-release: baserom-verified $(name).gbc
+# Development-safe checks. These intentionally do not enforce the canonical
+# custom-English output hash, so modified builds remain valid development builds.
+check: baserom-verified $(name).gbc
+	$(MAKE) check-rgbds-1-syntax
+	$(MAKE) check-toolchain
+
+check-release: check
+
+# Strict regression target for confirming an untouched checkout still reproduces
+# the current canonical custom-English baseline. This is optional for modding.
+check-baseline: baserom-verified $(name).gbc
 	$(MAKE) check-rgbds-1-syntax
 	$(MAKE) check-completion
 	$(MAKE) check-refinement

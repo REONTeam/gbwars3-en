@@ -53,18 +53,21 @@ Where repeated resource records are already proven, replace raw `db`/binary slic
 
 Run the checklist in `docs/testing/runtime_regression.md` on a CGB-accurate emulator and, when practical, hardware. Particularly valuable cases are late-game save loading, Campaign transitions, Map Menu send/receive flows, map editor save/load, Unit List promotion/delete, and Mobile/infrared error paths.
 
-## Release gates
+## Build and verification gates
 
-A refined release should satisfy all of the following:
+For ordinary development and modding:
 
-- `baserom.gbc` is present and passes the exact Japanese retail ROM identity check.
-- `make` succeeds with RGBDS 1.0.3.
-- Build emits no assembler warnings from project source.
-- `make check-toolchain` confirms the expected RGBDS/graphics toolchain.
-- `make check-release` passes as the aggregate release gate.
-- The component checks `check-rgbds-1-syntax`, `check-completion`, `check-refinement`, and `check-music-source` remain individually green.
-- Output SHA-256 remains `e5331609ded95b354e95af9f453e90531cbfc446f5c51117ba2ed985a80cb059` unless a deliberate custom-English change is being made.
-- Release archive contains no ROM, save, object/dependency, linker map/symbol, or downloaded tool binaries.
+- `baserom.gbc` must be present and pass the exact Japanese retail ROM identity check.
+- `make` must succeed with RGBDS 1.0.3.
+- Intentional source changes are allowed to change the output ROM hash.
+- `make check` / `make check-release` provide development-safe syntax/toolchain checks and do not enforce the canonical custom-English output hash.
+
+For strict baseline regression only:
+
+- `make check-baseline` verifies that an unmodified checkout still reproduces SHA-256 `e5331609ded95b354e95af9f453e90531cbfc446f5c51117ba2ed985a80cb059` and runs the historical completion/refinement/music/semantic checks.
+- Baseline-only verifiers are expected to fail after legitimate modifications that intentionally change ROM bytes; they are not normal build requirements.
+
+Release archives should contain no ROM, save, object/dependency, linker map/symbol, or downloaded tool binaries.
 
 ## Structural-asset migration milestone
 
